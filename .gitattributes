@@ -1,0 +1,17 @@
+# Normalise line endings in the repository, leave the working copy native.
+# Without this a Windows checkout rewrites every markdown file to CRLF and the
+# next diff is the whole vault - which would make `git log -p` useless as a
+# record of what actually changed in a note.
+* text=auto
+
+# Evidence. Kept diffable on purpose: a survey is what a clone returned on a
+# date, and seeing exactly which paths appeared or vanished between cohorts is
+# the point of keeping the old one.
+*.json  text diff
+
+# Not text. Marking them stops Git guessing and stops a corrupt diff attempt.
+*.pdf     binary
+*.png     binary
+*.jpg     binary
+*.sqlite  binary
+*.canvas  text

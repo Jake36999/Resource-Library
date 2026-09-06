@@ -1,0 +1,95 @@
+{
+  "nodes": [
+    {
+      "id": "209691ab-e975-5338-add8-e5e37c176a60",
+      "type": "file",
+      "file": "00-Indexes/Topic - Agentic AI & Models.md",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 240
+    },
+    {
+      "id": "54efa0ed-16be-5cdf-aa02-6126e1395dc5",
+      "type": "file",
+      "file": "01-Resources/armanakbari - Awsome-Efficient-DLMs.md",
+      "x": -650,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "85924815-760d-57c4-b9d6-88ad50618f11",
+      "type": "file",
+      "file": "01-Resources/awslabs - awsome-distributed-ai.md",
+      "x": -220,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "9117eeef-1ed2-5bce-a025-59c1a81fb6a7",
+      "type": "file",
+      "file": "01-Resources/Azure-Samples - semantic-kernel-advanced-usage.md",
+      "x": 210,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "3434e22e-ddf0-516b-8bc6-ca5f15548134",
+      "type": "file",
+      "file": "01-Resources/moyu6027 - awsome-chatgpt-like.md",
+      "x": 640,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "3015ecd2-a3d3-52f8-8291-f7562f79f45d",
+      "type": "file",
+      "file": "01-Resources/vercel-labs - skills.md",
+      "x": -650,
+      "y": 520,
+      "width": 320,
+      "height": 190
+    }
+  ],
+  "edges": [
+    {
+      "id": "892d15fa-935b-58b0-bc50-96e05d31b39e",
+      "fromNode": "209691ab-e975-5338-add8-e5e37c176a60",
+      "fromSide": "bottom",
+      "toNode": "54efa0ed-16be-5cdf-aa02-6126e1395dc5",
+      "toSide": "top"
+    },
+    {
+      "id": "872b24a1-019a-5cd4-bfb4-264b7c2c0d7f",
+      "fromNode": "209691ab-e975-5338-add8-e5e37c176a60",
+      "fromSide": "bottom",
+      "toNode": "85924815-760d-57c4-b9d6-88ad50618f11",
+      "toSide": "top"
+    },
+    {
+      "id": "17105255-3094-5d23-837f-2f9f651c8a26",
+      "fromNode": "209691ab-e975-5338-add8-e5e37c176a60",
+      "fromSide": "bottom",
+      "toNode": "9117eeef-1ed2-5bce-a025-59c1a81fb6a7",
+      "toSide": "top"
+    },
+    {
+      "id": "b03fd84e-1317-57da-a7e4-6c51d180574f",
+      "fromNode": "209691ab-e975-5338-add8-e5e37c176a60",
+      "fromSide": "bottom",
+      "toNode": "3434e22e-ddf0-516b-8bc6-ca5f15548134",
+      "toSide": "top"
+    },
+    {
+      "id": "b2461cc1-486a-517b-a553-46f6dcf2498c",
+      "fromNode": "209691ab-e975-5338-add8-e5e37c176a60",
+      "fromSide": "bottom",
+      "toNode": "3015ecd2-a3d3-52f8-8291-f7562f79f45d",
+      "toSide": "top"
+    }
+  ]
+}

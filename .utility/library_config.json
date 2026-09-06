@@ -1,0 +1,131 @@
+{
+  "seed_file": ".Data/seeds/repositories to chart.md",
+  "database_file": ".Data/Databases/solutions_library.sqlite",
+  "folders": {
+    "indexes": "00-Indexes",
+    "resources": "01-Resources",
+    "glossary": "02-Glossary",
+    "patterns": "03-Patterns",
+    "reviews": "04-Reviews",
+    "canvases": "05-Canvases",
+    "utility": ".utility",
+    "internal_docs": "internal docs",
+    "data": ".Data",
+    "databases": ".Data/Databases"
+  },
+  "read_only_sources": {
+    "dag_engine": "F:\\knowledge\\_compiler\\_engine (DAG Engine)",
+    "toolset": "D:\\Aletheia_project\\DEV_TOOLS\\ToolSet"
+  },
+  "lmstudio": {
+    "enabled": true,
+    "base_url": "http://127.0.0.1:1234/v1",
+    "_comment_server": "The LM Studio desktop app must have its local server running (Developer -> Local Server, or `lms server start`). An open app alone is not enough.",
+    "timeout_seconds": 300,
+    "warmup_timeout_seconds": 900,
+    "probe_timeout_seconds": 10,
+    "temperature": 0.2,
+    "max_tokens": 4096,
+    "json_mode": true,
+    "_comment_models": "Pin a model id per stage so runs are reproducible. Leave a stage out to fall back to whichever chat model is loaded. Scout is a cheap classification pass; chart is the expensive one.",
+    "models": {
+      "scout": "",
+      "chart": "",
+      "entity_extraction": "",
+      "glossary_resolution": "",
+      "metadata_enrichment": ""
+    }
+  },
+  "github": {
+    "enabled": true,
+    "api_base": "https://api.github.com",
+    "_comment_token": "Set GITHUB_TOKEN in the environment to raise the unauthenticated rate limit from 60 to 5000 requests per hour.",
+    "timeout_seconds": 20
+  },
+  "scout": {
+    "enabled": true,
+    "_comment_stages": "Stages batch and do not interleave: runtime.json allows one resident task model, so the 4B scout pass and the 14B deep dive must run as separate commands.",
+    "cohort_size": 100,
+    "discovery_per_query": 15,
+    "scout_batch_size": 50,
+    "max_attempts": 3,
+    "lease_seconds": 2400,
+    "_comment_models": "Leave blank to use whatever LM Studio has loaded. Pin these to match config/runtime.json model_routes for reproducible runs.",
+    "scout_model": "qwen/qwen3-4b-2507",
+    "research_model": "qwen2.5-14b-deepresearch-i1",
+    "_comment_weights": "Ranking is deterministic arithmetic over these weights. Change them and re-run `python -m scout rank`; every component score is stored in scout_signal so any position can be explained.",
+    "weights": {
+      "gap_fit": 30,
+      "corroboration": 20,
+      "vitality": 15,
+      "reusability": 15,
+      "adoption": 10,
+      "depth": 10
+    },
+    "_comment_escalation": "Hosted escalation is opt-in and keyed from the environment only (OPENAI_API_KEY / ANTHROPIC_API_KEY). Set provider to openai or anthropic to enable.",
+    "escalation_provider": "none",
+    "escalation_model": "",
+    "escalate_top_fraction": 0.1,
+    "escalate_below_confidence": 0.45,
+    "domains_note": "internal docs/Scouting Domains.md",
+    "seed_file": ".Data/seeds/repositories to chart.md",
+    "github_api_base": "https://api.github.com",
+    "request_timeout": 20,
+    "user_agent": "Resource-Library-Scout",
+    "_comment_toolchain": "Stage 5 delegates to the ToolSet: shallow clone, run_guided_repository_investigation, read the slice as evidence, delete the clone. The slice is never retained - a slice is a component of a source, not a source.",
+    "toolchain_evidence": true
+  },
+  "license_overrides": {
+    "_comment": "Manually verified licences for repositories GitHub reports as NOASSERTION or Other. The build prefers these over the API. Verified by reading the LICENSE file; record the date and who checked.",
+    "hashicorp/terraform": {
+      "spdx": "BUSL-1.1",
+      "note": "Business Source License 1.1 - source-available, not OSI open source",
+      "verified": "2026-09-01"
+    },
+    "getsentry/sentry": {
+      "spdx": "FSL-1.1",
+      "note": "Functional Source License (fair source) - not OSI open source",
+      "verified": "2026-09-01"
+    },
+    "animate-css/animate.css": {
+      "spdx": "Hippocratic-2.1",
+      "note": "Hippocratic License - ethical-use restrictions, not OSI open source",
+      "verified": "2026-09-01"
+    }
+  },
+  "catalogue": {
+    "_comment": "The read surface, the derived index and Mode D. Markdown is truth; everything in catalogue_index.sqlite is rebuildable from the vault.",
+    "chunk_target_chars": 1200,
+    "default_limit": 10,
+    "max_limit": 50,
+    "rrf_k": 60,
+    "_comment_embeddings": "Optional. Absent LM Studio the consult surface degrades to filters + FTS5 and says so; it never fails. The model id carries LM Studio's quantisation suffix, and a bare family name is resolved against the loaded models.",
+    "embeddings_enabled": true,
+    "embedding_model": "text-embedding-nomic-embed-text-v1.5@q4_k_m",
+    "embedding_base_url": "http://127.0.0.1:1234/v1",
+    "embedding_batch_size": 8,
+    "_comment_graph": "graphify has two permitted uses and no others (Design Specification 4B). Absent, the vault graph degrades to no communities; centrality is computed here either way.",
+    "graph_enabled": true,
+    "graphify_bin": "F:\\uv-data\\bin\\graphify.exe",
+    "graphify_timeout_seconds": 60,
+    "measured_gap_fit": false,
+    "_comment_toolchain": "Probed in order; the first with local_tool_assist_mcp wins, so moving the ToolSet needs no code change.",
+    "toolchain_candidates": [
+      "D:\\Aletheia_project\\DEV_TOOLS\\ToolSet",
+      "F:\\Mark-XLVIII-main\\ToolSet"
+    ],
+    "_comment_workbench": "Mode D only, person-initiated. --network none, capped memory and CPU, non-root, no inherited environment.",
+    "workbench_image": "python:3.11-slim",
+    "workbench_memory": "4g",
+    "workbench_cpus": "2",
+    "container_runtime": "docker"
+  },
+  "usage": {
+    "distribution_posture": "private",
+    "_comment_posture": "How this catalogue's output will be used, which is the only thing that makes a licence class consequential. 'private' - the library serves one person's R&D on tooling that is not published, so no distribution obligation is ever triggered and every source is usable as a reference and as a tool; licence becomes a mild preference for keeping future options open rather than a filter. 'distributed' - output may end up in something published, so copyleft obligations bind and an unrecorded licence is no grant at all. Read by scout.rank.reusability and librarian.config.permitted_uses. Licence facts are recorded identically under both; only what is done with them changes.",
+    "_comment_change": "Set to 'distributed' before any of this is published, and re-read 00-Indexes/Licence Resolution 2026-09-03.md, which lists what a person still has to confirm.",
+    "catalogue_role": "reference",
+    "_comment_role": "What the catalogue is for, which decides what a property costs a candidate. 'reference' - it locates and describes prior work so a person can find it, read it and decide what to do with it; age, popularity and licence are facts to report, never grounds for hiding a source. 'integration' - it selects components to depend on, where staleness and obscurity genuinely predict risk. Read by scout.rank.vitality and scout.rank.adoption. See LOCATE_DO_NOT_ADJUDICATE in the Design Specification."
+  },
+  "_comment_paths": "Machine-specific paths live here and never in package defaults. A checkout elsewhere overrides them or omits them, and the affected subsystem degrades with a named reason rather than failing."
+}

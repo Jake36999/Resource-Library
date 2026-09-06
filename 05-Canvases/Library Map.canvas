@@ -1,0 +1,255 @@
+{
+  "nodes": [
+    {
+      "id": "dfa0a3b9-a744-50e4-bbe1-21a34312b7ce",
+      "type": "file",
+      "file": "00-Indexes/Master Index.md",
+      "x": 0,
+      "y": 0,
+      "width": 420,
+      "height": 260
+    },
+    {
+      "id": "5365bc05-51d1-585f-a79a-4230cd5f6c32",
+      "type": "file",
+      "file": "00-Indexes/Taxonomy Index.md",
+      "x": 520,
+      "y": -200,
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "2ecf0ead-e235-50e2-bed4-5ed84f1db9fe",
+      "type": "file",
+      "file": "02-Glossary/Glossary Index.md",
+      "x": 520,
+      "y": 20,
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "c6e6bc61-6311-5bac-a1df-5f75a3b2be17",
+      "type": "file",
+      "file": "03-Patterns/Pattern Index.md",
+      "x": 520,
+      "y": 240,
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "85ebd6fa-4898-561a-9b9a-4c506ed65e89",
+      "type": "file",
+      "file": "04-Reviews/Review Queue.md",
+      "x": 520,
+      "y": 460,
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "12485d71-9bf1-5c35-94dc-4705fa7f899f",
+      "type": "file",
+      "file": "00-Indexes/Topic - Curated Aggregators & Reference Lists.md",
+      "x": -620,
+      "y": 320,
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "29f2d277-eaef-514e-bd18-5b461f24c281",
+      "type": "file",
+      "file": "00-Indexes/Topic - Agentic AI & Models.md",
+      "x": -220,
+      "y": 320,
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "fb2330b4-8729-52fd-8b78-fab161139fa6",
+      "type": "file",
+      "file": "00-Indexes/Topic - Data APIs & Big Data.md",
+      "x": 180,
+      "y": 320,
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "303415a9-3d17-5def-995a-49e92e53ab1b",
+      "type": "file",
+      "file": "00-Indexes/Topic - Geospatial & Earth Data.md",
+      "x": -620,
+      "y": 580,
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "d4790196-89a7-5cf2-9a8f-d3e618edc6fa",
+      "type": "file",
+      "file": "00-Indexes/Topic - Infrastructure & Observability.md",
+      "x": -220,
+      "y": 580,
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "c81dcc1a-3046-534b-a650-bba105d4407c",
+      "type": "file",
+      "file": "00-Indexes/Topic - Security & SIEM.md",
+      "x": 180,
+      "y": 580,
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "55865c81-2667-5fca-a42f-956943cdeac8",
+      "type": "file",
+      "file": "00-Indexes/Topic - Frontend & Design Systems.md",
+      "x": -620,
+      "y": 840,
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "be2210bf-74b8-5af4-b407-b880bba48830",
+      "type": "file",
+      "file": "00-Indexes/Topic - Scientific Simulation & Math.md",
+      "x": -220,
+      "y": 840,
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "bfd03170-bee0-5485-b9b9-740f2f473ddd",
+      "type": "file",
+      "file": "00-Indexes/Topic - Government & Civic Tech.md",
+      "x": 180,
+      "y": 840,
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "3197a36c-4d2a-501e-a98d-af00028e84f4",
+      "type": "file",
+      "file": "00-Indexes/Topic - CAD & SaaS Design.md",
+      "x": -620,
+      "y": 1100,
+      "width": 320,
+      "height": 180
+    },
+    {
+      "id": "0ebc5160-bb28-562a-8788-bedd70ed4217",
+      "type": "file",
+      "file": "00-Indexes/Topic - Architecture & Developer Playbooks.md",
+      "x": -220,
+      "y": 1100,
+      "width": 320,
+      "height": 180
+    }
+  ],
+  "edges": [
+    {
+      "id": "0a5b70c1-ca48-5576-b80e-81c91546c530",
+      "fromNode": "dfa0a3b9-a744-50e4-bbe1-21a34312b7ce",
+      "fromSide": "right",
+      "toNode": "5365bc05-51d1-585f-a79a-4230cd5f6c32",
+      "toSide": "left"
+    },
+    {
+      "id": "fcb3e70a-c272-5168-b7c5-a6160adde386",
+      "fromNode": "dfa0a3b9-a744-50e4-bbe1-21a34312b7ce",
+      "fromSide": "right",
+      "toNode": "2ecf0ead-e235-50e2-bed4-5ed84f1db9fe",
+      "toSide": "left"
+    },
+    {
+      "id": "3d00c83e-8654-52c8-b722-82f650327243",
+      "fromNode": "dfa0a3b9-a744-50e4-bbe1-21a34312b7ce",
+      "fromSide": "right",
+      "toNode": "c6e6bc61-6311-5bac-a1df-5f75a3b2be17",
+      "toSide": "left"
+    },
+    {
+      "id": "2aae36a5-7987-52bd-bfd2-bf770a35ebb6",
+      "fromNode": "dfa0a3b9-a744-50e4-bbe1-21a34312b7ce",
+      "fromSide": "right",
+      "toNode": "85ebd6fa-4898-561a-9b9a-4c506ed65e89",
+      "toSide": "left"
+    },
+    {
+      "id": "638623c8-1ef5-5462-857e-af171782173f",
+      "fromNode": "dfa0a3b9-a744-50e4-bbe1-21a34312b7ce",
+      "fromSide": "bottom",
+      "toNode": "12485d71-9bf1-5c35-94dc-4705fa7f899f",
+      "toSide": "top"
+    },
+    {
+      "id": "73feebff-5847-5f70-b983-2f71b7980902",
+      "fromNode": "dfa0a3b9-a744-50e4-bbe1-21a34312b7ce",
+      "fromSide": "bottom",
+      "toNode": "29f2d277-eaef-514e-bd18-5b461f24c281",
+      "toSide": "top"
+    },
+    {
+      "id": "2630542e-0966-5445-ab44-5786f4904eea",
+      "fromNode": "dfa0a3b9-a744-50e4-bbe1-21a34312b7ce",
+      "fromSide": "bottom",
+      "toNode": "fb2330b4-8729-52fd-8b78-fab161139fa6",
+      "toSide": "top"
+    },
+    {
+      "id": "bcdd8768-1089-5cf0-9c99-335dd53533f1",
+      "fromNode": "dfa0a3b9-a744-50e4-bbe1-21a34312b7ce",
+      "fromSide": "bottom",
+      "toNode": "303415a9-3d17-5def-995a-49e92e53ab1b",
+      "toSide": "top"
+    },
+    {
+      "id": "46c6dfca-9b68-590b-8e38-6aa388988184",
+      "fromNode": "dfa0a3b9-a744-50e4-bbe1-21a34312b7ce",
+      "fromSide": "bottom",
+      "toNode": "d4790196-89a7-5cf2-9a8f-d3e618edc6fa",
+      "toSide": "top"
+    },
+    {
+      "id": "b0e38e70-c27e-5269-aa02-1cceafc25bac",
+      "fromNode": "dfa0a3b9-a744-50e4-bbe1-21a34312b7ce",
+      "fromSide": "bottom",
+      "toNode": "c81dcc1a-3046-534b-a650-bba105d4407c",
+      "toSide": "top"
+    },
+    {
+      "id": "86905c73-153e-52bf-9c6f-d792ea9a5e44",
+      "fromNode": "dfa0a3b9-a744-50e4-bbe1-21a34312b7ce",
+      "fromSide": "bottom",
+      "toNode": "55865c81-2667-5fca-a42f-956943cdeac8",
+      "toSide": "top"
+    },
+    {
+      "id": "69fa5de9-31f6-5efa-9a08-efa62a33ceb9",
+      "fromNode": "dfa0a3b9-a744-50e4-bbe1-21a34312b7ce",
+      "fromSide": "bottom",
+      "toNode": "be2210bf-74b8-5af4-b407-b880bba48830",
+      "toSide": "top"
+    },
+    {
+      "id": "36121aa4-005f-5631-ab5d-4b2aba8498f9",
+      "fromNode": "dfa0a3b9-a744-50e4-bbe1-21a34312b7ce",
+      "fromSide": "bottom",
+      "toNode": "bfd03170-bee0-5485-b9b9-740f2f473ddd",
+      "toSide": "top"
+    },
+    {
+      "id": "8fa3139e-5ba9-5efc-959b-1a07405973b9",
+      "fromNode": "dfa0a3b9-a744-50e4-bbe1-21a34312b7ce",
+      "fromSide": "bottom",
+      "toNode": "3197a36c-4d2a-501e-a98d-af00028e84f4",
+      "toSide": "top"
+    },
+    {
+      "id": "9fe6eaed-d9bc-571a-9ce9-d525a48193ed",
+      "fromNode": "dfa0a3b9-a744-50e4-bbe1-21a34312b7ce",
+      "fromSide": "bottom",
+      "toNode": "0ebc5160-bb28-562a-8788-bedd70ed4217",
+      "toSide": "top"
+    }
+  ]
+}

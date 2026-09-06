@@ -1,0 +1,128 @@
+{
+  "$comment": "Twenty questions with known-correct answers, drawn from the application records in 09-Applications/ and the workflows in 08-Workflows/. This set exists so a retrieval change can be shown to have helped rather than assumed to have. Every `expects` entry is a note that exists in the vault; a question whose answer leaves the vault must be deleted or re-pointed, not quietly left failing.",
+  "k": 5,
+  "questions": [
+    {
+      "id": "rag-context-control",
+      "question": "what can control RAG context without needing multiple databases",
+      "intent": "precedent",
+      "expects": ["Application - Donor Front End And RAG Context Control"],
+      "why": "the brief's worked example: a real engagement recorded this exact need"
+    },
+    {
+      "id": "distributed-monitoring-precedent",
+      "question": "has anything here been used for distributed systems monitoring",
+      "intent": "precedent",
+      "expects": ["Application - Distributed Systems And Monitoring"]
+    },
+    {
+      "id": "simulation-precedent",
+      "question": "prior work on simulating physics and validating it against experiment",
+      "intent": "precedent",
+      "expects": ["Application - Quantum Simulation Project"]
+    },
+    {
+      "id": "nightly-dependent-jobs",
+      "question": "run twelve dependent jobs nightly and recover from partial failure without rerunning everything",
+      "intent": "donor",
+      "expects": ["apache - airflow"],
+      "why": "the Adopt A Dependency workflow's own worked example"
+    },
+    {
+      "id": "analytical-queries-laptop",
+      "question": "columnar analytical queries over local files with no server to run",
+      "intent": "donor",
+      "expects": ["duckdb - duckdb"]
+    },
+    {
+      "id": "warehouse-transformations",
+      "question": "declarative SQL transformations with tests and lineage over a warehouse",
+      "intent": "donor",
+      "expects": ["dbt-labs - dbt-core"]
+    },
+    {
+      "id": "portable-detection-rules",
+      "question": "detection rules that are portable between SIEM platforms",
+      "intent": "donor",
+      "expects": ["SigmaHQ - sigma"]
+    },
+    {
+      "id": "network-intrusion-detection",
+      "question": "network intrusion detection and traffic inspection engine",
+      "intent": "donor",
+      "expects": ["OISF - suricata"]
+    },
+    {
+      "id": "container-runtime-security",
+      "question": "watch syscalls at runtime and alert on suspicious container behaviour",
+      "intent": "donor",
+      "expects": ["falcosecurity - falco"]
+    },
+    {
+      "id": "query-the-os",
+      "question": "query operating system state as if it were a database",
+      "intent": "donor",
+      "expects": ["osquery - osquery"]
+    },
+    {
+      "id": "metrics-and-alerting",
+      "question": "time series metrics collection with alerting for infrastructure",
+      "intent": "donor",
+      "expects": ["prometheus"]
+    },
+    {
+      "id": "per-second-host-dashboards",
+      "question": "per second host monitoring with dashboards that work out of the box",
+      "intent": "donor",
+      "expects": ["netdata"]
+    },
+    {
+      "id": "raster-vector-translation",
+      "question": "read reproject and translate raster and vector geospatial formats",
+      "intent": "donor",
+      "expects": ["OSGeo - gdal"]
+    },
+    {
+      "id": "spatial-dataframes",
+      "question": "spatial joins and geometry columns in python dataframes",
+      "intent": "donor",
+      "expects": ["geopandas - geopandas"]
+    },
+    {
+      "id": "stac-metadata",
+      "question": "work with SpatioTemporal Asset Catalog metadata for imagery",
+      "intent": "donor",
+      "expects": ["stac-utils - pystac"]
+    },
+    {
+      "id": "parametric-cad-in-code",
+      "question": "define parametric CAD models in python source rather than a GUI",
+      "intent": "donor",
+      "expects": ["CadQuery - cadquery"]
+    },
+    {
+      "id": "symbolic-algebra",
+      "question": "symbolic mathematics and computer algebra in python",
+      "intent": "donor",
+      "expects": ["sympy"]
+    },
+    {
+      "id": "open-data-portal",
+      "question": "software for publishing an open data portal with dataset catalogues",
+      "intent": "data",
+      "expects": ["ckan - ckan", "GSA - data.gov"]
+    },
+    {
+      "id": "agent-orchestration-pattern",
+      "question": "coordinating prompts tools and memory so a system can do multi step work",
+      "intent": "pattern",
+      "expects": ["Pattern - Agent Orchestration"]
+    },
+    {
+      "id": "detection-as-code-pattern",
+      "question": "keeping detection logic in version control and testing it like code",
+      "intent": "pattern",
+      "expects": ["Pattern - Detection as Code"]
+    }
+  ]
+}

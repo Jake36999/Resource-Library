@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "58683db3-dc55-57f8-a0b6-67b662a99fd3",
+      "type": "file",
+      "file": "00-Indexes/Topic - Geospatial & Earth Data.md",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 240
+    },
+    {
+      "id": "87697eec-8445-52c4-96d4-cacd2bf89874",
+      "type": "file",
+      "file": "01-Resources/ngageoint - geoq.md",
+      "x": -650,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    }
+  ],
+  "edges": [
+    {
+      "id": "ee7b9c68-4330-5734-835f-c455f60ee756",
+      "fromNode": "58683db3-dc55-57f8-a0b6-67b662a99fd3",
+      "fromSide": "bottom",
+      "toNode": "87697eec-8445-52c4-96d4-cacd2bf89874",
+      "toSide": "top"
+    }
+  ]
+}

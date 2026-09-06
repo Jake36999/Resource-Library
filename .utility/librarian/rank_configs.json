@@ -1,0 +1,168 @@
+{
+  "_comment": "Ranking configurations for `python -m librarian relevance`. Each is a set of overrides onto CatalogueConfig, so a method is data rather than a code edit - the arrangement `JayLZhou - GraphRAG` uses to make ten published methods comparable. A configuration that lost is kept rather than deleted: a rejected option nobody can re-run is folklore, not a finding.",
+  "configurations": [
+    {
+      "name": "current",
+      "note": "what ships",
+      "knobs": {}
+    },
+    {
+      "name": "ceiling-0.34",
+      "note": "the ceiling before 2026-09-04, when `file`, `files`, `read` and `test` were being discarded",
+      "knobs": {
+        "selectivity_ceiling": 0.34
+      }
+    },
+    {
+      "name": "ceiling-0.42",
+      "note": "lower edge of the plateau",
+      "knobs": {
+        "selectivity_ceiling": 0.42
+      }
+    },
+    {
+      "name": "ceiling-0.62",
+      "note": "past the plateau, where useful@5 falls away",
+      "knobs": {
+        "selectivity_ceiling": 0.62
+      }
+    },
+    {
+      "name": "no-elimination",
+      "note": "keep every term regardless of how common it is",
+      "knobs": {
+        "selectivity_ceiling": 1.01
+      }
+    },
+    {
+      "name": "coverage-bm25",
+      "note": "order covered notes by the score FTS5 already computed rather than by term count, so `malformed` outweighs `service` instead of tying with it",
+      "knobs": {
+        "coverage_order": "bm25"
+      }
+    },
+    {
+      "name": "coverage-idf",
+      "note": "the naive weighting measured and rejected on 2026-09-04; kept selectable so the rejection stays reproducible",
+      "knobs": {
+        "coverage_order": "idf"
+      }
+    },
+    {
+      "name": "coverage-3-terms",
+      "note": "require three matched terms to count as covered, not two",
+      "knobs": {
+        "coverage_min_terms": 3
+      }
+    },
+    {
+      "name": "coverage-halved",
+      "note": "keep coverage as a signal but halve its say in the fusion",
+      "knobs": {
+        "coverage_weight_multiplier": 0.5
+      }
+    },
+    {
+      "name": "coverage-off",
+      "note": "name and text rankings only - does the coverage stage earn its place at all?",
+      "knobs": {
+        "coverage_weight_multiplier": 0.0
+      }
+    },
+    {
+      "name": "bm25-and-3-terms",
+      "note": "the two most promising single changes together",
+      "knobs": {
+        "coverage_order": "bm25",
+        "coverage_min_terms": 3
+      }
+    },
+    {
+      "name": "scope-all",
+      "note": "measure document frequency over every note, as it was before 2026-09-04 - 160 short glossary and pattern notes diluting the statistic",
+      "knobs": {
+        "selectivity_scope": "all"
+      }
+    },
+    {
+      "name": "scope-all-0.34",
+      "note": "the full pre-2026-09-04 behaviour, both knobs together",
+      "knobs": {
+        "selectivity_scope": "all",
+        "selectivity_ceiling": 0.34
+      }
+    },
+    {
+      "name": "answerable-0.34",
+      "note": "correct denominator, old ceiling",
+      "knobs": {
+        "selectivity_ceiling": 0.34
+      }
+    },
+    {
+      "name": "answerable-0.60",
+      "note": "correct denominator, looser ceiling",
+      "knobs": {
+        "selectivity_ceiling": 0.6
+      }
+    },
+    {
+      "name": "answerable-0.70",
+      "note": "correct denominator, looser still",
+      "knobs": {
+        "selectivity_ceiling": 0.7
+      }
+    },
+    {
+      "name": "segmented",
+      "note": "drop terms the query marks as out of scope; everything else as shipped",
+      "knobs": {
+        "query_segmentation": true
+      }
+    },
+    {
+      "name": "segmented-terms",
+      "note": "segmentation plus the older coverage ordering, to check the two do not interact",
+      "knobs": {
+        "query_segmentation": true,
+        "coverage_order": "terms"
+      }
+    },
+    {
+      "name": "segment-weighted",
+      "note": "weight matched terms by ask/context/excluded rather than deleting excluded ones",
+      "knobs": {
+        "coverage_order": "segment"
+      }
+    },
+    {
+      "name": "segment-weighted+drop",
+      "note": "weighting and deletion together, to see whether they compound or cancel",
+      "knobs": {
+        "coverage_order": "segment",
+        "query_segmentation": true
+      }
+    },
+    {
+      "name": "components-on",
+      "note": "also return addresses inside a source, appended after the notes and capped at three",
+      "knobs": {
+        "include_components": true
+      }
+    },
+    {
+      "name": "no-vectors",
+      "note": "lexical only - the behaviour before embeddings existed",
+      "knobs": {
+        "embeddings_enabled": false
+      }
+    },
+    {
+      "name": "vectors-heavy",
+      "note": "double the vector ranking's weight in the fusion",
+      "knobs": {
+        "vector_weight": 2.0
+      }
+    }
+  ]
+}

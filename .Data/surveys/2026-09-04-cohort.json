@@ -1,0 +1,5412 @@
+{
+ "rudradesai200/SimpleFS": {
+  "repo": "rudradesai200/SimpleFS",
+  "meta": {
+   "full_name": "rudradesai200/SimpleFS",
+   "description": "The file system is a layer of abstraction between the storage medium and the operating system. In the absence of a file system, it is tough to retrieve and manage data stored in the storage media. File systems provide an interface to access and control the data. It is implemented by separating data into chunks of predetermined size and labeling them for better management and operability. There are several types of file systems available out there. Some major examples are as follows: Disk-Based, Network-Based, and Virtual based.",
+   "language": "C++",
+   "spdx": null,
+   "default_branch": "master",
+   "stars": 7,
+   "forks": 5,
+   "open_issues": 0,
+   "size_kb": 1339,
+   "archived": false,
+   "fork": false,
+   "created": "2020-11-06T11:33:42Z",
+   "pushed": "2023-05-20T22:12:38Z",
+   "homepage": "https://rudradesai200.github.io/SimpleFS/",
+   "topics": [
+    "filesystem",
+    "linux",
+    "os",
+    "unix"
+   ]
+  },
+  "files": 278,
+  "top": [
+   "docs (250)",
+   "tests (10)",
+   "src (5)",
+   "(root) (4)",
+   "data (3)",
+   "include (3)",
+   ".vscode (1)",
+   "bin (1)",
+   "lib (1)"
+  ],
+  "second": {
+   "docs": [
+    "search (117)"
+   ],
+   "src": [
+    "library (4)",
+    "shell (1)"
+   ],
+   "include": [
+    "sfs (3)"
+   ]
+  },
+  "extensions": [
+   ".html (82)",
+   ".js (61)",
+   ".png (51)",
+   ".md5 (26)",
+   ".map (25)",
+   ".sh (10)",
+   ".cpp (5)",
+   ".css (4)",
+   ".h (3)",
+   ".json (1)"
+  ],
+  "root_files": [
+   ".gitignore",
+   "Makefile",
+   "README.md",
+   "fsconfig.dox"
+  ],
+  "signals": {
+   "docs": {
+    "n": 250,
+    "sample": [
+     "docs/CNAME",
+     "docs/SimpleFS.png",
+     "docs/Success.png",
+     "docs/annotated.html",
+     "docs/bc_s.png",
+     "docs/bdwn.png",
+     "docs/classDisk-members.html",
+     "docs/classDisk.html",
+     "docs/classDisk_a123447ae8556e1dbf6f88bddef33408e_icgraph.map",
+     "docs/classDisk_a123447ae8556e1dbf6f88bddef33408e_icgraph.md5"
+    ]
+   },
+   "tests": {
+    "n": 10,
+    "sample": [
+     "tests/test_cat.sh",
+     "tests/test_copyin.sh",
+     "tests/test_copyout.sh",
+     "tests/test_create.sh",
+     "tests/test_debug.sh",
+     "tests/test_format.sh",
+     "tests/test_mount.sh",
+     "tests/test_remove.sh",
+     "tests/test_stat.sh",
+     "tests/test_valgrind.sh"
+    ]
+   }
+  }
+ },
+ "alexandershaw4/PyBP-Py-BrainPlotter-for-AAL90": {
+  "repo": "alexandershaw4/PyBP-Py-BrainPlotter-for-AAL90",
+  "meta": {
+   "full_name": "alexandershaw4/PyBP-Py-BrainPlotter-for-AAL90",
+   "description": "Visualisation & processing of MEG data and networks on meshes. A bunch of functions, examples and a gui.",
+   "language": "Python",
+   "spdx": null,
+   "default_branch": "master",
+   "stars": 11,
+   "forks": 4,
+   "open_issues": 0,
+   "size_kb": 28731,
+   "archived": false,
+   "fork": false,
+   "created": "2017-10-05T08:35:20Z",
+   "pushed": "2019-10-11T09:01:00Z",
+   "homepage": "",
+   "topics": [
+    "alignment",
+    "atlas",
+    "brain-imaging",
+    "data-visualization",
+    "electroencephalography",
+    "magnetoencephalography",
+    "mesh-processing",
+    "neuroimaging",
+    "overlay",
+    "visualization"
+   ]
+  },
+  "files": 512,
+  "top": [
+   "nibabel (480)",
+   "(root) (31)",
+   "__pycache__ (1)"
+  ],
+  "second": {
+   "nibabel": [
+    "tests (144)",
+    "__pycache__ (88)",
+    "streamlines (37)",
+    "gifti (31)",
+    "nicom (26)",
+    "cifti2 (16)",
+    "freesurfer (15)",
+    "externals (13)",
+    "benchmarks (7)",
+    "testing (2)"
+   ]
+  },
+  "extensions": [
+   ".py (205)",
+   ".pyc (194)",
+   ".par (30)",
+   ".gii (10)",
+   ".png (9)",
+   ".mnc (9)",
+   ".gz (7)",
+   ".trk (6)",
+   ".dcm (5)",
+   ".txt (4)"
+  ],
+  "root_files": [
+   "AALv.txt",
+   "BrainMesh_ICBM152_smoothed.gii",
+   "InflateGiftiMeshUsingPythonInMatlab.m",
+   "Network.edge",
+   "NewSmoothed.gii",
+   "New_PyBP.py",
+   "New_PyBP.spec",
+   "OverlayData.txt",
+   "PyBP.py",
+   "PyBP.pyc",
+   "PyBPGUI.png",
+   "PyCompile_PyBP",
+   "README.md",
+   "S1.png",
+   "S2.png",
+   "S3.png",
+   "S4.png",
+   "UserScript.py"
+  ],
+  "signals": {
+   "examples": {
+    "n": 3,
+    "sample": [
+     "nibabel/externals/tests/data/example_1.nc",
+     "nibabel/tests/data/example4d.nii.gz",
+     "nibabel/tests/data/example_nifti2.nii.gz"
+    ]
+   },
+   "benchmarks": {
+    "n": 7,
+    "sample": [
+     "nibabel/benchmarks/__init__.py",
+     "nibabel/benchmarks/bench_array_to_file.py",
+     "nibabel/benchmarks/bench_fileslice.py",
+     "nibabel/benchmarks/bench_finite_range.py",
+     "nibabel/benchmarks/bench_load_save.py",
+     "nibabel/benchmarks/bench_streamlines.py",
+     "nibabel/benchmarks/butils.py"
+    ]
+   },
+   "tests": {
+    "n": 196,
+    "sample": [
+     "nibabel/cifti2/tests/__init__.py",
+     "nibabel/cifti2/tests/test_cifti2.py",
+     "nibabel/cifti2/tests/test_cifti2io.py",
+     "nibabel/cifti2/tests/test_new_cifti2.py",
+     "nibabel/externals/tests/__init__.py",
+     "nibabel/externals/tests/data/example_1.nc",
+     "nibabel/externals/tests/test_netcdf.py",
+     "nibabel/externals/tests/test_six.py",
+     "nibabel/freesurfer/tests/__init__.py",
+     "nibabel/freesurfer/tests/test_io.py"
+    ]
+   },
+   "fixtures": {
+    "n": 2,
+    "sample": [
+     "nibabel/tests/test_data.py",
+     "nibabel/tests/test_dataobj_images.py"
+    ]
+   }
+  }
+ },
+ "DataWithBaraa/databricks_bootcamp_2026": {
+  "repo": "DataWithBaraa/databricks_bootcamp_2026",
+  "meta": {
+   "full_name": "DataWithBaraa/databricks_bootcamp_2026",
+   "description": "End-to-end Data Lakehouse project built on Databricks, following the Medallion Architecture (Bronze, Silver, Gold). Covers real-world data engineering and analytics workflows using Spark, PySpark, SQL, Delta Lake, and Unity Catalog. Designed for learning, portfolio building, and job interviews.",
+   "language": "Jupyter Notebook",
+   "spdx": "MIT",
+   "default_branch": "main",
+   "stars": 405,
+   "forks": 184,
+   "open_issues": 3,
+   "size_kb": 2445,
+   "archived": false,
+   "fork": false,
+   "created": "2026-01-14T18:59:05Z",
+   "pushed": "2026-01-19T18:31:09Z",
+   "homepage": "https://www.youtube.com/playlist?list=PLNcg_FV9n7qZoxVkw-KPhcmgLWjHWVUc9",
+   "topics": [
+    "ai",
+    "apache-spark",
+    "data-analytics",
+    "data-engineering",
+    "data-engineering-project",
+    "data-lakehouse",
+    "data-pipeline",
+    "databricks",
+    "etl",
+    "lakehouse",
+    "medallion-architecture",
+    "protfolio-project",
+    "pyspark",
+    "python",
+    "spark",
+    "spark-sql",
+    "unity-catalog"
+   ]
+  },
+  "files": 27,
+  "top": [
+   "script (14)",
+   "datasets (10)",
+   "(root) (3)"
+  ],
+  "second": {
+   "script": [
+    "silver (7)",
+    "gold (4)",
+    "bronze (2)"
+   ],
+   "datasets": [
+    "engineering (6)",
+    "analysts (4)"
+   ]
+  },
+  "extensions": [
+   ".ipynb (14)",
+   ".csv (10)",
+   ".md (1)"
+  ],
+  "root_files": [
+   ".gitignore",
+   "LICENSE",
+   "README.md"
+  ],
+  "signals": {
+   "notebooks": {
+    "n": 14,
+    "sample": [
+     "script/bronze/bronze_layer(basic).ipynb",
+     "script/bronze/bronze_layer_(improved).ipynb",
+     "script/gold/gold_dim_customers.ipynb",
+     "script/gold/gold_dim_products.ipynb",
+     "script/gold/gold_fact_sales.ipynb",
+     "script/gold/gold_orchestration.ipynb",
+     "script/init_lakehouse.ipynb",
+     "script/silver/crm/silver_crm_cust_info.ipynb",
+     "script/silver/crm/silver_crm_prd_info.ipynb",
+     "script/silver/crm/silver_crm_sales_details.ipynb"
+    ]
+   },
+   "data": {
+    "n": 10,
+    "sample": [
+     "datasets/analysts/hr_dataset/dataset.csv",
+     "datasets/analysts/sales_dataset/dim_customers.csv",
+     "datasets/analysts/sales_dataset/dim_products.csv",
+     "datasets/analysts/sales_dataset/fact_sales.csv",
+     "datasets/engineering/source_crm/cust_info.csv",
+     "datasets/engineering/source_crm/prd_info.csv",
+     "datasets/engineering/source_crm/sales_details.csv",
+     "datasets/engineering/source_erp/CUST_AZ12.csv",
+     "datasets/engineering/source_erp/LOC_A101.csv",
+     "datasets/engineering/source_erp/PX_CAT_G1V2.csv"
+    ]
+   }
+  }
+ },
+ "carter-kilgour/delta-quality-testing": {
+  "repo": "carter-kilgour/delta-quality-testing",
+  "meta": {
+   "full_name": "carter-kilgour/delta-quality-testing",
+   "description": "Lighting Talk Data & AI Summit Europe 2020 - Data Quality Testing in the Medallion Architecture",
+   "language": "Python",
+   "spdx": null,
+   "default_branch": "master",
+   "stars": 9,
+   "forks": 4,
+   "open_issues": 0,
+   "size_kb": 1363,
+   "archived": false,
+   "fork": false,
+   "created": "2020-12-04T07:08:46Z",
+   "pushed": "2020-12-04T07:12:25Z",
+   "homepage": null,
+   "topics": []
+  },
+  "files": 16,
+  "top": [
+   "(root) (8)",
+   ".vscode (3)",
+   "tests (3)",
+   "pipelines (2)"
+  ],
+  "second": {
+   ".vscode": [
+    ".ropeproject (2)"
+   ],
+   "tests": [
+    "silver (1)"
+   ],
+   "pipelines": [
+    "jobs (1)",
+    "utils (1)"
+   ]
+  },
+  "extensions": [
+   ".py (9)",
+   ".json (1)",
+   ".pdf (1)",
+   ".md (1)",
+   ".txt (1)"
+  ],
+  "root_files": [
+   ".DS_Store",
+   ".gitignore",
+   "PresentationSlides.pdf",
+   "README.md",
+   "main.py",
+   "requirements.txt",
+   "setup.py",
+   "simpleExecute.py"
+  ],
+  "signals": {
+   "tests": {
+    "n": 4,
+    "sample": [
+     "pipelines/jobs/run_quality_tests.py",
+     "tests/__init__.py",
+     "tests/conftest.py",
+     "tests/silver/weather/temperatures_test.py"
+    ]
+   }
+  }
+ },
+ "roomi-fields/rtfm": {
+  "repo": "roomi-fields/rtfm",
+  "meta": {
+   "full_name": "roomi-fields/rtfm",
+   "description": "The open retrieval layer for AI coding agents. Indexes code, docs, legal, research, data — 22 parsers (incl. EPUB, DOCX, ODT), FTS5 + semantic search, knowledge graph. Serves surgical context via MCP. Open source, local, free.",
+   "language": "Python",
+   "spdx": "MIT",
+   "default_branch": "main",
+   "stars": 24,
+   "forks": 5,
+   "open_issues": 4,
+   "size_kb": 3466,
+   "archived": false,
+   "fork": false,
+   "created": "2026-02-20T21:37:42Z",
+   "pushed": "2026-09-03T19:07:06Z",
+   "homepage": "https://roomi-fields.github.io/rtfm/",
+   "topics": [
+    "ai-agents",
+    "claude",
+    "claude-code",
+    "code-search",
+    "context-engineering",
+    "developer-tools",
+    "embeddings",
+    "fts",
+    "json-schema",
+    "knowledge-base",
+    "knowledge-graph",
+    "mcp",
+    "mcp-server",
+    "notebooklm",
+    "obsidian",
+    "python",
+    "rag",
+    "retrieval",
+    "semantic-search",
+    "sqlite"
+   ]
+  },
+  "files": 183,
+  "top": [
+   "rtfm (127)",
+   "docs (22)",
+   "(root) (8)",
+   "bin (6)",
+   "hooks (5)",
+   "skills (5)",
+   ".github (4)",
+   "commands (2)",
+   ".claude-plugin (1)",
+   ".claude (1)",
+   "schemas (1)",
+   "scripts (1)"
+  ],
+  "second": {
+   "rtfm": [
+    "tests (60)",
+    "parsers (31)",
+    "core (18)",
+    "plugin (8)",
+    "_mcp (3)"
+   ],
+   "docs": [
+    "benchmarks (6)",
+    "demo (4)",
+    "comparisons (1)"
+   ],
+   "skills": [
+    "expand (1)",
+    "install-embeddings (1)",
+    "install-pdf-full (1)",
+    "install-pdf (1)",
+    "search (1)"
+   ],
+   ".github": [
+    "workflows (3)"
+   ]
+  },
+  "extensions": [
+   ".py (131)",
+   ".md (29)",
+   ".json (6)",
+   ".yml (4)",
+   ".cmd (3)",
+   ".png (2)",
+   ".tape (1)",
+   ".toml (1)",
+   ".html (1)",
+   ".xml (1)"
+  ],
+  "root_files": [
+   ".mcp.json",
+   "LICENSE",
+   "PRIVACY.md",
+   "README.md",
+   "glama.json",
+   "mkdocs.yml",
+   "pyproject.toml",
+   "server.json"
+  ],
+  "signals": {
+   "docs": {
+    "n": 22,
+    "sample": [
+     "docs/CHANGELOG.md",
+     "docs/architecture.md",
+     "docs/benchmarks/ab_test_b10_analysis.md",
+     "docs/benchmarks/ab_test_b10_analysis_fr.md",
+     "docs/benchmarks/benchmark_paper.md",
+     "docs/benchmarks/benchmark_paper_fr.md",
+     "docs/benchmarks/benchmark_results.md",
+     "docs/benchmarks/featurebench.md",
+     "docs/comparisons/vs-vector-rag.md",
+     "docs/demo/make_split_gif.py"
+    ]
+   },
+   "examples": {
+    "n": 4,
+    "sample": [
+     "docs/demo/make_split_gif.py",
+     "docs/demo/rtfm-demo.png",
+     "docs/demo/rtfm-demo.tape",
+     "docs/demo/rtfm-split.png"
+    ]
+   },
+   "benchmarks": {
+    "n": 6,
+    "sample": [
+     "docs/benchmarks/ab_test_b10_analysis.md",
+     "docs/benchmarks/ab_test_b10_analysis_fr.md",
+     "docs/benchmarks/benchmark_paper.md",
+     "docs/benchmarks/benchmark_paper_fr.md",
+     "docs/benchmarks/benchmark_results.md",
+     "docs/benchmarks/featurebench.md"
+    ]
+   },
+   "tests": {
+    "n": 62,
+    "sample": [
+     "docs/benchmarks/ab_test_b10_analysis.md",
+     "docs/benchmarks/ab_test_b10_analysis_fr.md",
+     "rtfm/tests/__init__.py",
+     "rtfm/tests/conftest.py",
+     "rtfm/tests/sample_bofip.html",
+     "rtfm/tests/sample_cgi.xml",
+     "rtfm/tests/test_audit.py",
+     "rtfm/tests/test_cli.py",
+     "rtfm/tests/test_cli_ergonomics.py",
+     "rtfm/tests/test_config.py"
+    ]
+   },
+   "schemas": {
+    "n": 1,
+    "sample": [
+     "schemas/rtfm-mapping-v1.json"
+    ]
+   },
+   "data": {
+    "n": 1,
+    "sample": [
+     "rtfm/tests/test_cross_corpus_move.py"
+    ]
+   },
+   "agent_instructions": {
+    "n": 12,
+    "sample": [
+     ".claude/CLAUDE.md",
+     ".mcp.json",
+     "rtfm/_mcp/__init__.py",
+     "rtfm/_mcp/schema.py",
+     "rtfm/_mcp/server.py",
+     "rtfm/mcp.py",
+     "rtfm/tests/test_mcp.py",
+     "skills/expand/SKILL.md",
+     "skills/install-embeddings/SKILL.md",
+     "skills/install-pdf-full/SKILL.md"
+    ]
+   }
+  }
+ },
+ "fatihsoysalcom/automated-data-lineage-tracker": {
+  "repo": "fatihsoysalcom/automated-data-lineage-tracker",
+  "meta": {
+   "full_name": "fatihsoysalcom/automated-data-lineage-tracker",
+   "description": "This example demonstrates how to implement automated data lineage tracking within a Python ETL pipeline. It captures metadata, dataset dependencies, and column-level transformations dynamically during execution, outputting both a visual ASCII lineage map and a structured JSON lineage manifest.",
+   "language": "Python",
+   "spdx": "MIT",
+   "default_branch": "main",
+   "stars": 0,
+   "forks": 0,
+   "open_issues": 0,
+   "size_kb": 5,
+   "archived": false,
+   "fork": false,
+   "created": "2026-07-04T06:09:52Z",
+   "pushed": "2026-07-04T06:09:58Z",
+   "homepage": null,
+   "topics": []
+  },
+  "files": 3,
+  "top": [
+   "(root) (3)"
+  ],
+  "second": {},
+  "extensions": [
+   ".md (1)",
+   ".py (1)"
+  ],
+  "root_files": [
+   "LICENSE",
+   "README.md",
+   "lineage_tracker.py"
+  ],
+  "signals": {}
+ },
+ "corzosoft/azure-edm-reference-data-platform": {
+  "repo": "corzosoft/azure-edm-reference-data-platform",
+  "meta": {
+   "full_name": "corzosoft/azure-edm-reference-data-platform",
+   "description": "Open-source EDM-style reference data platform simulator for Azure with SQL, Python, ADF, Bicep, audit, lineage, validation, and survivorship examples.",
+   "language": "Python",
+   "spdx": "MIT",
+   "default_branch": "main",
+   "stars": 0,
+   "forks": 0,
+   "open_issues": 0,
+   "size_kb": 29,
+   "archived": false,
+   "fork": false,
+   "created": "2026-05-18T23:55:19Z",
+   "pushed": "2026-05-19T00:03:46Z",
+   "homepage": null,
+   "topics": []
+  },
+  "files": 57,
+  "top": [
+   "(root) (9)",
+   "src (9)",
+   "sql (8)",
+   "adf (5)",
+   "docs (5)",
+   "infra (5)",
+   "sample-data (5)",
+   "tests (5)",
+   ".github (3)",
+   "architecture (3)"
+  ],
+  "second": {
+   "src": [
+    "edm_reference_platform (9)"
+   ],
+   "adf": [
+    "pipelines (3)",
+    "datasets (1)",
+    "linked-services (1)"
+   ],
+   "infra": [
+    "bicep (5)"
+   ],
+   ".github": [
+    "ISSUE_TEMPLATE (2)",
+    "workflows (1)"
+   ]
+  },
+  "extensions": [
+   ".py (14)",
+   ".md (12)",
+   ".sql (8)",
+   ".bicep (5)",
+   ".csv (5)",
+   ".yml (4)",
+   ".json (3)",
+   ".toml (1)"
+  ],
+  "root_files": [
+   ".gitattributes",
+   ".gitignore",
+   "CODE_OF_CONDUCT.md",
+   "CONTRIBUTING.md",
+   "LICENSE",
+   "README.md",
+   "SECURITY.md",
+   "docker-compose.yml",
+   "pyproject.toml"
+  ],
+  "signals": {
+   "docs": {
+    "n": 5,
+    "sample": [
+     "docs/azure-deployment-guide.md",
+     "docs/data-quality-rules.md",
+     "docs/interview-demo-script.md",
+     "docs/runbook.md",
+     "docs/survivorship-rules.md"
+    ]
+   },
+   "examples": {
+    "n": 1,
+    "sample": [
+     "docs/interview-demo-script.md"
+    ]
+   },
+   "tests": {
+    "n": 5,
+    "sample": [
+     "tests/test_cli.py",
+     "tests/test_file_validator.py",
+     "tests/test_lineage.py",
+     "tests/test_quality_report.py",
+     "tests/test_reconciliation.py"
+    ]
+   },
+   "fixtures": {
+    "n": 2,
+    "sample": [
+     "adf/pipelines/distribute_golden_source_pipeline.json",
+     "sql/007_golden_source_views.sql"
+    ]
+   },
+   "data": {
+    "n": 6,
+    "sample": [
+     "adf/datasets/.gitkeep",
+     "sample-data/ratings.csv",
+     "sample-data/vendor_a_prices.csv",
+     "sample-data/vendor_a_securities.csv",
+     "sample-data/vendor_b_prices.csv",
+     "sample-data/vendor_b_securities.csv"
+    ]
+   },
+   "containers": {
+    "n": 1,
+    "sample": [
+     "docker-compose.yml"
+    ]
+   },
+   "iac": {
+    "n": 5,
+    "sample": [
+     "infra/bicep/keyvault.bicep",
+     "infra/bicep/main.bicep",
+     "infra/bicep/monitor.bicep",
+     "infra/bicep/sql.bicep",
+     "infra/bicep/storage.bicep"
+    ]
+   }
+  }
+ },
+ "stephanie-wang/lineage-stash-artifact": {
+  "repo": "stephanie-wang/lineage-stash-artifact",
+  "meta": {
+   "full_name": "stephanie-wang/lineage-stash-artifact",
+   "description": "Scripts for plotting and example data",
+   "language": "Python",
+   "spdx": null,
+   "default_branch": "master",
+   "stars": 1,
+   "forks": 0,
+   "open_issues": 2,
+   "size_kb": 213446,
+   "archived": false,
+   "fork": false,
+   "created": "2019-08-14T04:38:51Z",
+   "pushed": "2022-02-11T03:55:35Z",
+   "homepage": null,
+   "topics": []
+  },
+  "files": 71,
+  "top": [
+   "data (37)",
+   "flink-wordcount (16)",
+   "mpi-bench (16)",
+   "(root) (2)"
+  ],
+  "second": {
+   "data": [
+    "streaming (17)",
+    "allreduce (10)",
+    "microbenchmark (10)"
+   ],
+   "flink-wordcount": [
+    "src (8)"
+   ]
+  },
+  "extensions": [
+   ".png (20)",
+   ".sh (13)",
+   ".py (8)",
+   ".gz (7)",
+   ".java (6)",
+   ".csv (4)",
+   ".md (2)",
+   ".template (2)",
+   ".txt (2)",
+   ".xml (1)"
+  ],
+  "root_files": [
+   ".gitignore",
+   "README.md"
+  ],
+  "signals": {
+   "benchmarks": {
+    "n": 26,
+    "sample": [
+     "data/microbenchmark/deterministic-latency-64-workers.png",
+     "data/microbenchmark/latency-19-08-26-03-20-32.tar.gz",
+     "data/microbenchmark/latency-64-workers.csv",
+     "data/microbenchmark/lineage-19-08-25-23-25-00.tar.gz",
+     "data/microbenchmark/nondeterministic--1-failures-latency-64-workers.png",
+     "data/microbenchmark/nondeterministic-8-failures-latency-64-workers.png",
+     "data/microbenchmark/plot_latency_cdf.py",
+     "data/microbenchmark/plot_uncommitted_lineage.py",
+     "data/microbenchmark/uncommitted-lineage-64-workers.csv",
+     "data/microbenchmark/uncommitted-lineage-64-workers.png"
+    ]
+   },
+   "data": {
+    "n": 4,
+    "sample": [
+     "data/allreduce/4-workers.csv",
+     "data/allreduce/64-workers.csv",
+     "data/microbenchmark/latency-64-workers.csv",
+     "data/microbenchmark/uncommitted-lineage-64-workers.csv"
+    ]
+   }
+  }
+ },
+ "whole-tale/provenance-examples": {
+  "repo": "whole-tale/provenance-examples",
+  "meta": {
+   "full_name": "whole-tale/provenance-examples",
+   "description": "Constructed and real-world examples for evaluation of provenance capture methods",
+   "language": "Dockerfile",
+   "spdx": null,
+   "default_branch": "master",
+   "stars": 0,
+   "forks": 1,
+   "open_issues": 0,
+   "size_kb": 105757,
+   "archived": false,
+   "fork": false,
+   "created": "2019-07-23T17:17:13Z",
+   "pushed": "2020-03-18T20:41:29Z",
+   "homepage": null,
+   "topics": []
+  },
+  "files": 75,
+  "top": [
+   "examples (73)",
+   "(root) (2)"
+  ],
+  "second": {
+   "examples": [
+    "Density-Dependence-in-Annual-Plant-Species-in-the-San-Joaquin-Desert (21)",
+    "trait-perception-accuracy (14)",
+    "multistep (10)",
+    "onestep (10)",
+    "ajps (9)",
+    "water-tale (9)"
+   ]
+  },
+  "extensions": [
+   ".md (14)",
+   ".txt (11)",
+   ".r (9)",
+   ".csv (7)",
+   ".sh (6)",
+   ".yml (6)",
+   ".svg (6)",
+   ".html (4)",
+   ".rmd (2)",
+   ".py (2)"
+  ],
+  "root_files": [
+   "Dockerfile",
+   "README.md"
+  ],
+  "signals": {
+   "examples": {
+    "n": 73,
+    "sample": [
+     "examples/Density-Dependence-in-Annual-Plant-Species-in-the-San-Joaquin-Desert/README.md",
+     "examples/Density-Dependence-in-Annual-Plant-Species-in-the-San-Joaquin-Desert/experiment/data/phytometer_data_trials_2018.csv",
+     "examples/Density-Dependence-in-Annual-Plant-Species-in-the-San-Joaquin-Desert/experiment/data/plant locations.csv",
+     "examples/Density-Dependence-in-Annual-Plant-Species-in-the-San-Joaquin-Desert/experiment/index.Rmd",
+     "examples/Density-Dependence-in-Annual-Plant-Species-in-the-San-Joaquin-Desert/experiment/install.R",
+     "examples/Density-Dependence-in-Annual-Plant-Species-in-the-San-Joaquin-Desert/experiment/phacelia.jpg",
+     "examples/Density-Dependence-in-Annual-Plant-Species-in-the-San-Joaquin-Desert/experiment/results/index.html",
+     "examples/Density-Dependence-in-Annual-Plant-Species-in-the-San-Joaquin-Desert/experiment/run.sh",
+     "examples/Density-Dependence-in-Annual-Plant-Species-in-the-San-Joaquin-Desert/recordr/README.md",
+     "examples/Density-Dependence-in-Annual-Plant-Species-in-the-San-Joaquin-Desert/recordr/record-run.R"
+    ]
+   },
+   "notebooks": {
+    "n": 1,
+    "sample": [
+     "examples/water-tale/workspace/wt_quickstart.ipynb"
+    ]
+   },
+   "data": {
+    "n": 7,
+    "sample": [
+     "examples/Density-Dependence-in-Annual-Plant-Species-in-the-San-Joaquin-Desert/experiment/data/phytometer_data_trials_2018.csv",
+     "examples/Density-Dependence-in-Annual-Plant-Species-in-the-San-Joaquin-Desert/experiment/data/plant locations.csv",
+     "examples/ajps/newspapers_count.csv",
+     "examples/ajps/precincts0711.csv",
+     "examples/ajps/replication_file.csv",
+     "examples/trait-perception-accuracy/experiment/data/sims.csv",
+     "examples/trait-perception-accuracy/experiment/data/subn50.csv"
+    ]
+   },
+   "containers": {
+    "n": 1,
+    "sample": [
+     "Dockerfile"
+    ]
+   }
+  }
+ },
+ "MisterIcy/provenance": {
+  "repo": "MisterIcy/provenance",
+  "meta": {
+   "full_name": "MisterIcy/provenance",
+   "description": "🏺⛏️ Provenance — field-tested Claude Code skills with a documented origin. Every method has a history; this is mine.",
+   "language": "Python",
+   "spdx": "Apache-2.0",
+   "default_branch": "main",
+   "stars": 0,
+   "forks": 0,
+   "open_issues": 0,
+   "size_kb": 164,
+   "archived": false,
+   "fork": false,
+   "created": "2026-08-17T13:40:37Z",
+   "pushed": "2026-08-30T11:16:11Z",
+   "homepage": "",
+   "topics": []
+  },
+  "files": 49,
+  "top": [
+   "skills (25)",
+   "(root) (6)",
+   "agents (6)",
+   "hooks (4)",
+   ".github (3)",
+   ".claude-plugin (2)",
+   "monitors (2)",
+   ".claude (1)"
+  ],
+  "second": {
+   "skills": [
+    "skill-creator (13)",
+    "subagent-creator (6)",
+    "git-committer (3)",
+    "git-committer-setup (2)",
+    "pr-description-sync (1)"
+   ],
+   "hooks": [
+    "scripts (3)"
+   ],
+   ".github": [
+    "scripts (1)",
+    "workflows (1)"
+   ],
+   "monitors": [
+    "scripts (1)"
+   ]
+  },
+  "extensions": [
+   ".md (32)",
+   ".json (6)",
+   ".sh (5)",
+   ".py (3)",
+   ".yml (2)"
+  ],
+  "root_files": [
+   "AGENTS.md",
+   "CHANGELOG.md",
+   "CLAUDE.md",
+   "CODE_OF_CONDUCT.md",
+   "LICENSE",
+   "README.md"
+  ],
+  "signals": {
+   "agent_instructions": {
+    "n": 28,
+    "sample": [
+     ".claude/settings.json",
+     "AGENTS.md",
+     "CLAUDE.md",
+     "skills/git-committer-setup/SKILL.md",
+     "skills/git-committer-setup/scripts/ingest-commits.sh",
+     "skills/git-committer/SKILL.md",
+     "skills/git-committer/references/conventional-commits.md",
+     "skills/git-committer/references/style-voice-guidelines.md",
+     "skills/pr-description-sync/SKILL.md",
+     "skills/skill-creator/SKILL.md"
+    ]
+   }
+  }
+ },
+ "MazzaWill/neo4j-python-pandas-py2neo-v3": {
+  "repo": "MazzaWill/neo4j-python-pandas-py2neo-v3",
+  "meta": {
+   "full_name": "MazzaWill/neo4j-python-pandas-py2neo-v3",
+   "description": "Excel-to-Neo4j knowledge graph examples: legacy py2neo v3 plus modern Neo4j GraphRAG/vector search.",
+   "language": "Python",
+   "spdx": "MIT",
+   "default_branch": "master",
+   "stars": 579,
+   "forks": 187,
+   "open_issues": 3,
+   "size_kb": 95,
+   "archived": false,
+   "fork": false,
+   "created": "2018-11-13T09:09:33Z",
+   "pushed": "2026-09-01T21:06:02Z",
+   "homepage": "",
+   "topics": [
+    "ai-agents",
+    "codex-skill",
+    "excel",
+    "graphrag",
+    "knowledge-graph",
+    "neo4j",
+    "pandas",
+    "py2neo",
+    "python"
+   ]
+  },
+  "files": 51,
+  "top": [
+   "(root) (14)",
+   "examples (12)",
+   ".github (7)",
+   "skills (5)",
+   "tests (5)",
+   "dataToNeo4jClass (4)",
+   "jieba_code (3)",
+   "__pycache__ (1)"
+  ],
+  "second": {
+   "examples": [
+    "modern_invoice_graphrag (11)"
+   ],
+   ".github": [
+    "ISSUE_TEMPLATE (4)",
+    "workflows (1)"
+   ],
+   "skills": [
+    "neo4j-knowledge-graph (5)"
+   ],
+   "tests": [
+    "modern_invoice_graphrag (4)",
+    "skill_neo4j_knowledge_graph (1)"
+   ],
+   "dataToNeo4jClass": [
+    "__pycache__ (2)"
+   ]
+  },
+  "extensions": [
+   ".py (20)",
+   ".md (13)",
+   ".yml (5)",
+   ".txt (4)",
+   ".pyc (3)",
+   ".xls (1)",
+   ".example (1)",
+   ".csv (1)",
+   ".yaml (1)"
+  ],
+  "root_files": [
+   "CHANGELOG.md",
+   "CODE_OF_CONDUCT.md",
+   "CONTRIBUTING.md",
+   "Invoice_data_Demo.xls",
+   "LICENSE",
+   "README.md",
+   "README.zh-CN.md",
+   "SECURITY.md",
+   "SUPPORT.md",
+   "__init__.py",
+   "invoice_neo4j.py",
+   "neo4j_matrix.py",
+   "neo4j_to_dataframe.py",
+   "requirements.txt"
+  ],
+  "signals": {
+   "examples": {
+    "n": 13,
+    "sample": [
+     "Invoice_data_Demo.xls",
+     "examples/__init__.py",
+     "examples/modern_invoice_graphrag/.env.example",
+     "examples/modern_invoice_graphrag/README.md",
+     "examples/modern_invoice_graphrag/README.zh-CN.md",
+     "examples/modern_invoice_graphrag/__init__.py",
+     "examples/modern_invoice_graphrag/app.py",
+     "examples/modern_invoice_graphrag/cypher.py",
+     "examples/modern_invoice_graphrag/embeddings.py",
+     "examples/modern_invoice_graphrag/model.py"
+    ]
+   },
+   "tests": {
+    "n": 5,
+    "sample": [
+     "tests/modern_invoice_graphrag/test_app.py",
+     "tests/modern_invoice_graphrag/test_cypher.py",
+     "tests/modern_invoice_graphrag/test_embeddings.py",
+     "tests/modern_invoice_graphrag/test_model.py",
+     "tests/skill_neo4j_knowledge_graph/test_profile_table.py"
+    ]
+   },
+   "data": {
+    "n": 1,
+    "sample": [
+     "examples/modern_invoice_graphrag/sample_invoice_rows.csv"
+    ]
+   },
+   "agent_instructions": {
+    "n": 5,
+    "sample": [
+     "skills/neo4j-knowledge-graph/SKILL.md",
+     "skills/neo4j-knowledge-graph/agents/openai.yaml",
+     "skills/neo4j-knowledge-graph/references/cypher-and-graphrag.md",
+     "skills/neo4j-knowledge-graph/references/modeling.md",
+     "skills/neo4j-knowledge-graph/scripts/profile_table.py"
+    ]
+   }
+  }
+ },
+ "Azure-Samples/academic-knowledge-analytics-visualization": {
+  "repo": "Azure-Samples/academic-knowledge-analytics-visualization",
+  "meta": {
+   "full_name": "Azure-Samples/academic-knowledge-analytics-visualization",
+   "description": "Various examples to perform big data analytics over Microsoft Academic Graph and visualize the results.",
+   "language": "C#",
+   "spdx": "MIT",
+   "default_branch": "master",
+   "stars": 62,
+   "forks": 29,
+   "open_issues": 2,
+   "size_kb": 334418,
+   "archived": true,
+   "fork": false,
+   "created": "2018-03-09T23:06:49Z",
+   "pushed": "2020-10-21T01:35:55Z",
+   "homepage": null,
+   "topics": []
+  },
+  "files": 115,
+  "top": [
+   "src (67)",
+   "images (41)",
+   "(root) (5)",
+   ".github (2)"
+  ],
+  "second": {
+   "src": [
+    "AcademicAnalytics (66)"
+   ]
+  },
+  "extensions": [
+   ".png (41)",
+   ".md (18)",
+   ".usql (13)",
+   ".cs (13)",
+   ".pbix (13)",
+   ".pbit (13)",
+   ".sln (1)",
+   ".usqlproj (1)"
+  ],
+  "root_files": [
+   ".gitattributes",
+   ".gitignore",
+   "CONTRIBUTING.md",
+   "LICENSE.md",
+   "README.md"
+  ],
+  "signals": {}
+ },
+ "hannesfrank/Course-Knowledge-Graphs": {
+  "repo": "hannesfrank/Course-Knowledge-Graphs",
+  "meta": {
+   "full_name": "hannesfrank/Course-Knowledge-Graphs",
+   "description": "Test data and example source code for the Knowledge Graphs lecture 2018",
+   "language": "Python",
+   "spdx": null,
+   "default_branch": "master",
+   "stars": 0,
+   "forks": 22,
+   "open_issues": 0,
+   "size_kb": 360,
+   "archived": false,
+   "fork": false,
+   "created": "2018-10-17T11:26:11Z",
+   "pushed": "2018-10-17T11:54:18Z",
+   "homepage": "https://iccl.inf.tu-dresden.de/web/Knowledge_Graphs_(WS2018)/en",
+   "topics": []
+  },
+  "files": 10,
+  "top": [
+   "test-data (7)",
+   "(root) (2)",
+   "scripts (1)"
+  ],
+  "second": {},
+  "extensions": [
+   ".txt (7)",
+   ".md (1)",
+   ".py (1)"
+  ],
+  "root_files": [
+   ".gitignore",
+   "README.md"
+  ],
+  "signals": {
+   "tests": {
+    "n": 7,
+    "sample": [
+     "test-data/01-triangle.txt",
+     "test-data/02-empty.txt",
+     "test-data/03-k5.txt",
+     "test-data/04-s5.txt",
+     "test-data/05-random-small.txt",
+     "test-data/06-random-medium.txt",
+     "test-data/07-random-big.txt"
+    ]
+   }
+  }
+ },
+ "SachaCR/library-examples": {
+  "repo": "SachaCR/library-examples",
+  "meta": {
+   "full_name": "SachaCR/library-examples",
+   "description": "A library management app example with Ontologic",
+   "language": "TypeScript",
+   "spdx": "MIT",
+   "default_branch": "main",
+   "stars": 0,
+   "forks": 0,
+   "open_issues": 0,
+   "size_kb": 594,
+   "archived": true,
+   "fork": false,
+   "created": "2026-04-02T19:23:58Z",
+   "pushed": "2026-08-18T10:43:49Z",
+   "homepage": null,
+   "topics": []
+  },
+  "files": 64,
+  "top": [
+   "src (51)",
+   "(root) (9)",
+   ".cursor (2)",
+   "docs (2)"
+  ],
+  "second": {
+   "src": [
+    "domain (30)",
+    "presentation (17)",
+    "infrastructure (4)"
+   ],
+   ".cursor": [
+    "rules (1)",
+    "skills (1)"
+   ],
+   "docs": [
+    "articles (2)"
+   ]
+  },
+  "extensions": [
+   ".ts (52)",
+   ".md (4)",
+   ".json (4)",
+   ".mdc (1)",
+   ".yaml (1)"
+  ],
+  "root_files": [
+   ".gitignore",
+   "LICENSE",
+   "README.md",
+   "nest-cli.json",
+   "package.json",
+   "pnpm-lock.yaml",
+   "tsconfig.build.json",
+   "tsconfig.json",
+   "vitest.config.ts"
+  ],
+  "signals": {
+   "docs": {
+    "n": 2,
+    "sample": [
+     "docs/articles/01-bounded-context-and-ontologic.md",
+     "docs/articles/02-invariants.md"
+    ]
+   },
+   "tests": {
+    "n": 13,
+    "sample": [
+     ".cursor/rules/unit-tests-gherkin-domain.mdc",
+     ".cursor/skills/vitest-gherkin-domain-tests/SKILL.md",
+     "src/domain/entities/book/__tests__/book.entity.test.ts",
+     "src/domain/entities/loan/__tests__/loan.entity.test.ts",
+     "src/domain/repositories/__tests__/searchBook.test.ts",
+     "src/domain/use-cases/__tests__/addBook.test.ts",
+     "src/domain/use-cases/__tests__/declareBookLost.test.ts",
+     "src/domain/use-cases/__tests__/helpers.ts",
+     "src/domain/use-cases/__tests__/listOutstandingLoansForMember.test.ts",
+     "src/domain/use-cases/__tests__/recordBookReturn.test.ts"
+    ]
+   },
+   "agent_instructions": {
+    "n": 2,
+    "sample": [
+     ".cursor/rules/unit-tests-gherkin-domain.mdc",
+     ".cursor/skills/vitest-gherkin-domain-tests/SKILL.md"
+    ]
+   }
+  }
+ },
+ "mdebellis/SemanticKG-Design": {
+  "repo": "mdebellis/SemanticKG-Design",
+  "meta": {
+   "full_name": "mdebellis/SemanticKG-Design",
+   "description": "For ontology, code and other supporting examples and tools for the book: Designing Semantic Knowledge Graphs: A Guide to Utilizing Semantic Web Technologies for Agile Data Management",
+   "language": "Python",
+   "spdx": "NOASSERTION",
+   "default_branch": "main",
+   "stars": 1,
+   "forks": 0,
+   "open_issues": 1,
+   "size_kb": 80295,
+   "archived": false,
+   "fork": false,
+   "created": "2025-03-06T23:22:12Z",
+   "pushed": "2026-09-01T14:49:17Z",
+   "homepage": null,
+   "topics": []
+  },
+  "files": 160,
+  "top": [
+   "docs (40)",
+   "data_product (37)",
+   "chapter_3 (17)",
+   "chapter_8 (14)",
+   "tests (13)",
+   ".idea (8)",
+   "chapter_12 (7)",
+   "ontologies (7)",
+   "chapter_1 (5)",
+   "(root) (4)",
+   "chapter_7 (3)",
+   "chapter_9 (3)",
+   "chapter_13 (1)",
+   "tools (1)"
+  ],
+  "second": {
+   "docs": [
+    "peopleOntology (40)"
+   ],
+   "data_product": [
+    "data_product_src (16)",
+    "queries (11)",
+    "knowledge_graph (3)",
+    "figures (2)",
+    "REST (1)",
+    "graphql (1)",
+    "kafka (1)",
+    "rag-bot (1)"
+   ],
+   "chapter_3": [
+    "exercises (8)"
+   ],
+   "chapter_8": [
+    "data_ingestion (9)"
+   ],
+   "tests": [
+    "verify (11)"
+   ],
+   ".idea": [
+    "inspectionProfiles (2)"
+   ],
+   "chapter_1": [
+    "exercises (5)"
+   ]
+  },
+  "extensions": [
+   ".md (31)",
+   ".ttl (20)",
+   ".py (17)",
+   ".sparql (14)",
+   ".rq (12)",
+   ".html (11)",
+   ".css (9)",
+   ".xml (7)",
+   ".ru (6)",
+   ".js (5)"
+  ],
+  "root_files": [
+   ".gitignore",
+   "LICENSE",
+   "README.md",
+   "requirements.txt"
+  ],
+  "signals": {
+   "docs": {
+    "n": 40,
+    "sample": [
+     "docs/peopleOntology/.htaccess",
+     "docs/peopleOntology/406.html",
+     "docs/peopleOntology/index-en.html",
+     "docs/peopleOntology/index.html",
+     "docs/peopleOntology/ontology.jsonld",
+     "docs/peopleOntology/ontology.nt",
+     "docs/peopleOntology/ontology.owl",
+     "docs/peopleOntology/ontology.ttl",
+     "docs/peopleOntology/readme.md",
+     "docs/peopleOntology/resources/dark-mode-toggle.mjs"
+    ]
+   },
+   "examples": {
+    "n": 8,
+    "sample": [
+     "chapter_1/exercises/EXERCISE_1-1_Standards_for_the_Online_Tutorials.md",
+     "chapter_3/Listings_3-7_to_3-13_Basic_SPARQL_examples.rq",
+     "chapter_3/Pattern_Examples_No_Labels.ttl",
+     "chapter_3/exercises/EXERCISE_3-8_THE_PIZZA_TUTORIAL.md",
+     "chapter_8/data_ingestion/ingestion_example.ttl",
+     "chapter_8/data_ingestion/processed_data/stream_forge_example_trending_snapshot.csv",
+     "chapter_8/data_ingestion/stream_forge_example_prefect.py",
+     "chapter_9/Pattern_Examples_No_Labels.ttl"
+    ]
+   },
+   "tests": {
+    "n": 16,
+    "sample": [
+     "chapter_7/Listing_7-1_SPARQL_Test_Data_Generated_by_ChatGPT.ru",
+     "chapter_8/data_ingestion/processed_data/TestPipelineReport.md",
+     "ontologies/people_ontology_test_data.ttl",
+     "tests/basic_kg_tests.sparql",
+     "tests/robot_report.tsv",
+     "tests/verify/01-class-label-en.sparql",
+     "tests/verify/02-op-label-en.sparql",
+     "tests/verify/03-no-hash-iris.sparql",
+     "tests/verify/04-op-lowercase_underscores.sparql",
+     "tests/verify/05-unsat-guard.sparql"
+    ]
+   },
+   "fixtures": {
+    "n": 4,
+    "sample": [
+     "chapter_7/Listing_7-1_SPARQL_Test_Data_Generated_by_ChatGPT.ru",
+     "chapter_8/data_ingestion/processed_data/stream_forge_example_trending_snapshot.csv",
+     "chapter_8/data_ingestion/trending_snapshot_validation.ttl",
+     "ontologies/people_ontology_test_data.ttl"
+    ]
+   },
+   "schemas": {
+    "n": 22,
+    "sample": [
+     "chapter_12/consulting_ontology.ttl",
+     "chapter_12/consulting_semantic_taxonomy.ttl",
+     "chapter_12/consulting_skos_taxonomy.ttl",
+     "chapter_12/skos_glossary.ttl",
+     "chapter_3/Listing_3-23_to_3-24_Employee_Shape.ttl",
+     "chapter_3/Pattern_Examples_No_Labels.ttl",
+     "chapter_8/data_ingestion/ingestion_example.ttl",
+     "chapter_8/data_ingestion/trending_snapshot_validation.ttl",
+     "chapter_9/Pattern_Examples_No_Labels.ttl",
+     "data_product/REST/Get_Video_Metadata_REST-OpenAPI_Implementation.md"
+    ]
+   },
+   "data": {
+    "n": 4,
+    "sample": [
+     "chapter_8/data_ingestion/processed_data/stream_forge_example_trending_snapshot.csv",
+     "data_product/queries/access/product-to-dataset.rq",
+     "data_product/queries/catalog/datasets-in-catalog.rq",
+     "docs/peopleOntology/ontology.jsonld"
+    ]
+   }
+  }
+ },
+ "lancedb/vectordb-recipes": {
+  "repo": "lancedb/vectordb-recipes",
+  "meta": {
+   "full_name": "lancedb/vectordb-recipes",
+   "description": "Resource, examples & tutorials for multimodal AI, RAG and agents using vector search and LLMs",
+   "language": "Jupyter Notebook",
+   "spdx": "Apache-2.0",
+   "default_branch": "main",
+   "stars": 973,
+   "forks": 170,
+   "open_issues": 4,
+   "size_kb": 296135,
+   "archived": false,
+   "fork": false,
+   "created": "2023-06-25T06:10:35Z",
+   "pushed": "2026-04-24T11:29:16Z",
+   "homepage": "",
+   "topics": [
+    "agents",
+    "ai",
+    "deep-learning",
+    "embeddings",
+    "fine-tuning",
+    "gpt",
+    "gpt-4-vision",
+    "lancedb",
+    "langchain",
+    "llama-index",
+    "llms",
+    "machine-learning",
+    "multimodal",
+    "multimodal-ai",
+    "openai",
+    "rag",
+    "vector-database"
+   ]
+  },
+  "files": 686,
+  "top": [
+   "examples (314)",
+   "applications (256)",
+   "assets (57)",
+   "tutorials (50)",
+   "(root) (6)",
+   ".github (2)",
+   ".vscode (1)"
+  ],
+  "second": {
+   "examples": [
+    "archived_examples (37)",
+    "saas_examples (21)",
+    "databricks_DBRX_website_bot (14)",
+    "Code-Documentation-QA-Bot (10)",
+    "multi-document-agentic-rag (10)",
+    "Multi_Speaker_Context_Aware_Podcast_Generation (9)",
+    "nvidia-rag-blueprint-lancedb (9)",
+    "cognee-RAG (8)",
+    "movie-recommender (8)",
+    "multimodal_video_search (8)"
+   ],
+   "applications": [
+    "node (141)",
+    "archived_applications (64)",
+    "multimodal-search (19)",
+    "Chatbot_with_Parler_TTS (8)",
+    "multimodal-recipe-agent (7)",
+    "evaluate_RAG (6)",
+    "Multilingual_RAG (4)",
+    "Music_Recommendation (4)",
+    "Multi_collabration_chatbot (3)"
+   ],
+   "tutorials": [
+    "Agentic_RAG (5)",
+    "Multi-Head-RAG-from-Scratch (5)",
+    "Local-RAG-from-Scratch (4)",
+    "RAG-with_MatryoshkaEmbed-Llamaindex (4)",
+    "cli-sdk-to-convert-image-datasets-to-lance (3)",
+    "cohere-reranker (3)",
+    "different-types-text-chunking-in-RAG (3)",
+    "feature-engineering (3)",
+    "Advace_RAG_LlamaParser (2)",
+    "Corrective-RAG-with_Langgraph (2)"
+   ],
+   ".github": [
+    "workflows (2)"
+   ]
+  },
+  "extensions": [
+   ".md (123)",
+   ".py (101)",
+   ".ipynb (101)",
+   ".png (63)",
+   ".txt (59)",
+   ".js (51)",
+   ".json (33)",
+   ".jsx (25)",
+   ".gif (16)",
+   ".css (15)"
+  ],
+  "root_files": [
+   ".gitignore",
+   "LICENSE",
+   "README.md",
+   "compile_testing.js",
+   "package.json",
+   "requirements.txt"
+  ],
+  "signals": {
+   "docs": {
+    "n": 6,
+    "sample": [
+     "applications/archived_applications/chat_with_anywebsite/README.MD",
+     "applications/archived_applications/chat_with_anywebsite/app.py",
+     "applications/archived_applications/chat_with_anywebsite/main_app.ipynb",
+     "applications/archived_applications/chat_with_anywebsite/requirements.txt",
+     "examples/CrawlerQ&A_website/README.md",
+     "examples/CrawlerQ&A_website/main.ipynb"
+    ]
+   },
+   "examples": {
+    "n": 373,
+    "sample": [
+     ".github/workflows/examples-test.yml",
+     "applications/Chatbot_with_Parler_TTS/.env-example",
+     "applications/Multilingual_RAG/.env-example",
+     "applications/archived_applications/Chatbot_with_memory/.env-example",
+     "applications/archived_applications/HR_chatbot/scripts/.env-example",
+     "applications/archived_applications/talk-with-youtube-gpt4-vision-api/demo_video/demo.mp4",
+     "applications/archived_applications/talk-with-youtube-gpt4-vision-api/demo_video/demo.png",
+     "applications/multimodal-search/.env.example",
+     "assets/imagebind-demo.png",
+     "examples/AG2-Multiagent-RAG-with-LanceDB/README.md"
+    ]
+   },
+   "notebooks": {
+    "n": 101,
+    "sample": [
+     "applications/archived_applications/Chatbot_with_memory/main.ipynb",
+     "applications/archived_applications/chat_with_anywebsite/main_app.ipynb",
+     "applications/evaluate_RAG/SEE_THIS.ipynb",
+     "applications/multimodal-recipe-agent/multimodal-recipe-agent.ipynb",
+     "examples/AG2-Multiagent-RAG-with-LanceDB/main.ipynb",
+     "examples/AI-Email-Assistant-with-Composio/composio-lance.ipynb",
+     "examples/AI-Trends-with-CrewAI/CrewAI_AI_Trends.ipynb",
+     "examples/Accelerate-Vector-Search-Applications-Using-OpenVINO/clip_text_image_search.ipynb",
+     "examples/Advance-RAG-with-HyDE/main.ipynb",
+     "examples/Advance_RAG_LOTR/main.ipynb"
+    ]
+   },
+   "tests": {
+    "n": 14,
+    "sample": [
+     ".github/workflows/examples-test.yml",
+     "applications/node/lanchain_writing_assistant/src/App.test.js",
+     "applications/node/lanchain_writing_assistant/src/setupTests.js",
+     "applications/node/sentance_auto_complete/src/App.test.js",
+     "applications/node/sentance_auto_complete/src/setupTests.js",
+     "compile_testing.js",
+     "examples/Chunking_Analysis/Chunking_Analysis_Latest.ipynb",
+     "examples/RAG-with-MiniMax/test_integration.py",
+     "examples/RAG-with-MiniMax/test_unit.py",
+     "examples/Youtube-Search-QA-Bot/test.py"
+    ]
+   },
+   "data": {
+    "n": 14,
+    "sample": [
+     "applications/archived_applications/HR_chatbot/data/employee_info.csv",
+     "applications/node/AI_powered_job_search/src/server/dataset/add_your_data_file_here.csv",
+     "examples/Geospatial-Recommendation-System/data.csv",
+     "examples/RAG-On-PDF/Dataset/FARM5CROPS_farmergpt.pdf",
+     "examples/RAG-On-PDF/Dataset/info.txt",
+     "examples/archived_examples/Food_recommendation/main_food.csv",
+     "examples/archived_examples/Food_recommendation/ratings.csv",
+     "examples/assistance-bot-with-swarm/dataset_prep.py",
+     "examples/fintech-ai-agent/credit_risk_dataset.csv",
+     "tutorials/NER-dataset-with-Instructor/README.md"
+    ]
+   },
+   "diagrams": {
+    "n": 1,
+    "sample": [
+     "assets/multikb_diagram.jpeg"
+    ]
+   },
+   "containers": {
+    "n": 1,
+    "sample": [
+     "examples/nvidia-rag-blueprint-lancedb/docker-compose.override.yml"
+    ]
+   }
+  }
+ },
+ "elastic/elastic-labs": {
+  "repo": "elastic/elastic-labs",
+  "meta": {
+   "full_name": "elastic/elastic-labs",
+   "description": "Notebooks & Example Apps for Search, Observability, and Security with Elasticsearch",
+   "language": "Jupyter Notebook",
+   "spdx": "Apache-2.0",
+   "default_branch": "main",
+   "stars": 1127,
+   "forks": 279,
+   "open_issues": 46,
+   "size_kb": 179383,
+   "archived": false,
+   "fork": false,
+   "created": "2023-06-14T17:50:22Z",
+   "pushed": "2026-08-26T14:22:31Z",
+   "homepage": "",
+   "topics": [
+    "ai",
+    "applications",
+    "chatgpt",
+    "chatlog",
+    "elastic",
+    "elasticsearch",
+    "genai",
+    "genaistack",
+    "langchain",
+    "langchain-python",
+    "openai",
+    "openai-chatgpt",
+    "python",
+    "search",
+    "vector",
+    "vectordatabase"
+   ]
+  },
+  "files": 1006,
+  "top": [
+   "supporting-blog-content (618)",
+   "example-apps (267)",
+   "notebooks (96)",
+   "(root) (9)",
+   ".github (3)",
+   "bin (3)",
+   "datasets (3)",
+   "docker (2)",
+   "k8s (2)",
+   "img (1)",
+   "supporting-video-content (1)",
+   "telemetry (1)"
+  ],
+  "second": {
+   "supporting-blog-content": [
+    "hybrid-search-for-an-e-commerce-product-catalogue (31)",
+    "esre-with-blazor (29)",
+    "building-multimodal-rag-with-elasticsearch-gotham (28)",
+    "building-actionable-ai-automating-it-requests-with-agent-builder-and-one-workflow (26)",
+    "add-ai-generated-summaries (23)",
+    "search-analytics-otel (22)",
+    "langraph-retrieval-agent-template-demo (20)",
+    "music-search (20)",
+    "customer-success-example (16)",
+    "navigating-an-elastic-vector-database (16)"
+   ],
+   "example-apps": [
+    "chatbot-rag-app (87)",
+    "internal-knowledge-search (57)",
+    "relevance-workbench (55)",
+    "search-tutorial (50)",
+    "openai-embeddings (14)",
+    "workplace-search (2)",
+    "elasticsearch-mcp-server (1)"
+   ],
+   "notebooks": [
+    "search (30)",
+    "integrations (27)",
+    "langchain (12)",
+    "document-chunking (7)",
+    "generative-ai (4)",
+    "ingestion-and-chunking (4)",
+    "model-upgrades (4)",
+    "enterprise-search (3)",
+    "playground-examples (2)",
+    "esql (1)"
+   ],
+   ".github": [
+    "workflows (3)"
+   ],
+   "bin": [
+    "mocks (1)"
+   ]
+  },
+  "extensions": [
+   ".ipynb (160)",
+   ".json (123)",
+   ".py (88)",
+   ".png (82)",
+   ".md (81)",
+   ".txt (72)",
+   ".tsx (42)",
+   ".js (41)",
+   ".svg (25)",
+   ".yml (22)"
+  ],
+  "root_files": [
+   ".gitignore",
+   ".pre-commit-config.yaml",
+   "CODEOWNERS",
+   "CONTRIBUTING.md",
+   "LICENSE",
+   "Makefile",
+   "NOTICE",
+   "README.md",
+   "requirements-dev.txt"
+  ],
+  "signals": {
+   "examples": {
+    "n": 349,
+    "sample": [
+     "example-apps/README.md",
+     "example-apps/chatbot-rag-app/.dockerignore",
+     "example-apps/chatbot-rag-app/.gitignore",
+     "example-apps/chatbot-rag-app/Dockerfile",
+     "example-apps/chatbot-rag-app/README.md",
+     "example-apps/chatbot-rag-app/api/app.py",
+     "example-apps/chatbot-rag-app/api/chat.py",
+     "example-apps/chatbot-rag-app/api/elasticsearch_client.py",
+     "example-apps/chatbot-rag-app/api/llm_integrations.py",
+     "example-apps/chatbot-rag-app/api/templates/condense_question_prompt.txt"
+    ]
+   },
+   "notebooks": {
+    "n": 160,
+    "sample": [
+     "notebooks/document-chunking/_nbtest.teardown.with-index-pipelines.ipynb",
+     "notebooks/document-chunking/_nbtest.teardown.with-langchain-splitters.ipynb",
+     "notebooks/document-chunking/configuring-chunking-settings-for-inference-endpoints.ipynb",
+     "notebooks/document-chunking/tokenization.ipynb",
+     "notebooks/document-chunking/with-index-pipelines.ipynb",
+     "notebooks/document-chunking/with-langchain-splitters.ipynb",
+     "notebooks/enterprise-search/app-search-crawler-to-open-crawler-migration.ipynb",
+     "notebooks/enterprise-search/app-search-engine-exporter.ipynb",
+     "notebooks/enterprise-search/elastic-crawler-to-open-crawler-migration.ipynb",
+     "notebooks/esql/esql-getting-started.ipynb"
+    ]
+   },
+   "benchmarks": {
+    "n": 63,
+    "sample": [
+     "example-apps/relevance-workbench/.gitignore",
+     "example-apps/relevance-workbench/LICENSE",
+     "example-apps/relevance-workbench/README.md",
+     "example-apps/relevance-workbench/app-api/.gitignore",
+     "example-apps/relevance-workbench/app-api/Dockerfile",
+     "example-apps/relevance-workbench/app-api/app.py",
+     "example-apps/relevance-workbench/app-api/requirements.txt",
+     "example-apps/relevance-workbench/app-ui/.eslintrc.json",
+     "example-apps/relevance-workbench/app-ui/.gitignore",
+     "example-apps/relevance-workbench/app-ui/Dockerfile"
+    ]
+   },
+   "tests": {
+    "n": 34,
+    "sample": [
+     ".github/workflows/tests.yml",
+     "bin/find-notebooks-to-test.sh",
+     "bin/nbtest",
+     "example-apps/chatbot-rag-app/frontend/src/App.test.tsx",
+     "notebooks/document-chunking/.nbtest.yml",
+     "notebooks/document-chunking/_nbtest.teardown.with-index-pipelines.ipynb",
+     "notebooks/document-chunking/_nbtest.teardown.with-langchain-splitters.ipynb",
+     "notebooks/ingestion-and-chunking/_nbtest.teardown.ipynb",
+     "notebooks/integrations/hugging-face/.nbtest.yml",
+     "notebooks/integrations/hugging-face/_nbtest.teardown.loading-model-from-hugging-face.ipynb"
+    ]
+   },
+   "schemas": {
+    "n": 2,
+    "sample": [
+     "supporting-blog-content/ElasticGPT_Plugin/openapi.yaml",
+     "supporting-blog-content/enhance-microsoft-copilot-with-elasticsearch/openAPI-specification.json"
+    ]
+   },
+   "data": {
+    "n": 66,
+    "sample": [
+     "datasets/.keep",
+     "datasets/book_summaries_1000_chunked.json",
+     "datasets/workplace-documents.json",
+     "notebooks/search/listings.csv",
+     "notebooks/search/listings.csv.gz",
+     "notebooks/search/sample_data/learning-to-rank/movies-corpus.jsonl.gz",
+     "supporting-blog-content/context-engineering-mistral-completions/snes_games.csv",
+     "supporting-blog-content/elasticsearch-chatgpt-connector/github_internal_dataset.json",
+     "supporting-blog-content/elasticsearch-inference-api-and-hugging-face/dataset.json",
+     "supporting-blog-content/elasticsearch-reference-architecture-for-agentic-applications/dataset.json"
+    ]
+   },
+   "diagrams": {
+    "n": 2,
+    "sample": [
+     "supporting-blog-content/ElasticDocs_GPT/images/ElasticChat GPT Diagram - No line text.jpeg",
+     "supporting-blog-content/elasticsearch-reference-architecture-for-agentic-applications/arch_diagram.png"
+    ]
+   },
+   "containers": {
+    "n": 19,
+    "sample": [
+     "docker/docker-compose-elastic.yml",
+     "example-apps/chatbot-rag-app/Dockerfile",
+     "example-apps/chatbot-rag-app/docker-compose.yml",
+     "example-apps/openai-embeddings/Dockerfile",
+     "example-apps/openai-embeddings/docker-compose.yml",
+     "example-apps/relevance-workbench/app-api/Dockerfile",
+     "example-apps/relevance-workbench/app-ui/Dockerfile",
+     "example-apps/relevance-workbench/docker-compose.yml",
+     "k8s/README.md",
+     "k8s/k8s-manifest-elastic.yml"
+    ]
+   },
+   "agent_instructions": {
+    "n": 8,
+    "sample": [
+     "example-apps/elasticsearch-mcp-server/README.md",
+     "supporting-blog-content/elasticsearch-chatgpt-connector/elasticsearch-mcp-server-for-chatgpt.ipynb",
+     "supporting-blog-content/elasticsearch-typescript-claude-mcp/README.md",
+     "supporting-blog-content/elasticsearch-typescript-claude-mcp/dataset.json",
+     "supporting-blog-content/elasticsearch-typescript-claude-mcp/index.ts",
+     "supporting-blog-content/elasticsearch-typescript-claude-mcp/package-lock.json",
+     "supporting-blog-content/elasticsearch-typescript-claude-mcp/package.json",
+     "supporting-blog-content/elasticsearch-typescript-claude-mcp/setup.ts"
+    ]
+   }
+  }
+ },
+ "qdrant/examples": {
+  "repo": "qdrant/examples",
+  "meta": {
+   "full_name": "qdrant/examples",
+   "description": "A collection of examples and tutorials for Qdrant vector search engine",
+   "language": "Jupyter Notebook",
+   "spdx": "Apache-2.0",
+   "default_branch": "master",
+   "stars": 220,
+   "forks": 75,
+   "open_issues": 18,
+   "size_kb": 161843,
+   "archived": false,
+   "fork": false,
+   "created": "2023-03-29T09:02:48Z",
+   "pushed": "2026-09-02T10:18:48Z",
+   "homepage": null,
+   "topics": []
+  },
+  "files": 177,
+  "top": [
+   "ecommerce-search-golang (51)",
+   "qdrant_101_image_data (21)",
+   "course-multi-vector-search (20)",
+   "agentic_rag_zoom_crewai (11)",
+   "course (7)",
+   "qdrant_101_text_data (7)",
+   "multimodal-search (6)",
+   "beginners-course (5)",
+   "ecommerce_reverse_image_search (5)",
+   "llama_index_recency (5)",
+   "graphrag_neo4j (4)",
+   "(root) (3)",
+   "qdrant_101_audio_data (3)",
+   "qdrant_101_getting_started (3)"
+  ],
+  "second": {
+   "ecommerce-search-golang": [
+    "frontend (40)",
+    "cmd (2)"
+   ],
+   "qdrant_101_image_data": [
+    "04_qdrant_101_cv_files (18)",
+    "img (1)"
+   ],
+   "course-multi-vector-search": [
+    "module-3 (9)",
+    "module-2 (6)",
+    "module-1 (4)",
+    "module-0 (1)"
+   ],
+   "agentic_rag_zoom_crewai": [
+    "data (4)",
+    "vector (3)"
+   ],
+   "course": [
+    "day_3 (3)",
+    "day_1 (1)",
+    "day_2 (1)",
+    "day_4 (1)",
+    "day_5 (1)"
+   ],
+   "qdrant_101_text_data": [
+    "02_qdrant_101_text_files (2)",
+    "qdrant_and_text_data_files (2)",
+    "img (1)"
+   ],
+   "multimodal-search": [
+    "images (5)"
+   ],
+   "ecommerce_reverse_image_search": [
+    "queries (4)"
+   ],
+   "llama_index_recency": [
+    "images (3)"
+   ]
+  },
+  "extensions": [
+   ".ipynb (51)",
+   ".png (36)",
+   ".tsx (21)",
+   ".md (12)",
+   ".jpg (10)",
+   ".ts (7)",
+   ".txt (5)",
+   ".svg (5)",
+   ".py (4)",
+   ".csv (3)"
+  ],
+  "root_files": [
+   ".gitignore",
+   "LICENSE",
+   "README.md"
+  ],
+  "signals": {
+   "examples": {
+    "n": 6,
+    "sample": [
+     "agentic_rag_zoom_crewai/.env.example",
+     "agentic_rag_zoom_crewai/tutorial.md",
+     "colpali-and-binary-quantization/colpali_demo_binary.ipynb",
+     "course/day_5/universal-query-demo.ipynb",
+     "ecommerce-search-golang/.env.example",
+     "pdf-retrieval-at-scale/ColPali_ColQwen2_Tutorial.ipynb"
+    ]
+   },
+   "notebooks": {
+    "n": 52,
+    "sample": [
+     "DSPy-medical-bot/medical_bot_DSPy_Qdrant.ipynb",
+     "beginners-course/Module1.ipynb",
+     "beginners-course/Module2.ipynb",
+     "beginners-course/Module3.ipynb",
+     "beginners-course/Module4.ipynb",
+     "beginners-course/Module5.ipynb",
+     "binary-quantization-qdrant/bq_with_qdrant.ipynb",
+     "code-search/code-search.ipynb",
+     "collaborative-filtering/collaborative-filtering.ipynb",
+     "colpali-and-binary-quantization/colpali_demo_binary.ipynb"
+    ]
+   },
+   "data": {
+    "n": 3,
+    "sample": [
+     "sci-fi-books/top_100_scifi_books_full.csv",
+     "self-query/winemag-data-130k-v2.csv",
+     "time-based-sharding/social-media-posts.csv"
+    ]
+   },
+   "containers": {
+    "n": 4,
+    "sample": [
+     "ecommerce-search-golang/Dockerfile.ingest",
+     "ecommerce-search-golang/Dockerfile.server",
+     "ecommerce-search-golang/docker-compose.yml",
+     "ecommerce-search-golang/frontend/Dockerfile"
+    ]
+   }
+  }
+ },
+ "reichenbch/RAG-examples": {
+  "repo": "reichenbch/RAG-examples",
+  "meta": {
+   "full_name": "reichenbch/RAG-examples",
+   "description": "Retrieval Augmented Generation Examples - Original, GPT based, Semantic Search based.",
+   "language": "Jupyter Notebook",
+   "spdx": "MIT",
+   "default_branch": "main",
+   "stars": 65,
+   "forks": 8,
+   "open_issues": 1,
+   "size_kb": 963,
+   "archived": false,
+   "fork": false,
+   "created": "2023-08-07T13:36:54Z",
+   "pushed": "2024-02-01T16:20:02Z",
+   "homepage": "",
+   "topics": [
+    "faiss",
+    "langchain",
+    "ml",
+    "nlp-machine-learning",
+    "rag"
+   ]
+  },
+  "files": 16,
+  "top": [
+   "(root) (14)",
+   "faiss_doc_idx (2)"
+  ],
+  "second": {},
+  "extensions": [
+   ".png (5)",
+   ".ipynb (3)",
+   ".txt (2)",
+   ".md (1)",
+   ".faiss (1)",
+   ".pkl (1)",
+   ".py (1)",
+   ".csv (1)"
+  ],
+  "root_files": [
+   "LICENSE",
+   "LaBSE + RAG - Multilingual Support.ipynb",
+   "LangChain LLamaIndex RAG.ipynb",
+   "Meta Original RAG Model Implementation.ipynb",
+   "README.md",
+   "bot_design1_img1.png",
+   "bot_design1_img2.png",
+   "bot_design2_img1.png",
+   "bot_design2_img2.png",
+   "bot_design2_img3.png",
+   "dataset.txt",
+   "gradio_app.py",
+   "requirements.txt",
+   "test_data.csv"
+  ],
+  "signals": {
+   "notebooks": {
+    "n": 3,
+    "sample": [
+     "LaBSE + RAG - Multilingual Support.ipynb",
+     "LangChain LLamaIndex RAG.ipynb",
+     "Meta Original RAG Model Implementation.ipynb"
+    ]
+   },
+   "tests": {
+    "n": 1,
+    "sample": [
+     "test_data.csv"
+    ]
+   },
+   "fixtures": {
+    "n": 1,
+    "sample": [
+     "test_data.csv"
+    ]
+   },
+   "data": {
+    "n": 2,
+    "sample": [
+     "dataset.txt",
+     "test_data.csv"
+    ]
+   }
+  }
+ },
+ "DiceTechJobs/SolrConfigExamples": {
+  "repo": "DiceTechJobs/SolrConfigExamples",
+  "meta": {
+   "full_name": "DiceTechJobs/SolrConfigExamples",
+   "description": "Examples of Solr configuration entries for Solr plugins and Conceptual Search\\Semantic Search from Simon Hughes Dice.com",
+   "language": null,
+   "spdx": "Apache-2.0",
+   "default_branch": "master",
+   "stars": 26,
+   "forks": 11,
+   "open_issues": 0,
+   "size_kb": 17,
+   "archived": false,
+   "fork": false,
+   "created": "2015-10-12T18:40:01Z",
+   "pushed": "2016-10-16T17:34:23Z",
+   "homepage": "http://www.dice.com",
+   "topics": [
+    "conceptual-search",
+    "dice",
+    "information-retrieval",
+    "lucene",
+    "semantic-search",
+    "solr",
+    "solr-plugin",
+    "synonym-files"
+   ]
+  },
+  "files": 6,
+  "top": [
+   "(root) (6)"
+  ],
+  "second": {},
+  "extensions": [
+   ".xml (3)",
+   ".md (2)",
+   ".txt (1)"
+  ],
+  "root_files": [
+   "LICENSE.md",
+   "README.md",
+   "job_titles.txt",
+   "solrconfig_snippets.xml",
+   "top_n_field_type.xml",
+   "vector_field_type.xml"
+  ],
+  "signals": {}
+ },
+ "thinktecture-labs/semantic-kernel-semanticsearch": {
+  "repo": "thinktecture-labs/semantic-kernel-semanticsearch",
+  "meta": {
+   "full_name": "thinktecture-labs/semantic-kernel-semanticsearch",
+   "description": "Example how to implement a question & answer flow using semantic search with OpenAI - by using C# & Semantic Kernel",
+   "language": "C#",
+   "spdx": null,
+   "default_branch": "main",
+   "stars": 27,
+   "forks": 4,
+   "open_issues": 0,
+   "size_kb": 313,
+   "archived": false,
+   "fork": false,
+   "created": "2023-04-21T12:14:13Z",
+   "pushed": "2024-05-06T11:26:06Z",
+   "homepage": "",
+   "topics": [
+    "dotnet",
+    "embeddings",
+    "generative-ai",
+    "llms",
+    "openai",
+    "semantic-kernel",
+    "semantic-search"
+   ]
+  },
+  "files": 13,
+  "top": [
+   "src (5)",
+   "(root) (3)",
+   ".vscode (3)",
+   ".vs (2)"
+  ],
+  "second": {
+   "src": [
+    "SkSemanticSearch (5)"
+   ],
+   ".vs": [
+    "SkSemanticSearch (2)"
+   ]
+  },
+  "extensions": [
+   ".json (5)",
+   ".xml (1)",
+   ".md (1)",
+   ".sln (1)",
+   ".cs (1)",
+   ".csproj (1)",
+   ".db (1)",
+   ".txt (1)"
+  ],
+  "root_files": [
+   ".gitignore",
+   "README.md",
+   "SkSemanticSearch.sln"
+  ],
+  "signals": {}
+ },
+ "polkadot-java/api": {
+  "repo": "polkadot-java/api",
+  "meta": {
+   "full_name": "polkadot-java/api",
+   "description": "Java APIs around Polkadot and any Substrate-based chain RPC calls. It is dynamically generated based on what the Substrate runtime provides in terms of metadata.Full documentation & examples available.",
+   "language": "Java",
+   "spdx": "Apache-2.0",
+   "default_branch": "master",
+   "stars": 64,
+   "forks": 28,
+   "open_issues": 9,
+   "size_kb": 22897,
+   "archived": false,
+   "fork": false,
+   "created": "2019-02-26T12:19:59Z",
+   "pushed": "2021-09-08T10:21:55Z",
+   "homepage": "https://polkadot-java.github.io/",
+   "topics": []
+  },
+  "files": 1190,
+  "top": [
+   "doc (606)",
+   "packages (276)",
+   "examples_runnable (239)",
+   "examples (29)",
+   "docfiles (21)",
+   "sr25519 (15)",
+   "(root) (4)"
+  ],
+  "second": {
+   "doc": [
+    "org (566)",
+    "docfiles (21)"
+   ],
+   "packages": [
+    "src (266)",
+    "data (4)",
+    "libs (1)"
+   ],
+   "examples_runnable": [
+    "20190616 (62)",
+    "20190601 (53)",
+    "20190525 (48)",
+    "20190518 (44)",
+    "20190511 (32)"
+   ],
+   "examples": [
+    "src (22)",
+    "libs (2)"
+   ],
+   "docfiles": [
+    "examples (20)"
+   ],
+   "sr25519": [
+    "cpp (6)",
+    "java (4)",
+    "libs (3)"
+   ]
+  },
+  "extensions": [
+   ".html (620)",
+   ".java (280)",
+   ".jar (185)",
+   ".sh (51)",
+   ".md (11)",
+   ".xml (7)",
+   ".wasm (6)",
+   ".dylib (5)",
+   ".gradle (4)",
+   ".h (3)"
+  ],
+  "root_files": [
+   ".gitignore",
+   "LICENSE",
+   "README.md",
+   "gendoc.sh"
+  ],
+  "signals": {
+   "docs": {
+    "n": 606,
+    "sample": [
+     "doc/allclasses-frame.html",
+     "doc/allclasses-noframe.html",
+     "doc/classref.txt",
+     "doc/constant-values.html",
+     "doc/deprecated-list.html",
+     "doc/docfiles/examples/promise/01_simple_connect/index.html",
+     "doc/docfiles/examples/promise/02_listen_to_blocks/index.html",
+     "doc/docfiles/examples/promise/03_listen_to_balance_change/index.html",
+     "doc/docfiles/examples/promise/04_unsubscribe/index.html",
+     "doc/docfiles/examples/promise/05_read_storage/index.html"
+    ]
+   },
+   "examples": {
+    "n": 365,
+    "sample": [
+     "doc/docfiles/examples/promise/01_simple_connect/index.html",
+     "doc/docfiles/examples/promise/02_listen_to_blocks/index.html",
+     "doc/docfiles/examples/promise/03_listen_to_balance_change/index.html",
+     "doc/docfiles/examples/promise/04_unsubscribe/index.html",
+     "doc/docfiles/examples/promise/05_read_storage/index.html",
+     "doc/docfiles/examples/promise/06_make_transfer/index.html",
+     "doc/docfiles/examples/promise/08_system_events/index.html",
+     "doc/docfiles/examples/promise/09_transfer_events/index.html",
+     "doc/docfiles/examples/promise/10_upgrade_chain/index.html",
+     "doc/docfiles/examples/promise/index.html"
+    ]
+   },
+   "tests": {
+    "n": 29,
+    "sample": [
+     "doc/org/polkadot/example/TestingPairs.html",
+     "doc/org/polkadot/types/type/AttestedCandidate.AvailabilityVote.html",
+     "doc/org/polkadot/types/type/AttestedCandidate.BalanceUpload.html",
+     "doc/org/polkadot/types/type/AttestedCandidate.CandidateReceipt.html",
+     "doc/org/polkadot/types/type/AttestedCandidate.CandidateSignature.html",
+     "doc/org/polkadot/types/type/AttestedCandidate.EgressQueueRoot.html",
+     "doc/org/polkadot/types/type/AttestedCandidate.ExplicitCandidateSignature.html",
+     "doc/org/polkadot/types/type/AttestedCandidate.HeadData.html",
+     "doc/org/polkadot/types/type/AttestedCandidate.ValidityAttestation.html",
+     "doc/org/polkadot/types/type/AttestedCandidate.ValidityVote.html"
+    ]
+   },
+   "fixtures": {
+    "n": 6,
+    "sample": [
+     "examples/libs/polkadot-java-1.0-SNAPSHOT.jar",
+     "examples_runnable/20190511/lib/polkadot-java-1.0-SNAPSHOT.jar",
+     "examples_runnable/20190518/lib/polkadot-java-1.0-SNAPSHOT.jar",
+     "examples_runnable/20190525/lib/polkadot-java-1.0-SNAPSHOT.jar",
+     "examples_runnable/20190601/lib/polkadot-java-1.0-SNAPSHOT.jar",
+     "examples_runnable/20190616/lib/polkadot-java-1.0-SNAPSHOT.jar"
+    ]
+   }
+  }
+ },
+ "guillaumegenthial/sequence_tagging": {
+  "repo": "guillaumegenthial/sequence_tagging",
+  "meta": {
+   "full_name": "guillaumegenthial/sequence_tagging",
+   "description": "Named Entity Recognition (LSTM + CRF) - Tensorflow",
+   "language": "Python",
+   "spdx": "Apache-2.0",
+   "default_branch": "master",
+   "stars": 1952,
+   "forks": 696,
+   "open_issues": 22,
+   "size_kb": 56,
+   "archived": false,
+   "fork": false,
+   "created": "2017-03-29T15:53:29Z",
+   "pushed": "2020-10-16T09:18:22Z",
+   "homepage": "https://guillaumegenthial.github.io/sequence-tagging-with-tensorflow.html",
+   "topics": [
+    "bi-lstm",
+    "characters-embeddings",
+    "conditional-random-fields",
+    "crf",
+    "glove",
+    "named-entity-recognition",
+    "ner",
+    "state-of-art",
+    "tensorflow"
+   ]
+  },
+  "files": 15,
+  "top": [
+   "(root) (8)",
+   "model (6)",
+   "data (1)"
+  ],
+  "second": {},
+  "extensions": [
+   ".py (9)",
+   ".txt (3)",
+   ".md (1)"
+  ],
+  "root_files": [
+   ".gitignore",
+   "LICENSE.txt",
+   "README.md",
+   "build_data.py",
+   "evaluate.py",
+   "makefile",
+   "requirements.txt",
+   "train.py"
+  ],
+  "signals": {
+   "tests": {
+    "n": 1,
+    "sample": [
+     "data/test.txt"
+    ]
+   }
+  }
+ },
+ "msgi/nlp-journey": {
+  "repo": "msgi/nlp-journey",
+  "meta": {
+   "full_name": "msgi/nlp-journey",
+   "description": "Documents, papers and codes related to  Natural Language Processing, including Topic Model, Word Embedding, Named Entity Recognition, Text Classificatin, Text Generation, Text Similarity, Machine Translation)，etc. ",
+   "language": "Python",
+   "spdx": "Apache-2.0",
+   "default_branch": "master",
+   "stars": 1629,
+   "forks": 375,
+   "open_issues": 7,
+   "size_kb": 157,
+   "archived": false,
+   "fork": false,
+   "created": "2019-04-22T12:27:35Z",
+   "pushed": "2026-02-11T17:42:41Z",
+   "homepage": "https://github.com/msgi/nlp-journey",
+   "topics": [
+    "deep-learning",
+    "paper"
+   ]
+  },
+  "files": 14,
+  "top": [
+   "llm-chat (8)",
+   "(root) (3)",
+   "llm-tutorial (3)"
+  ],
+  "second": {
+   "llm-chat": [
+    "imgs (1)"
+   ],
+   "llm-tutorial": [
+    "activations (1)",
+    "normalizations (1)"
+   ]
+  },
+  "extensions": [
+   ".py (7)",
+   ".md (3)",
+   ".png (1)",
+   ".txt (1)"
+  ],
+  "root_files": [
+   ".gitignore",
+   "LICENSE",
+   "README.md"
+  ],
+  "signals": {
+   "examples": {
+    "n": 3,
+    "sample": [
+     "llm-tutorial/README.md",
+     "llm-tutorial/activations/activations.py",
+     "llm-tutorial/normalizations/layer_norm.py"
+    ]
+   }
+  }
+ },
+ "fighting41love/funNLP": {
+  "repo": "fighting41love/funNLP",
+  "meta": {
+   "full_name": "fighting41love/funNLP",
+   "description": "中英文敏感词、语言检测、中外手机/电话归属地/运营商查询、名字推断性别、手机号抽取、身份证抽取、邮箱抽取、中日文人名库、中文缩写库、拆字词典、词汇情感值、停用词、反动词表、暴恐词表、繁简体转换、英文模拟中文发音、汪峰歌词生成器、职业名称词库、同义词库、反义词库、否定词库、汽车品牌词库、汽车零件词库、连续英文切割、各种中文词向量、公司名字大全、古诗词库、IT词库、财经词库、成语词库、地名词库、历史名人词库、诗词词库、医学词库、饮食词库、法律词库、汽车词库、动物词库、中文聊天语料、中文谣言数据、百度中文问答数据集、句子相似度匹配算法集合、bert资源、文本生成&摘要相关工具、cocoNLP信息抽取工具、国内电话号码正则匹配、清华大学XLORE:中英文跨语言百科知识图谱、清华大学人工智能技术系列报告、自然语言生成、NLU太难了系列、自动对联数据及机器人、用户名黑名单列表、罪名法务名词及分类模型、微信公众号语料、cs224n深度学习自然语言处理课程、中文手写汉字识别、中文自然语言处理 语料/数据集、变量命名神器、分词语料库+代码、任务型对话英文数据集、ASR 语音数据集 + 基于深度学习的中文语音识别系统、笑声检测器、Microsoft多语言数字/单位/如日期时间识别包、中华新华字典数据库及api(包括常用歇后语、成语、词语和汉字)、文档图谱自动生成、SpaCy 中文模型、Common Voice语音识别数据集新版、神经网络关系抽取、基于bert的命名实体识别、关键词(Keyphrase)抽取包pke、基于医疗领域知识图谱的问答系统、基于依存句法与语义角色标注的事件三元组抽取、依存句法分析4万句高质量标注数据、cnocr：用来做中文OCR的Python3包、中文人物关系知识图谱项目、中文nlp竞赛项目及代码汇总、中文字符数据、speech-aligner: 从“人声语音”及其“语言文本”产生音素级别时间对齐标注的工具、AmpliGraph: 知识图谱表示学习(Python)库：知识图谱概念链接预测、Scattertext 文本可视化(python)、语言/知识表示工具：BERT & ERNIE、中文对比英文自然语言处理NLP的区别综述、Synonyms中文近义词工具包、HarvestText领域自适应文本挖掘工具（新词发现-情感分析-实体链接等）、word2word：(Python)方便易用的多语言词-词对集：62种语言/3,564个多语言对、语音识别语料生成工具：从具有音频/字幕的在线视频创建自动语音识别(ASR)语料库、构建医疗实体识别的模型（包含词典和语料标注）、单文档非监督的关键词抽取、Kashgari中使用gpt-2语言模型、开源的金融投资数据提取工具、文本自动摘要库TextTeaser: 仅支持英文、人民日报语料处理工具集、一些关于自然语言的基本模型、基于14W歌曲知识库的问答尝试--功能包括歌词接龙and已知歌词找歌曲以及歌曲歌手歌词三角关系的问答、基于Siamese bilstm模型的相似句子判定模型并提供训练数据集和测试数据集、用Transformer编解码模型实现的根据Hacker News文章标题自动生成评论、用BERT进行序列标记和文本分类的模板代码、LitBank：NLP数据集——支持自然语言处理和计算人文学科任务的100部带标记英文小说语料、百度开源的基准信息抽取系统、虚假新闻数据集、Facebook: LAMA语言模型分析，提供Transformer-XL/BERT/ELMo/GPT预训练语言模型的统一访问接口、CommonsenseQA：面向常识的英文QA挑战、中文知识图谱资料、数据及工具、各大公司内部里大牛分享的技术文档 PDF 或者 PPT、自然语言生成SQL语句（英文）、中文NLP数据增强（EDA）工具、英文NLP数据增强工具 、基于医药知识图谱的智能问答系统、京东商品知识图谱、基于mongodb存储的军事领域知识图谱问答项目、基于远监督的中文关系抽取、语音情感分析、中文ULMFiT-情感分析-文本分类-语料及模型、一个拍照做题程序、世界各国大规模人名库、一个利用有趣中文语料库 qingyun 训练出来的中文聊天机器人、中文聊天机器人seqGAN、省市区镇行政区划数据带拼音标注、教育行业新闻语料库包含自动文摘功能、开放了对话机器人-知识图谱-语义理解-自然语言处理工具及数据、中文知识图谱：基于百度百科中文页面-抽取三元组信息-构建中文知识图谱、masr: 中文语音识别-提供预训练模型-高识别率、Python音频数据增广库、中文全词覆盖BERT及两份阅读理解数据、ConvLab：开源多域端到端对话系统平台、中文自然语言处理数据集、基于最新版本rasa搭建的对话系统、基于TensorFlow和BERT的管道式实体及关系抽取、一个小型的证券知识图谱/知识库、复盘所有NLP比赛的TOP方案、OpenCLaP：多领域开源中文预训练语言模型仓库、UER：基于不同语料+编码器+目标任务的中文预训练模型仓库、中文自然语言处理向量合集、基于金融-司法领域(兼有闲聊性质)的聊天机器人、g2pC：基于上下文的汉语读音自动标记模块、Zincbase 知识图谱构建工具包、诗歌质量评价/细粒度情感诗歌语料库、快速转化「中文数字」和「阿拉伯数字」、百度知道问答语料库、基于知识图谱的问答系统、jieba_fast 加速版的jieba、正则表达式教程、中文阅读理解数据集、基于BERT等最新语言模型的抽取式摘要提取、Python利用深度学习进行文本摘要的综合指南、知识图谱深度学习相关资料整理、维基大规模平行文本语料、StanfordNLP 0.2.0：纯Python版自然语言处理包、NeuralNLP-NeuralClassifier：腾讯开源深度学习文本分类工具、端到端的封闭域对话系统、中文命名实体识别：NeuroNER vs. BertNER、新闻事件线索抽取、2019年百度的三元组抽取比赛：“科学空间队”源码、基于依存句法的开放域文本知识三元组抽取和知识库构建、中文的GPT2训练代码、ML-NLP - 机器学习(Machine Learning)NLP面试中常考到的知识点和代码实现、nlp4han:中文自然语言处理工具集(断句/分词/词性标注/组块/句法分析/语义分析/NER/N元语法/HMM/代词消解/情感分析/拼写检查、XLM：Facebook的跨语言预训练语言模型、用基于BERT的微调和特征提取方法来进行知识图谱百度百科人物词条属性抽取、中文自然语言处理相关的开放任务-数据集-当前最佳结果、CoupletAI - 基于CNN+Bi-LSTM+Attention 的自动对对联系统、抽象知识图谱、MiningZhiDaoQACorpus - 580万百度知道问答数据挖掘项目、brat rapid annotation tool: 序列标注工具、大规模中文知识图谱数据：1.4亿实体、数据增强在机器翻译及其他nlp任务中的应用及效果、allennlp阅读理解:支持多种数据和模型、PDF表格数据提取工具 、 Graphbrain：AI开源软件库和科研工具，目的是促进自动意义提取和文本理解以及知识的探索和推断、简历自动筛选系统、基于命名实体识别的简历自动摘要、中文语言理解测评基准，包括代表性的数据集&基准模型&语料库&排行榜、树洞 OCR 文字识别 、从包含表格的扫描图片中识别表格和文字、语声迁移、Python口语自然语言处理工具集(英文)、 similarity：相似度计算工具包，java编写、海量中文预训练ALBERT模型 、Transformers 2.0 、基于大规模音频数据集Audioset的音频增强 、Poplar：网页版自然语言标注工具、图片文字去除，可用于漫画翻译 、186种语言的数字叫法库、Amazon发布基于知识的人-人开放领域对话数据集 、中文文本纠错模块代码、繁简体转换 、 Python实现的多种文本可读性评价指标、类似于人名/地名/组织机构名的命名体识别数据集 、东南大学《知识图谱》研究生课程(资料)、. 英文拼写检查库 、 wwsearch是企业微信后台自研的全文检索引擎、CHAMELEON：深度学习新闻推荐系统元架构 、 8篇论文梳理BERT相关模型进展与反思、DocSearch：免费文档搜索引擎、 LIDA：轻量交互式对话标注工具 、aili - the fastest in-memory index in the East 东半球最快并发索引 、知识图谱车音工作项目、自然语言生成资源大全 、中日韩分词库mecab的Python接口库、中文文本摘要/关键词提取、汉字字符特征提取器 (featurizer)，提取汉字的特征（发音特征、字形特征）用做深度学习的特征、中文生成任务基准测评 、中文缩写数据集、中文任务基准测评 - 代表性的数据集-基准(预训练)模型-语料库-baseline-工具包-排行榜、PySS3：面向可解释AI的SS3文本分类器机器可视化工具 、中文NLP数据集列表、COPE - 格律诗编辑程序、doccano：基于网页的开源协同多语言文本标注工具 、PreNLP：自然语言预处理库、简单的简历解析器，用来从简历中提取关键信息、用于中文闲聊的GPT2模型：GPT2-chitchat、基于检索聊天机器人多轮响应选择相关资源列表(Leaderboards、Datasets、Papers)、(Colab)抽象文本摘要实现集锦(教程 、词语拼音数据、高效模糊搜索工具、NLP数据增广资源集、微软对话机器人框架 、 GitHub Typo Corpus：大规模GitHub多语言拼写错误/语法错误数据集、TextCluster：短文本聚类预处理模块 Short text cluster、面向语音识别的中文文本规范化、BLINK：最先进的实体链接库、BertPunc：基于BERT的最先进标点修复模型、Tokenizer：快速、可定制的文本词条化库、中文语言理解测评基准，包括代表性的数据集、基准(预训练)模型、语料库、排行榜、spaCy 医学文本挖掘与信息提取 、 NLP任务示例项目代码集、 python拼写检查库、chatbot-list - 行业内关于智能客服、聊天机器人的应用和架构、算法分享和介绍、语音质量评价指标(MOSNet, BSSEval, STOI, PESQ, SRMR)、 用138GB语料训练的法文RoBERTa预训练语言模型 、BERT-NER-Pytorch：三种不同模式的BERT中文NER实验、无道词典 - 有道词典的命令行版本，支持英汉互查和在线查询、2019年NLP亮点回顾、 Chinese medical dialogue data 中文医疗对话数据集 、最好的汉字数字(中文数字)-阿拉伯数字转换工具、 基于百科知识库的中文词语多词义/义项获取与特定句子词语语义消歧、awesome-nlp-sentiment-analysis - 情感分析、情绪原因识别、评价对象和评价词抽取、LineFlow：面向所有深度学习框架的NLP数据高效加载器、中文医学NLP公开资源整理 、MedQuAD：(英文)医学问答数据集、将自然语言数字串解析转换为整数和浮点数、Transfer Learning in Natural Language Processing (NLP) 、面向语音识别的中文/英文发音辞典、Tokenizers：注重性能与多功能性的最先进分词器、CLUENER 细粒度命名实体识别 Fine Grained Named Entity Recognition、 基于BERT的中文命名实体识别、中文谣言数据库、NLP数据集/基准任务大列表、nlp相关的一些论文及代码, 包括主题模型、词向量(Word Embedding)、命名实体识别(NER)、文本分类(Text Classificatin)、文本生成(Text Generation)、文本相似性(Text Similarity)计算等，涉及到各种与nlp相关的算法，基于keras和tensorflow 、Python文本挖掘/NLP实战示例、 Blackstone：面向非结构化法律文本的spaCy pipeline和NLP模型通过同义词替换实现文本“变脸” 、中文 预训练 ELECTREA 模型: 基于对抗学习 pretrain Chinese Model 、albert-chinese-ner - 用预训练语言模型ALBERT做中文NER 、基于GPT2的特定主题文本生成/文本增广、开源预训练语言模型合集、多语言句向量包、编码、标记和实现：一种可控高效的文本生成方法、 英文脏话大列表 、attnvis：GPT2、BERT等transformer语言模型注意力交互可视化、CoVoST：Facebook发布的多语种语音-文本翻译语料库，包括11种语言(法语、德语、荷兰语、俄语、西班牙语、意大利语、土耳其语、波斯语、瑞典语、蒙古语和中文)的语音、文字转录及英文译文、Jiagu自然语言处理工具 - 以BiLSTM等模型为基础，提供知识图谱关系抽取 中文分词 词性标注 命名实体识别 情感分析 新词发现 关键词 文本摘要 文本聚类等功能、用unet实现对文档表格的自动检测，表格重建、NLP事件提取文献资源列表 、 金融领域自然语言处理研究资源大列表、CLUEDatasetSearch - 中英文NLP数据集：搜索所有中文NLP数据集，附常用英文NLP数据集 、medical_NER - 中文医学知识图谱命名实体识别 、(哈佛)讲因果推理的免费书、知识图谱相关学习资料/数据集/工具资源大列表、Forte：灵活强大的自然语言处理pipeline工具集 、Python字符串相似性算法库、PyLaia：面向手写文档分析的深度学习工具包、TextFooler：针对文本分类/推理的对抗文本生成模块、Haystack：灵活、强大的可扩展问答(QA)框架、中文关键短语抽取工具",
+   "language": "Python",
+   "spdx": null,
+   "default_branch": "master",
+   "stars": 82862,
+   "forks": 15279,
+   "open_issues": 53,
+   "size_kb": 174188,
+   "archived": false,
+   "fork": false,
+   "created": "2018-08-21T11:20:39Z",
+   "pushed": "2024-05-10T07:38:24Z",
+   "homepage": "https://zhuanlan.zhihu.com/yangyangfuture",
+   "topics": []
+  },
+  "files": 111,
+  "top": [
+   "\"data (107)",
+   "data (2)",
+   ".github (1)",
+   "(root) (1)"
+  ],
+  "second": {
+   "\"data": [
+    "\\345\\217\\244\\350\\257\\227\\350\\257\\215\\345\\272\\223 (31)",
+    "\\344\\270\\255\\346\\226\\207\\345\\210\\206\\350\\257\\215\\350\\257\\215\\345\\272\\223\\346\\225\\264\\347\\220\\206 (22)",
+    "\\344\\270\\255\\350\\213\\261\\346\\227\\245\\346\\226\\207\\345\\220\\215\\345\\255\\227\\345\\272\\223 (11)",
+    ".logo\\345\\233\\276\\347\\211\\207 (8)",
+    "\\345\\201\\234\\347\\224\\250\\350\\257\\215 (4)",
+    "\\344\\270\\255\\346\\226\\207\\347\\274\\251\\345\\206\\231\\345\\272\\223 (3)",
+    "\\345\\205\\254\\345\\217\\270\\345\\220\\215\\345\\255\\227\\350\\257\\215\\345\\272\\223 (3)",
+    "\\345\\220\\214\\344\\271\\211\\350\\257\\215\\345\\272\\223\\343\\200\\201\\345\\217\\215\\344\\271\\211\\350\\257\\215\\345\\272\\223\\343\\200\\201\\345\\220\\246\\345\\256\\232\\350\\257\\215\\345\\272\\223 (3)",
+    "\\346\\261\\275\\350\\275\\246\\345\\223\\201\\347\\211\\214\\343\\200\\201\\351\\233\\266\\344\\273\\266\\350\\257\\215\\345\\272\\223 (3)",
+    "\\344\\270\\255\\346\\226\\207\\350\\260\\243\\350\\250\\200\\346\\225\\260\\346\\215\\256 (2)"
+   ],
+   "data": [
+    "NLP_BOOK (1)",
+    "paper (1)"
+   ]
+  },
+  "extensions": [
+   ".txt\" (83)",
+   ".jpg\" (4)",
+   ".svg\" (4)",
+   ".xlsx\" (4)",
+   ".md\" (2)",
+   ".pdf (2)",
+   ".rar\" (2)",
+   ".yml (1)",
+   ".md (1)",
+   ".py\" (1)"
+  ],
+  "root_files": [
+   "README.md"
+  ],
+  "signals": {
+   "tests": {
+    "n": 1,
+    "sample": [
+     "\"data/\\344\\270\\255\\346\\226\\207\\347\\274\\251\\345\\206\\231\\345\\272\\223/test_set.txt\""
+    ]
+   },
+   "data": {
+    "n": 13,
+    "sample": [
+     "\"data/\\344\\270\\255\\350\\213\\261\\346\\227\\245\\346\\226\\207\\345\\220\\215\\345\\255\\227\\345\\272\\223/Chinese_Names_Corpus/Ancient_Names_Corpus\\357\\274\\21025W\\357\\274\\211.txt\"",
+     "\"data/\\344\\270\\255\\350\\213\\261\\346\\227\\245\\346\\226\\207\\345\\220\\215\\345\\255\\227\\345\\272\\223/Chinese_Names_Corpus/Chinese_Family_Name\\357\\274\\2101k\\357\\274\\211.xlsx\"",
+     "\"data/\\344\\270\\255\\350\\213\\261\\346\\227\\245\\346\\226\\207\\345\\220\\215\\345\\255\\227\\345\\272\\223/Chinese_Names_Corpus/Chinese_Names_Corpus_Gender\\357\\274\\210120W\\357\\274\\211.txt\"",
+     "\"data/\\344\\270\\255\\350\\213\\261\\346\\227\\245\\346\\226\\207\\345\\220\\215\\345\\255\\227\\345\\272\\223/Chinese_Names_Corpus/Chinese_Names_Corpus\\357\\274\\210120W\\357\\274\\211.txt\"",
+     "\"data/\\344\\270\\255\\350\\213\\261\\346\\227\\245\\346\\226\\207\\345\\220\\215\\345\\255\\227\\345\\272\\223/Chinese_Names_Corpus/Chinese_Relationship\\357\\274\\2104.8k\\357\\274\\211.xlsx\"",
+     "\"data/\\344\\270\\255\\350\\213\\261\\346\\227\\245\\346\\226\\207\\345\\220\\215\\345\\255\\227\\345\\272\\223/English_Names_Corpus/English_Cn_Name_Corpus_Gender\\357\\274\\21048W\\357\\274\\211.txt\"",
+     "\"data/\\344\\270\\255\\350\\213\\261\\346\\227\\245\\346\\226\\207\\345\\220\\215\\345\\255\\227\\345\\272\\223/English_Names_Corpus/English_Cn_Name_Corpus\\357\\274\\21048W\\357\\274\\211.txt\"",
+     "\"data/\\344\\270\\255\\350\\213\\261\\346\\227\\245\\346\\226\\207\\345\\220\\215\\345\\255\\227\\345\\272\\223/English_Names_Corpus/English_Names_Corpus\\357\\274\\2102W\\357\\274\\211.txt\"",
+     "\"data/\\344\\270\\255\\350\\213\\261\\346\\227\\245\\346\\226\\207\\345\\220\\215\\345\\255\\227\\345\\272\\223/Japanese_Names_Corpus/Japanese_Names_Corpus\\357\\274\\21018W\\357\\274\\211.txt\"",
+     "\"data/\\344\\270\\255\\350\\213\\261\\346\\227\\245\\346\\226\\207\\345\\220\\215\\345\\255\\227\\345\\272\\223/Japanese_Names_Corpus/Japanese_Names_Corpus\\357\\274\\2101W\\357\\274\\211.xlsx\""
+    ]
+   }
+  }
+ },
+ "JackieZhangdx/WeakSupervisedSegmentationList": {
+  "repo": "JackieZhangdx/WeakSupervisedSegmentationList",
+  "meta": {
+   "full_name": "JackieZhangdx/WeakSupervisedSegmentationList",
+   "description": "This repository contains lists of state-or-art weakly supervised semantic segmentation works",
+   "language": null,
+   "spdx": null,
+   "default_branch": "master",
+   "stars": 598,
+   "forks": 86,
+   "open_issues": 6,
+   "size_kb": 1172,
+   "archived": false,
+   "fork": false,
+   "created": "2018-03-03T03:52:45Z",
+   "pushed": "2019-04-29T02:23:54Z",
+   "homepage": "",
+   "topics": []
+  },
+  "files": 7,
+  "top": [
+   "img (5)",
+   "(root) (2)"
+  ],
+  "second": {},
+  "extensions": [
+   ".png (5)",
+   ".md (2)"
+  ],
+  "root_files": [
+   "README.md",
+   "unsup.md"
+  ],
+  "signals": {
+   "data": {
+    "n": 1,
+    "sample": [
+     "img/dataset.PNG"
+    ]
+   }
+  }
+ },
+ "ardamavi/Unsupervised-Classification-with-Autoencoder": {
+  "repo": "ardamavi/Unsupervised-Classification-with-Autoencoder",
+  "meta": {
+   "full_name": "ardamavi/Unsupervised-Classification-with-Autoencoder",
+   "description": "Using Autoencoders for classification as unsupervised machine learning algorithms with Deep Learning.",
+   "language": "Jupyter Notebook",
+   "spdx": "Apache-2.0",
+   "default_branch": "master",
+   "stars": 48,
+   "forks": 15,
+   "open_issues": 1,
+   "size_kb": 32037,
+   "archived": false,
+   "fork": false,
+   "created": "2017-11-17T19:01:19Z",
+   "pushed": "2018-08-02T06:43:18Z",
+   "homepage": "",
+   "topics": [
+    "autoencoder",
+    "deep-learning",
+    "machine-learning"
+   ]
+  },
+  "files": 1405,
+  "top": [
+   "Examples (1401)",
+   "(root) (4)"
+  ],
+  "second": {
+   "Examples": [
+    "Dog-Cat (1401)"
+   ]
+  },
+  "extensions": [
+   ".jpg (1399)",
+   ".ipynb (2)",
+   ".py (1)",
+   ".md (1)"
+  ],
+  "root_files": [
+   ".gitignore",
+   "LICENSE",
+   "README.md",
+   "Unsupervised Classification With Autoencoder.ipynb"
+  ],
+  "signals": {
+   "examples": {
+    "n": 1401,
+    "sample": [
+     "Examples/Dog-Cat/Data/Train_Data/cat/cat.0.jpg",
+     "Examples/Dog-Cat/Data/Train_Data/cat/cat.1.jpg",
+     "Examples/Dog-Cat/Data/Train_Data/cat/cat.10.jpg",
+     "Examples/Dog-Cat/Data/Train_Data/cat/cat.100.jpg",
+     "Examples/Dog-Cat/Data/Train_Data/cat/cat.1000.jpg",
+     "Examples/Dog-Cat/Data/Train_Data/cat/cat.1001.jpg",
+     "Examples/Dog-Cat/Data/Train_Data/cat/cat.1002.jpg",
+     "Examples/Dog-Cat/Data/Train_Data/cat/cat.1003.jpg",
+     "Examples/Dog-Cat/Data/Train_Data/cat/cat.1004.jpg",
+     "Examples/Dog-Cat/Data/Train_Data/cat/cat.1005.jpg"
+    ]
+   },
+   "notebooks": {
+    "n": 2,
+    "sample": [
+     "Examples/Dog-Cat/Dog-Cat Classification With Autoencoder.ipynb",
+     "Unsupervised Classification With Autoencoder.ipynb"
+    ]
+   },
+   "data": {
+    "n": 1,
+    "sample": [
+     "Examples/Dog-Cat/get_dataset.py"
+    ]
+   }
+  }
+ },
+ "knodle/knodle": {
+  "repo": "knodle/knodle",
+  "meta": {
+   "full_name": "knodle/knodle",
+   "description": "A PyTorch-based open-source framework that provides methods for improving the weakly annotated data and allows researchers to efficiently develop and compare their own methods. ",
+   "language": "Python",
+   "spdx": "Apache-2.0",
+   "default_branch": "develop",
+   "stars": 108,
+   "forks": 15,
+   "open_issues": 47,
+   "size_kb": 23734,
+   "archived": false,
+   "fork": false,
+   "created": "2020-11-04T16:03:50Z",
+   "pushed": "2024-09-10T13:53:28Z",
+   "homepage": "http://knodle.cc",
+   "topics": [
+    "ai",
+    "classification",
+    "denoising-methods",
+    "knodle",
+    "machine-learning",
+    "natural-language-procressing",
+    "python",
+    "pytorch",
+    "relation-extraction",
+    "snorkel",
+    "weak-supervision",
+    "weakly-supervised-learning"
+   ]
+  },
+  "files": 142,
+  "top": [
+   "knodle (51)",
+   "examples (47)",
+   "tests (23)",
+   "(root) (12)",
+   "img (5)",
+   ".github (4)"
+  ],
+  "second": {
+   "knodle": [
+    "trainer (30)",
+    "transformation (7)",
+    "evaluation (6)",
+    "model (5)",
+    "utils (1)"
+   ],
+   "examples": [
+    "data_preprocessing (30)",
+    "trainer (15)"
+   ],
+   "tests": [
+    "trainer (11)",
+    "transformation (7)",
+    "data (2)",
+    "evaluation (1)"
+   ],
+   ".github": [
+    "workflows (4)"
+   ]
+  },
+  "extensions": [
+   ".py (102)",
+   ".ipynb (11)",
+   ".txt (9)",
+   ".yml (4)",
+   ".png (4)",
+   ".md (2)",
+   ".jpg (2)",
+   ".yaml (1)",
+   ".in (1)",
+   ".toml (1)"
+  ],
+  "root_files": [
+   ".flake8",
+   ".gitignore",
+   ".pre-commit-config.yaml",
+   ".toml",
+   "LICENSE",
+   "MANIFEST.in",
+   "README.md",
+   "STYLE_GUIDE.md",
+   "pyproject.toml",
+   "requirements.txt",
+   "setup.py",
+   "update_version_from_tag.py"
+  ],
+  "signals": {
+   "examples": {
+    "n": 47,
+    "sample": [
+     "examples/__init__.py",
+     "examples/data_preprocessing/MIMIC_CXR_dataset/prepare_mimic_cxr.ipynb",
+     "examples/data_preprocessing/MIMIC_CXR_dataset/prepare_mimic_cxr.py",
+     "examples/data_preprocessing/MIMIC_CXR_dataset/requirements.txt",
+     "examples/data_preprocessing/MIMIC_III_dataset/mimic_overview.PNG",
+     "examples/data_preprocessing/MIMIC_III_dataset/prepare_MIMIC_III_data.ipynb",
+     "examples/data_preprocessing/MIMIC_III_dataset/requirements.txt",
+     "examples/data_preprocessing/__init__.py",
+     "examples/data_preprocessing/imdb_dataset/Prepare_weak_IMDB_data.ipynb",
+     "examples/data_preprocessing/imdb_dataset/__init__.py"
+    ]
+   },
+   "notebooks": {
+    "n": 11,
+    "sample": [
+     "examples/data_preprocessing/MIMIC_CXR_dataset/prepare_mimic_cxr.ipynb",
+     "examples/data_preprocessing/MIMIC_III_dataset/prepare_MIMIC_III_data.ipynb",
+     "examples/data_preprocessing/imdb_dataset/Prepare_weak_IMDB_data.ipynb",
+     "examples/data_preprocessing/police_killing_dataset/data_preprocessing_with_regex.ipynb",
+     "examples/data_preprocessing/police_killing_dataset/preprocessing_with_kb.ipynb",
+     "examples/data_preprocessing/tac_based_dataset/[WIP]_patterns_aka_lfs/Prepare_TAC_based_RE_dataset_with_patters_aka_lfs.ipynb",
+     "examples/data_preprocessing/tac_based_dataset/entity_pairs_aka_lfs/.ipynb_checkpoints/Prepare_TAC_based_RE_dataset-checkpoint.ipynb",
+     "examples/data_preprocessing/tac_based_dataset/entity_pairs_aka_lfs/Prepare_TAC_based_RE_dataset.ipynb",
+     "examples/data_preprocessing/wiennerisches_diarium_historical_dataset/data_preprocessing_sterbelisten_wiener_diarum.ipynb",
+     "examples/trainer/[WIP]_baseline/bert/bert.ipynb"
+    ]
+   },
+   "tests": {
+    "n": 24,
+    "sample": [
+     ".github/workflows/test_deploy.yml",
+     "tests/.coveragerc",
+     "tests/__init__.py",
+     "tests/data/__init__.py",
+     "tests/data/test_statistics.py",
+     "tests/evaluation/majority.py",
+     "tests/trainer/cleanlab/test_cl.py",
+     "tests/trainer/generic.py",
+     "tests/trainer/snorkel/test_utils.py",
+     "tests/trainer/test_auto_trainer.py"
+    ]
+   },
+   "data": {
+    "n": 28,
+    "sample": [
+     "examples/data_preprocessing/MIMIC_CXR_dataset/prepare_mimic_cxr.ipynb",
+     "examples/data_preprocessing/MIMIC_CXR_dataset/prepare_mimic_cxr.py",
+     "examples/data_preprocessing/MIMIC_CXR_dataset/requirements.txt",
+     "examples/data_preprocessing/MIMIC_III_dataset/mimic_overview.PNG",
+     "examples/data_preprocessing/MIMIC_III_dataset/prepare_MIMIC_III_data.ipynb",
+     "examples/data_preprocessing/MIMIC_III_dataset/requirements.txt",
+     "examples/data_preprocessing/imdb_dataset/Prepare_weak_IMDB_data.ipynb",
+     "examples/data_preprocessing/imdb_dataset/__init__.py",
+     "examples/data_preprocessing/imdb_dataset/prepare_weak_imdb_data.py",
+     "examples/data_preprocessing/imdb_dataset/requirements.txt"
+    ]
+   }
+  }
+ },
+ "aws-samples/amazon-comprehend-examples": {
+  "repo": "aws-samples/amazon-comprehend-examples",
+  "meta": {
+   "full_name": "aws-samples/amazon-comprehend-examples",
+   "description": "A sample set of notebooks demonstrating Amazon Comprehend capabilities.",
+   "language": "Jupyter Notebook",
+   "spdx": "MIT-0",
+   "default_branch": "master",
+   "stars": 47,
+   "forks": 33,
+   "open_issues": 4,
+   "size_kb": 12350,
+   "archived": false,
+   "fork": false,
+   "created": "2020-05-20T18:04:49Z",
+   "pushed": "2023-11-28T18:26:32Z",
+   "homepage": "",
+   "topics": []
+  },
+  "files": 69,
+  "top": [
+   "comprehend_groundtruth_integration (33)",
+   "building-custom-classifier (9)",
+   "amazon_comprehend_events_tutorial (8)",
+   "(root) (6)",
+   "s3_object_lambda_pii_protection_blog (5)",
+   "amazon_comprehend_moderation (3)",
+   "topic_wise_review_analysis (3)",
+   "building-custom-entity-recognizer-for-PDFs (2)"
+  ],
+  "second": {
+   "comprehend_groundtruth_integration": [
+    "src (32)"
+   ],
+   "building-custom-classifier": [
+    "sample-docs (7)",
+    "train-data (1)"
+   ],
+   "amazon_comprehend_events_tutorial": [
+    "notebooks (6)",
+    "data (1)"
+   ],
+   "s3_object_lambda_pii_protection_blog": [
+    "access-control (3)",
+    "redaction (2)"
+   ],
+   "building-custom-entity-recognizer-for-PDFs": [
+    "helperPackage (1)"
+   ]
+  },
+  "extensions": [
+   ".py (23)",
+   ".ipynb (8)",
+   ".pyc (8)",
+   ".md (6)",
+   ".txt (5)",
+   ".png (5)",
+   ".pdf (3)",
+   ".html (2)",
+   ".sh (2)",
+   ".yaml (2)"
+  ],
+  "root_files": [
+   ".gitignore",
+   ".gitmodules",
+   "CODE_OF_CONDUCT.md",
+   "CONTRIBUTING.md",
+   "LICENSE",
+   "README.md"
+  ],
+  "signals": {
+   "docs": {
+    "n": 7,
+    "sample": [
+     "building-custom-classifier/sample-docs/CMS1500.png",
+     "building-custom-classifier/sample-docs/discharge-summary.pdf",
+     "building-custom-classifier/sample-docs/doctors-notes.pdf",
+     "building-custom-classifier/sample-docs/drivers_license.png",
+     "building-custom-classifier/sample-docs/insurance_card.png",
+     "building-custom-classifier/sample-docs/insurance_invoice.png",
+     "building-custom-classifier/sample-docs/passport.pdf"
+    ]
+   },
+   "examples": {
+    "n": 8,
+    "sample": [
+     "amazon_comprehend_events_tutorial/README.md",
+     "amazon_comprehend_events_tutorial/data/sample_finance_dataset.txt",
+     "amazon_comprehend_events_tutorial/notebooks/compact_nx.html",
+     "amazon_comprehend_events_tutorial/notebooks/comprehend-2017-11-27.normal.json",
+     "amazon_comprehend_events_tutorial/notebooks/comprehend_events_finance_tutorial.ipynb",
+     "amazon_comprehend_events_tutorial/notebooks/events_graph.py",
+     "amazon_comprehend_events_tutorial/notebooks/nx.html",
+     "amazon_comprehend_events_tutorial/notebooks/requirements.txt"
+    ]
+   },
+   "notebooks": {
+    "n": 8,
+    "sample": [
+     "amazon_comprehend_events_tutorial/notebooks/comprehend_events_finance_tutorial.ipynb",
+     "amazon_comprehend_moderation/amazon_comprehend_chain.ipynb",
+     "amazon_comprehend_moderation/moderated_chat.ipynb",
+     "building-custom-classifier/BuildingCustomClassifier.ipynb",
+     "building-custom-entity-recognizer-for-PDFs/BuildingCustomEntityRecognizerForPDFs.ipynb",
+     "topic_wise_review_analysis/data_processing.ipynb",
+     "topic_wise_review_analysis/model_training.ipynb",
+     "topic_wise_review_analysis/topic_mapping_sentiment_generation.ipynb"
+    ]
+   },
+   "data": {
+    "n": 2,
+    "sample": [
+     "amazon_comprehend_events_tutorial/data/sample_finance_dataset.txt",
+     "building-custom-classifier/train-data/comprehend_train_data.csv"
+    ]
+   }
+  }
+ },
+ "awsdocs/amazon-comprehend-developer-guide": {
+  "repo": "awsdocs/amazon-comprehend-developer-guide",
+  "meta": {
+   "full_name": "awsdocs/amazon-comprehend-developer-guide",
+   "description": "The open source version of the Amazon Comprehend docs. You can submit feedback & requests for changes by submitting issues in this repo or by making proposed changes & submitting a pull request",
+   "language": null,
+   "spdx": "NOASSERTION",
+   "default_branch": "archived",
+   "stars": 21,
+   "forks": 25,
+   "open_issues": 0,
+   "size_kb": 841,
+   "archived": true,
+   "fork": false,
+   "created": "2017-12-08T18:53:22Z",
+   "pushed": "2023-06-15T20:30:43Z",
+   "homepage": null,
+   "topics": []
+  },
+  "files": 6,
+  "top": [
+   "(root) (5)",
+   ".github (1)"
+  ],
+  "second": {},
+  "extensions": [
+   ".md (3)"
+  ],
+  "root_files": [
+   "CONTRIBUTING.md",
+   "LICENSE",
+   "LICENSE-SAMPLECODE",
+   "LICENSE-SUMMARY",
+   "README.md"
+  ],
+  "signals": {}
+ },
+ "open-metadata/docs-v1-legacy": {
+  "repo": "open-metadata/docs-v1-legacy",
+  "meta": {
+   "full_name": "open-metadata/docs-v1-legacy",
+   "description": "OpenMetadata docs page source code ",
+   "language": "TypeScript",
+   "spdx": null,
+   "default_branch": "main",
+   "stars": 5,
+   "forks": 30,
+   "open_issues": 18,
+   "size_kb": 2225311,
+   "archived": true,
+   "fork": false,
+   "created": "2022-10-18T04:30:01Z",
+   "pushed": "2026-02-16T05:46:34Z",
+   "homepage": "https://docsv1.netlify.app",
+   "topics": [
+    "docs",
+    "openmetadata"
+   ]
+  },
+  "files": 10759,
+  "top": [
+   "content (5482)",
+   "public (4980)",
+   "components (137)",
+   "images (52)",
+   "markdoc (39)",
+   "(root) (16)",
+   "constants (11)",
+   "utils (11)",
+   "context (9)",
+   "pages (7)",
+   ".github (4)",
+   "enums (3)",
+   "lib (3)",
+   "scripts (2)"
+  ],
+  "second": {
+   "content": [
+    "v1.12.x-SNAPSHOT (1627)",
+    "v1.11.x (1626)",
+    "v1.10.x (1603)",
+    "partials (626)"
+   ],
+   "public": [
+    "images (4946)",
+    "algolia (3)",
+    "blogs (3)"
+   ],
+   "components": [
+    "common (44)",
+    "Steps (7)",
+    "APIInfoContainer (6)",
+    "CodePreview (6)",
+    "PageLayouts (6)",
+    "Roadmap (6)",
+    "ConnectorsInfo (5)",
+    "Search (5)",
+    "SideNav (5)",
+    "Dropdown (4)"
+   ],
+   "images": [
+    "icons (51)"
+   ],
+   "markdoc": [
+    "tags (32)",
+    "nodes (6)"
+   ],
+   "pages": [
+    "[version] (2)",
+    "api (2)"
+   ]
+  },
+  "extensions": [
+   ".md (5483)",
+   ".png (4373)",
+   ".webp (341)",
+   ".gif (218)",
+   ".tsx (91)",
+   ".ts (82)",
+   ".css (53)",
+   ".svg (52)",
+   ".jpg (36)",
+   ".yaml (4)"
+  ],
+  "root_files": [
+   ".babelrc",
+   ".dockerignore",
+   ".env.example",
+   ".gitignore",
+   ".nvmrc",
+   "Dockerfile",
+   "Makefile",
+   "README.md",
+   "next-env.d.ts",
+   "next.config.js",
+   "package.json",
+   "postcss.config.js",
+   "skip_links.txt",
+   "tailwind.config.js",
+   "tsconfig.json",
+   "yarn.lock"
+  ],
+  "signals": {
+   "docs": {
+    "n": 39,
+    "sample": [
+     "markdoc/functions.ts",
+     "markdoc/nodes/code.markdoc.ts",
+     "markdoc/nodes/fence.markdoc.ts",
+     "markdoc/nodes/heading.markdoc.ts",
+     "markdoc/nodes/index.ts",
+     "markdoc/nodes/link.markdoc.ts",
+     "markdoc/nodes/table/table.markdoc.ts",
+     "markdoc/tags/APIInfoContainer/apiDescription/apiDescription.markdoc.ts",
+     "markdoc/tags/APIInfoContainer/apiInfoContainer.markdoc.ts",
+     "markdoc/tags/APIInfoContainer/apiPageContainer.markdoc.ts"
+    ]
+   },
+   "examples": {
+    "n": 94,
+    "sample": [
+     ".env.example",
+     "content/v1.10.x/how-to-guides/data-governance/workflows/examples/index.md",
+     "content/v1.10.x/how-to-guides/data-governance/workflows/examples/set-tags-to-mlmodels-workflow.md",
+     "content/v1.10.x/how-to-guides/data-governance/workflows/examples/table-documentation-tiering-workflow.md",
+     "content/v1.10.x/how-to-guides/data-governance/workflows/examples/tag-approval-workflow.md",
+     "content/v1.11.x/how-to-guides/data-governance/workflows/examples/index.md",
+     "content/v1.11.x/how-to-guides/data-governance/workflows/examples/set-tags-to-mlmodels-workflow.md",
+     "content/v1.11.x/how-to-guides/data-governance/workflows/examples/table-documentation-tiering-workflow.md",
+     "content/v1.11.x/how-to-guides/data-governance/workflows/examples/tag-approval-workflow.md",
+     "content/v1.12.x-SNAPSHOT/how-to-guides/data-governance/workflows/examples/index.md"
+    ]
+   },
+   "tests": {
+    "n": 372,
+    "sample": [
+     "content/partials/v1.10/connectors/test-connection.md",
+     "content/partials/v1.10/releases/latest.md",
+     "content/partials/v1.11/connectors/test-connection.md",
+     "content/partials/v1.11/releases/latest.md",
+     "content/partials/v1.12/connectors/test-connection.md",
+     "content/partials/v1.12/releases/latest.md",
+     "content/v1.10.x/developers/contribute/build-code-and-run-tests/generate-typescript-types-from-json-schema.md",
+     "content/v1.10.x/developers/contribute/build-code-and-run-tests/index.md",
+     "content/v1.10.x/developers/contribute/build-code-and-run-tests/ingestion-framework.md",
+     "content/v1.10.x/developers/contribute/build-code-and-run-tests/openmetadata-ops.md"
+    ]
+   },
+   "fixtures": {
+    "n": 1627,
+    "sample": [
+     "content/v1.12.x-SNAPSHOT/api/java-sdk.md",
+     "content/v1.12.x-SNAPSHOT/api/python-sdk.md",
+     "content/v1.12.x-SNAPSHOT/applications/autopilot.md",
+     "content/v1.12.x-SNAPSHOT/applications/data-retention.md",
+     "content/v1.12.x-SNAPSHOT/applications/index.md",
+     "content/v1.12.x-SNAPSHOT/applications/metadata-exporter.md",
+     "content/v1.12.x-SNAPSHOT/applications/query-runner.md",
+     "content/v1.12.x-SNAPSHOT/applications/reverse-metadata.md",
+     "content/v1.12.x-SNAPSHOT/applications/slack.md",
+     "content/v1.12.x-SNAPSHOT/collate-ai/collate-ai-autopilot-workflows.md"
+    ]
+   },
+   "schemas": {
+    "n": 2412,
+    "sample": [
+     "content/v1.10.x/main-concepts/metadata-standard/schemas/analytics/basic.md",
+     "content/v1.10.x/main-concepts/metadata-standard/schemas/analytics/index.md",
+     "content/v1.10.x/main-concepts/metadata-standard/schemas/analytics/reportData.md",
+     "content/v1.10.x/main-concepts/metadata-standard/schemas/analytics/reportDataType/aggregatedCostAnalysisReportData.md",
+     "content/v1.10.x/main-concepts/metadata-standard/schemas/analytics/reportDataType/entityReportData.md",
+     "content/v1.10.x/main-concepts/metadata-standard/schemas/analytics/reportDataType/index.md",
+     "content/v1.10.x/main-concepts/metadata-standard/schemas/analytics/reportDataType/rawCostAnalysisReportData.md",
+     "content/v1.10.x/main-concepts/metadata-standard/schemas/analytics/reportDataType/webAnalyticEntityViewReportData.md",
+     "content/v1.10.x/main-concepts/metadata-standard/schemas/analytics/reportDataType/webAnalyticUserActivityReportData.md",
+     "content/v1.10.x/main-concepts/metadata-standard/schemas/analytics/webAnalyticEvent.md"
+    ]
+   },
+   "diagrams": {
+    "n": 37,
+    "sample": [
+     "content/v1.10.x/how-to-guides/data-discovery/er-diagrams.md",
+     "content/v1.11.x/how-to-guides/data-discovery/er-diagrams.md",
+     "content/v1.12.x-SNAPSHOT/how-to-guides/data-discovery/er-diagrams.md",
+     "images/docs-structure.drawio.png",
+     "public/images/connectors/profiler/profilerUMLDiagram.png",
+     "public/images/readme/ingestion/base-workflow.steps.drawio.png",
+     "public/images/readme/ingestion/base-workflow.workflow.drawio.png",
+     "public/images/v1.10/deployment/upgrade/how-does-it-work/upgrade-backup.drawio.png",
+     "public/images/v1.10/deployment/upgrade/how-does-it-work/upgrade-migrate.drawio.png",
+     "public/images/v1.10/deployment/upgrade/how-does-it-work/upgrade-simple.drawio.png"
+    ]
+   },
+   "containers": {
+    "n": 1,
+    "sample": [
+     "Dockerfile"
+    ]
+   },
+   "agent_instructions": {
+    "n": 57,
+    "sample": [
+     "content/v1.10.x/how-to-guides/mcp/claude.md",
+     "content/v1.10.x/how-to-guides/mcp/connect.md",
+     "content/v1.10.x/how-to-guides/mcp/goose.md",
+     "content/v1.10.x/how-to-guides/mcp/index.md",
+     "content/v1.10.x/how-to-guides/mcp/reference.md",
+     "content/v1.10.x/main-concepts/metadata-standard/schemas/api/mcp/index.md",
+     "content/v1.10.x/main-concepts/metadata-standard/schemas/api/mcp/mcpToolDefinition.md",
+     "content/v1.11.x/how-to-guides/mcp/claude.md",
+     "content/v1.11.x/how-to-guides/mcp/connect.md",
+     "content/v1.11.x/how-to-guides/mcp/cursor.md"
+    ]
+   }
+  }
+ },
+ "javaparser/javaparser": {
+  "repo": "javaparser/javaparser",
+  "meta": {
+   "full_name": "javaparser/javaparser",
+   "description": "Java 1-25 Parser and Abstract Syntax Tree for Java with advanced analysis functionalities.",
+   "language": "Java",
+   "spdx": "NOASSERTION",
+   "default_branch": "master",
+   "stars": 6146,
+   "forks": 1256,
+   "open_issues": 451,
+   "size_kb": 47944,
+   "archived": false,
+   "fork": false,
+   "created": "2011-10-30T14:03:44Z",
+   "pushed": "2026-09-04T03:09:45Z",
+   "homepage": "https://javaparser.org",
+   "topics": [
+    "abstract-syntax-tree",
+    "ast",
+    "code-analysis",
+    "code-generation",
+    "code-generator",
+    "java",
+    "javadoc",
+    "javaparser",
+    "javasymbolsolver",
+    "parser",
+    "syntax-tree"
+   ]
+  },
+  "files": 2674,
+  "top": [
+   "javaparser-symbol-solver-testing (1436)",
+   "javaparser-core (578)",
+   "javaparser-core-testing (352)",
+   "javaparser-symbol-solver-core (174)",
+   "javaparser-core-generators (44)",
+   "javaparser-core-testing-bdd (32)",
+   "(root) (24)",
+   ".github (7)",
+   "javaparser-core-metamodel-generator (7)",
+   "scripts (6)",
+   "javaparser-core-serialization (5)",
+   "dev-files (4)",
+   ".mvn (3)",
+   "doc (2)"
+  ],
+  "second": {
+   "javaparser-symbol-solver-testing": [
+    "src (1434)"
+   ],
+   "javaparser-core": [
+    "src (577)"
+   ],
+   "javaparser-core-testing": [
+    "src (351)"
+   ],
+   "javaparser-symbol-solver-core": [
+    "src (172)"
+   ],
+   "javaparser-core-generators": [
+    "src (43)"
+   ],
+   "javaparser-core-testing-bdd": [
+    "src (31)"
+   ],
+   ".github": [
+    "workflows (4)"
+   ],
+   "javaparser-core-metamodel-generator": [
+    "src (6)"
+   ]
+  },
+  "extensions": [
+   ".java (2009)",
+   ".txt (545)",
+   ".jar (27)",
+   ".xml (14)",
+   ".md (11)",
+   ".class (11)",
+   ".yml (10)",
+   ".story (9)",
+   ".sh (7)",
+   ".yaml (5)"
+  ],
+  "root_files": [
+   ".git-blame-ignore-revs",
+   ".gitattributes",
+   ".gitignore",
+   "CONTRIBUTING.md",
+   "FEATURES.md",
+   "LICENSE",
+   "LICENSE.APACHE",
+   "LICENSE.GPL",
+   "LICENSE.LGPL",
+   "PULL_REQUEST_TEMPLATE.md",
+   "SECURITY.md",
+   "appveyor.yml",
+   "changelog.md",
+   "codecov.yml",
+   "mvnw",
+   "mvnw.cmd",
+   "pom.xml",
+   "readme.md"
+  ],
+  "signals": {
+   "docs": {
+    "n": 11,
+    "sample": [
+     "doc/component_diagram.puml",
+     "doc/readme.md",
+     "javaparser-core-testing/src/test/java/com/github/javaparser/javadoc/JavadocExtractorTest.java",
+     "javaparser-core-testing/src/test/java/com/github/javaparser/javadoc/JavadocTest.java",
+     "javaparser-core-testing/src/test/java/com/github/javaparser/javadoc/description/JavadocInlineTagTest.java",
+     "javaparser-core/src/main/java/com/github/javaparser/javadoc/Javadoc.java",
+     "javaparser-core/src/main/java/com/github/javaparser/javadoc/JavadocBlockTag.java",
+     "javaparser-core/src/main/java/com/github/javaparser/javadoc/description/JavadocDescription.java",
+     "javaparser-core/src/main/java/com/github/javaparser/javadoc/description/JavadocDescriptionElement.java",
+     "javaparser-core/src/main/java/com/github/javaparser/javadoc/description/JavadocInlineTag.java"
+    ]
+   },
+   "examples": {
+    "n": 77,
+    "sample": [
+     "javaparser-core-generators/src/main/java/com/github/javaparser/generator/core/node/NodeModifierGenerator.java",
+     "javaparser-core-testing-bdd/src/test/resources/com/github/javaparser/samples/ClassInLatin1.java",
+     "javaparser-core-testing-bdd/src/test/resources/com/github/javaparser/samples/JavaConcepts.java",
+     "javaparser-core-testing-bdd/src/test/resources/com/github/javaparser/samples/package-info.java",
+     "javaparser-core-testing/src/test/resources/com/github/javaparser/issue_samples/Issue290.java.txt",
+     "javaparser-core-testing/src/test/resources/com/github/javaparser/issue_samples/Issue412.java.expected.txt",
+     "javaparser-core-testing/src/test/resources/com/github/javaparser/issue_samples/Issue412.java.txt",
+     "javaparser-core-testing/src/test/resources/com/github/javaparser/issue_samples/Issue624.java.txt",
+     "javaparser-core-testing/src/test/resources/com/github/javaparser/issue_samples/issue1003.java.txt",
+     "javaparser-core-testing/src/test/resources/com/github/javaparser/issue_samples/issue_2627/DefaultStrategy.java"
+    ]
+   },
+   "tests": {
+    "n": 1833,
+    "sample": [
+     ".github/workflows/maven_tests.yml",
+     "javaparser-core-generators/src/test/java/com/github/javaparser/generator/core/quality/NotNullGeneratorTest.java",
+     "javaparser-core-generators/src/test/java/com/github/javaparser/generator/core/utils/CodeUtilsTest.java",
+     "javaparser-core-generators/src/test/resources/com/github/javaparser/generator/core/quality/NotNullGeneratorTest/expected/ConstructorParameterTest.java",
+     "javaparser-core-generators/src/test/resources/com/github/javaparser/generator/core/quality/NotNullGeneratorTest/expected/ConstructorParameterWithSuperTest.java",
+     "javaparser-core-generators/src/test/resources/com/github/javaparser/generator/core/quality/NotNullGeneratorTest/expected/MethodParameterRerunTest.java",
+     "javaparser-core-generators/src/test/resources/com/github/javaparser/generator/core/quality/NotNullGeneratorTest/expected/MethodParameterTest.java",
+     "javaparser-core-generators/src/test/resources/com/github/javaparser/generator/core/quality/NotNullGeneratorTest/original/ConstructorParameterTest.java",
+     "javaparser-core-generators/src/test/resources/com/github/javaparser/generator/core/quality/NotNullGeneratorTest/original/ConstructorParameterWithSuperTest.java",
+     "javaparser-core-generators/src/test/resources/com/github/javaparser/generator/core/quality/NotNullGeneratorTest/original/MethodParameterRerunTest.java"
+    ]
+   },
+   "fixtures": {
+    "n": 5,
+    "sample": [
+     "javaparser-symbol-solver-testing/src/test/resources/static_import_cycle_fixture/cycle/CycleA.java",
+     "javaparser-symbol-solver-testing/src/test/resources/static_import_cycle_fixture/cycle/CycleB.java",
+     "javaparser-symbol-solver-testing/src/test/resources/static_import_cycle_fixture/cycle/EntryPoint.java",
+     "javaparser-symbol-solver-testing/src/test/resources/static_import_cycle_fixture/cycle/SolvableConstants.java",
+     "javaparser-symbol-solver-testing/src/test/resources/static_import_cycle_fixture/cycle/Target.java"
+    ]
+   },
+   "grammars": {
+    "n": 2,
+    "sample": [
+     "javaparser-core-generators/src/main/java/com/github/javaparser/generator/core/other/GrammarLetterGenerator.java",
+     "javaparser-core/src/main/javacc/java.jj"
+    ]
+   },
+   "diagrams": {
+    "n": 1,
+    "sample": [
+     "doc/component_diagram.puml"
+    ]
+   }
+  }
+ },
+ "ajaxorg/treehugger": {
+  "repo": "ajaxorg/treehugger",
+  "meta": {
+   "full_name": "ajaxorg/treehugger",
+   "description": "JavaScript AST (Abstract Syntax Tree) transformation tools",
+   "language": "JavaScript",
+   "spdx": "MIT",
+   "default_branch": "master",
+   "stars": 483,
+   "forks": 56,
+   "open_issues": 6,
+   "size_kb": 519,
+   "archived": true,
+   "fork": false,
+   "created": "2011-03-27T14:53:18Z",
+   "pushed": "2020-02-13T00:15:13Z",
+   "homepage": "http://ajaxorg.github.com/treehugger/test.html",
+   "topics": []
+  },
+  "files": 25,
+  "top": [
+   "lib (17)",
+   "(root) (7)",
+   ".github (1)"
+  ],
+  "second": {
+   "lib": [
+    "treehugger (11)",
+    "acorn (3)"
+   ]
+  },
+  "extensions": [
+   ".js (16)",
+   ".md (4)",
+   ".json (2)",
+   ".html (1)"
+  ],
+  "root_files": [
+   ".gitignore",
+   "CODE_OF_CONDUCT.md",
+   "CONTRIBUTING.md",
+   "LICENSE",
+   "README.md",
+   "package.json",
+   "test.html"
+  ],
+  "signals": {
+   "examples": {
+    "n": 1,
+    "sample": [
+     "lib/demo.js"
+    ]
+   },
+   "tests": {
+    "n": 2,
+    "sample": [
+     "lib/treehugger/js/parse_test.js",
+     "test.html"
+    ]
+   }
+  }
+ },
+ "whitequark/ast": {
+  "repo": "whitequark/ast",
+  "meta": {
+   "full_name": "whitequark/ast",
+   "description": "A library for working with Abstract Syntax Trees.",
+   "language": "Ruby",
+   "spdx": "MIT",
+   "default_branch": "master",
+   "stars": 210,
+   "forks": 29,
+   "open_issues": 6,
+   "size_kb": 170,
+   "archived": false,
+   "fork": false,
+   "created": "2013-04-01T21:15:41Z",
+   "pushed": "2025-03-19T18:48:50Z",
+   "homepage": null,
+   "topics": []
+  },
+  "files": 17,
+  "top": [
+   "(root) (9)",
+   "lib (5)",
+   "spec (2)",
+   ".github (1)"
+  ],
+  "second": {
+   "lib": [
+    "ast (4)"
+   ],
+   ".github": [
+    "workflows (1)"
+   ]
+  },
+  "extensions": [
+   ".rb (7)",
+   ".md (3)",
+   ".yml (1)",
+   ".mit (1)",
+   ".gemspec (1)"
+  ],
+  "root_files": [
+   ".gitignore",
+   ".yardopts",
+   "CHANGELOG.md",
+   "Gemfile",
+   "LICENSE.MIT",
+   "README.YARD.md",
+   "README.md",
+   "Rakefile",
+   "ast.gemspec"
+  ],
+  "signals": {
+   "tests": {
+    "n": 3,
+    "sample": [
+     ".github/workflows/test.yml",
+     "spec/ast_spec.rb",
+     "spec/helper.rb"
+    ]
+   }
+  }
+ },
+ "cst/cst": {
+  "repo": "cst/cst",
+  "meta": {
+   "full_name": "cst/cst",
+   "description": ":herb: JavaScript Concrete Syntax Tree ",
+   "language": "JavaScript",
+   "spdx": "MIT",
+   "default_branch": "master",
+   "stars": 463,
+   "forks": 22,
+   "open_issues": 34,
+   "size_kb": 1082,
+   "archived": false,
+   "fork": false,
+   "created": "2015-06-11T17:44:47Z",
+   "pushed": "2022-12-06T19:46:59Z",
+   "homepage": "",
+   "topics": [
+    "ast",
+    "babylon",
+    "cst"
+   ]
+  },
+  "files": 235,
+  "top": [
+   "src (118)",
+   "test (104)",
+   "(root) (11)",
+   "docs (1)",
+   "interfaces (1)"
+  ],
+  "second": {
+   "src": [
+    "elements (103)",
+    "plugins (8)",
+    "utils (2)"
+   ],
+   "test": [
+    "lib (95)",
+    "3rdParty (3)",
+    "benchmarks (3)",
+    "integrated (1)"
+   ]
+  },
+  "extensions": [
+   ".js (220)",
+   ".json (3)",
+   ".yml (1)",
+   ".md (1)",
+   ".png (1)",
+   ".opts (1)",
+   ".lock (1)"
+  ],
+  "root_files": [
+   ".babelrc",
+   ".eslintignore",
+   ".eslintrc.json",
+   ".flowconfig",
+   ".gitignore",
+   ".gitmodules",
+   ".travis.yml",
+   "LICENSE",
+   "README.md",
+   "package.json",
+   "yarn.lock"
+  ],
+  "signals": {
+   "docs": {
+    "n": 1,
+    "sample": [
+     "docs/cst-example.png"
+    ]
+   },
+   "examples": {
+    "n": 1,
+    "sample": [
+     "docs/cst-example.png"
+    ]
+   },
+   "benchmarks": {
+    "n": 3,
+    "sample": [
+     "test/benchmarks/benchmarks.js",
+     "test/benchmarks/elements/indexElements.js",
+     "test/benchmarks/elements/noIndexElements.js"
+    ]
+   },
+   "tests": {
+    "n": 104,
+    "sample": [
+     "test/3rdParty/babylon",
+     "test/3rdParty/index.js",
+     "test/3rdParty/xfail.json",
+     "test/benchmarks/benchmarks.js",
+     "test/benchmarks/elements/indexElements.js",
+     "test/benchmarks/elements/noIndexElements.js",
+     "test/integrated/requireCurlyBraces.js",
+     "test/lib/Parser.js",
+     "test/lib/Traverse.js",
+     "test/lib/elements/Element.appendChild.js"
+    ]
+   }
+  }
+ },
+ "s-expressionists/Concrete-Syntax-Tree": {
+  "repo": "s-expressionists/Concrete-Syntax-Tree",
+  "meta": {
+   "full_name": "s-expressionists/Concrete-Syntax-Tree",
+   "description": "Concrete Syntax Trees represent s-expressions with source information",
+   "language": "Common Lisp",
+   "spdx": "BSD-2-Clause",
+   "default_branch": "master",
+   "stars": 62,
+   "forks": 15,
+   "open_issues": 2,
+   "size_kb": 482,
+   "archived": false,
+   "fork": false,
+   "created": "2017-03-26T07:19:53Z",
+   "pushed": "2025-08-22T14:12:42Z",
+   "homepage": "https://s-expressionists.github.io/Concrete-Syntax-Tree/",
+   "topics": [
+    "compiler",
+    "parsing",
+    "syntax-tree"
+   ]
+  },
+  "files": 91,
+  "top": [
+   "(root) (21)",
+   "Lambda-list (20)",
+   "documentation (17)",
+   "Destructuring (15)",
+   "Test (6)",
+   "tools (5)",
+   "Source-info (3)",
+   ".github (2)",
+   "data (2)"
+  ],
+  "second": {
+   "Lambda-list": [
+    "Test (6)"
+   ],
+   ".github": [
+    "workflows (2)"
+   ]
+  },
+  "extensions": [
+   ".lisp (62)",
+   ".texi (11)",
+   ".asd (4)",
+   ".css (3)",
+   ".yml (2)",
+   ".sexp (2)",
+   ".org (1)",
+   ".html (1)"
+  ],
+  "root_files": [
+   ".gitignore",
+   "LICENSE",
+   "NEWS",
+   "README.org",
+   "bindings.lisp",
+   "body.lisp",
+   "concrete-syntax-tree.asd",
+   "condition-reporters-english.lisp",
+   "conditions.lisp",
+   "cons-cst.lisp",
+   "cst-from-expression.lisp",
+   "cst.lisp",
+   "cstify.lisp",
+   "declarations.lisp",
+   "generic-functions.lisp",
+   "list-structure.lisp",
+   "listify.lisp",
+   "packages.lisp"
+  ],
+  "signals": {
+   "docs": {
+    "n": 17,
+    "sample": [
+     "documentation/.gitignore",
+     "documentation/Makefile",
+     "documentation/chapter-internals.texi",
+     "documentation/chapter-introduction.texi",
+     "documentation/chapter-user-manual.texi",
+     "documentation/concrete-syntax-tree.texi",
+     "documentation/index.html",
+     "documentation/macros.texi",
+     "documentation/section-basic-use.texi",
+     "documentation/section-destructuring-lambda-lists.texi"
+    ]
+   },
+   "tests": {
+    "n": 13,
+    "sample": [
+     ".github/workflows/test.yml",
+     "Lambda-list/Test/compare-parse-trees.lisp",
+     "Lambda-list/Test/packages.lisp",
+     "Lambda-list/Test/parsers.lisp",
+     "Lambda-list/Test/random-lambda-list.lisp",
+     "Lambda-list/Test/test.lisp",
+     "Lambda-list/Test/unparse.lisp",
+     "Test/cst-from-expression.lisp",
+     "Test/packages.lisp",
+     "Test/quasiquotation.lisp"
+    ]
+   },
+   "grammars": {
+    "n": 3,
+    "sample": [
+     "Lambda-list/grammar-symbols.lisp",
+     "Lambda-list/grammar.lisp",
+     "Lambda-list/standard-grammars.lisp"
+    ]
+   }
+  }
+ },
+ "nene/sql-parser-cst": {
+  "repo": "nene/sql-parser-cst",
+  "meta": {
+   "full_name": "nene/sql-parser-cst",
+   "description": "Parses SQL into Concrete Syntax Tree (CST)",
+   "language": "TypeScript",
+   "spdx": "GPL-2.0",
+   "default_branch": "master",
+   "stars": 189,
+   "forks": 12,
+   "open_issues": 39,
+   "size_kb": 2742,
+   "archived": false,
+   "fork": false,
+   "created": "2022-10-10T12:04:26Z",
+   "pushed": "2026-08-23T18:01:22Z",
+   "homepage": null,
+   "topics": []
+  },
+  "files": 292,
+  "top": [
+   "test (141)",
+   "src (121)",
+   "(root) (14)",
+   "scripts (8)",
+   "perf (7)",
+   ".github (1)"
+  ],
+  "second": {
+   "test": [
+    "expr (25)",
+    "select (24)",
+    "ddl (23)",
+    "proc (19)",
+    "literal (10)",
+    "config (6)",
+    "postgresql (6)",
+    "dml (5)",
+    "bigquery (4)",
+    "dcl (3)"
+   ],
+   "src": [
+    "cst (51)",
+    "showNode (47)",
+    "utils (10)",
+    "keywords (6)"
+   ],
+   ".github": [
+    "workflows (1)"
+   ]
+  },
+  "extensions": [
+   ".ts (263)",
+   ".json (14)",
+   ".sql (5)",
+   ".yml (1)",
+   ".md (1)",
+   ".hbs (1)",
+   ".pegjs (1)",
+   ".lock (1)"
+  ],
+  "root_files": [
+   ".editorconfig",
+   ".eslintrc.json",
+   ".gitignore",
+   ".prettierignore",
+   "AUTHORS",
+   "LICENSE",
+   "README.md",
+   "changelog.hbs",
+   "package.json",
+   "ts-pegjs.d.ts",
+   "tsconfig.build.json",
+   "tsconfig.eslint.json",
+   "tsconfig.json",
+   "yarn.lock"
+  ],
+  "signals": {
+   "benchmarks": {
+    "n": 7,
+    "sample": [
+     "perf/.eslintrc.json",
+     "perf/data-bigquery.sql",
+     "perf/data-case.sql",
+     "perf/data-mysql.sql",
+     "perf/data-select.sql",
+     "perf/data-sqlite.sql",
+     "perf/perf-test.ts"
+    ]
+   },
+   "tests": {
+    "n": 142,
+    "sample": [
+     "perf/perf-test.ts",
+     "test/.eslintrc.json",
+     "test/analyze.test.ts",
+     "test/bigquery/bigquery.test.ts",
+     "test/bigquery/export_data.test.ts",
+     "test/bigquery/load_data.test.ts",
+     "test/bigquery/row_access_policy.test.ts",
+     "test/config/bigquery.json",
+     "test/config/mariadb.json",
+     "test/config/mysql.json"
+    ]
+   },
+   "grammars": {
+    "n": 1,
+    "sample": [
+     "src/parser.pegjs"
+    ]
+   }
+  }
+ },
+ "sturdy-dev/semantic-code-search": {
+  "repo": "sturdy-dev/semantic-code-search",
+  "meta": {
+   "full_name": "sturdy-dev/semantic-code-search",
+   "description": "Search your codebase with natural language • CLI • No data leaves your computer",
+   "language": "Python",
+   "spdx": "AGPL-3.0",
+   "default_branch": "main",
+   "stars": 403,
+   "forks": 39,
+   "open_issues": 14,
+   "size_kb": 1876,
+   "archived": false,
+   "fork": false,
+   "created": "2022-11-09T14:27:02Z",
+   "pushed": "2023-05-14T13:53:27Z",
+   "homepage": "",
+   "topics": [
+    "ai",
+    "codesearch"
+   ]
+  },
+  "files": 14,
+  "top": [
+   "(root) (6)",
+   "src (6)",
+   "docs (2)"
+  ],
+  "second": {
+   "src": [
+    "semantic_code_search (6)"
+   ]
+  },
+  "extensions": [
+   ".py (7)",
+   ".txt (2)",
+   ".png (2)",
+   ".md (1)",
+   ".cfg (1)"
+  ],
+  "root_files": [
+   ".gitignore",
+   "LICENSE.txt",
+   "README.md",
+   "requirements.txt",
+   "setup.cfg",
+   "setup.py"
+  ],
+  "signals": {
+   "docs": {
+    "n": 2,
+    "sample": [
+     "docs/example-results.png",
+     "docs/readme-banner.png"
+    ]
+   },
+   "examples": {
+    "n": 1,
+    "sample": [
+     "docs/example-results.png"
+    ]
+   }
+  }
+ },
+ "hamelsmu/code_search": {
+  "repo": "hamelsmu/code_search",
+  "meta": {
+   "full_name": "hamelsmu/code_search",
+   "description": "Code For Medium Article: \"How To Create Natural Language Semantic Search for Arbitrary Objects With Deep Learning\"",
+   "language": "Jupyter Notebook",
+   "spdx": "MIT",
+   "default_branch": "master",
+   "stars": 491,
+   "forks": 135,
+   "open_issues": 28,
+   "size_kb": 77209,
+   "archived": false,
+   "fork": false,
+   "created": "2018-05-07T13:41:00Z",
+   "pushed": "2022-12-08T02:10:59Z",
+   "homepage": "https://medium.com/@hamelhusain/semantic-code-search-3cd6d244a39c",
+   "topics": [
+    "code-search",
+    "data-science",
+    "deep-learning",
+    "fastai",
+    "keras",
+    "machine-learning",
+    "machine-learning-on-source-code",
+    "ml-on-code",
+    "natural-language-processing",
+    "nlp",
+    "python",
+    "pytorch",
+    "search",
+    "search-algorithm",
+    "searching-algorithms",
+    "semantic-search",
+    "semantic-search-engine",
+    "tensorflow",
+    "tutorial"
+   ]
+  },
+  "files": 483,
+  "top": [
+   "fastai (468)",
+   "notebooks (11)",
+   "(root) (2)",
+   "gifs (1)",
+   "requirements (1)"
+  ],
+  "second": {
+   "fastai": [
+    "courses (296)",
+    "tutorials (78)",
+    "fastai (58)",
+    "docs (15)",
+    "tests (6)"
+   ],
+   "notebooks": [
+    "diagram (1)"
+   ]
+  },
+  "extensions": [
+   ".py (326)",
+   ".ipynb (57)",
+   ".png (33)",
+   ".md (9)",
+   ".xlsx (6)",
+   ".yml (5)",
+   ".sh (5)",
+   ".gif (5)",
+   ".adoc (5)",
+   ".pptx (4)"
+  ],
+  "root_files": [
+   "LICENSE",
+   "README.md"
+  ],
+  "signals": {
+   "docs": {
+    "n": 15,
+    "sample": [
+     "fastai/docs/README.md",
+     "fastai/docs/__init__.py",
+     "fastai/docs/abbr.md",
+     "fastai/docs/anatomy.adoc",
+     "fastai/docs/dataloader.adoc",
+     "fastai/docs/expand_adoc_templ.ipynb",
+     "fastai/docs/gen_ascii_docs.py",
+     "fastai/docs/md_expander.py",
+     "fastai/docs/module-decisions.md",
+     "fastai/docs/style.md"
+    ]
+   },
+   "examples": {
+    "n": 83,
+    "sample": [
+     "fastai/courses/dl1/adamw-sgdw-demo.ipynb",
+     "fastai/courses/dl1/excel/conv-example.xlsx",
+     "fastai/courses/dl1/excel/entropy_example.xlsx",
+     "fastai/courses/dl1/excel/layers_example.xlsx",
+     "fastai/courses/dl2/xl/dl-examples.xlsx",
+     "fastai/tutorials/__init__.py",
+     "fastai/tutorials/fastai/.gitignore",
+     "fastai/tutorials/fastai/__init__.py",
+     "fastai/tutorials/fastai/adaptive_softmax.py",
+     "fastai/tutorials/fastai/column_data.py"
+    ]
+   },
+   "notebooks": {
+    "n": 57,
+    "sample": [
+     "fastai/courses/dl1/adamw-sgdw-demo.ipynb",
+     "fastai/courses/dl1/cifar10-simplenet.ipynb",
+     "fastai/courses/dl1/cifar10.ipynb",
+     "fastai/courses/dl1/embedding_refactoring_unit_tests.ipynb",
+     "fastai/courses/dl1/fish.ipynb",
+     "fastai/courses/dl1/keras_lesson1.ipynb",
+     "fastai/courses/dl1/lang_model-arxiv.ipynb",
+     "fastai/courses/dl1/lang_model.ipynb",
+     "fastai/courses/dl1/lesson1-rxt50.ipynb",
+     "fastai/courses/dl1/lesson1-vgg.ipynb"
+    ]
+   },
+   "tests": {
+    "n": 13,
+    "sample": [
+     "fastai/courses/dl1/embedding_refactoring_unit_tests.ipynb",
+     "fastai/courses/dl1/test_transforms.ipynb",
+     "fastai/courses/dl2/cgan/models/test_model.py",
+     "fastai/courses/dl2/cgan/options/test_options.py",
+     "fastai/courses/dl2/cgan/test.py",
+     "fastai/docs/testing.adoc",
+     "fastai/pytest.ini",
+     "fastai/tests/__init__.py",
+     "fastai/tests/test_core.py",
+     "fastai/tests/test_layer_optimizer.py"
+    ]
+   },
+   "data": {
+    "n": 10,
+    "sample": [
+     "fastai/courses/dl1/fastai/dataset.py",
+     "fastai/courses/dl2/cgan/data/aligned_dataset.py",
+     "fastai/courses/dl2/cgan/data/base_dataset.py",
+     "fastai/courses/dl2/cgan/data/custom_dataset_data_loader.py",
+     "fastai/courses/dl2/cgan/data/single_dataset.py",
+     "fastai/courses/dl2/cgan/data/unaligned_dataset.py",
+     "fastai/courses/dl2/fastai/dataset.py",
+     "fastai/courses/ml1/fastai/dataset.py",
+     "fastai/fastai/dataset.py",
+     "fastai/tutorials/fastai/dataset.py"
+    ]
+   },
+   "diagrams": {
+    "n": 1,
+    "sample": [
+     "notebooks/diagram/Diagram.png"
+    ]
+   }
+  }
+ },
+ "fynnfluegge/codeqai": {
+  "repo": "fynnfluegge/codeqai",
+  "meta": {
+   "full_name": "fynnfluegge/codeqai",
+   "description": "Local first semantic code search and chat | Leverage custom copilots with fine-tuning datasets from code in Alpaca, Conversational, Completion and Instruction format",
+   "language": "Python",
+   "spdx": "Apache-2.0",
+   "default_branch": "main",
+   "stars": 492,
+   "forks": 56,
+   "open_issues": 10,
+   "size_kb": 584,
+   "archived": true,
+   "fork": false,
+   "created": "2023-09-17T21:46:07Z",
+   "pushed": "2025-12-12T13:40:27Z",
+   "homepage": "",
+   "topics": [
+    "codellama",
+    "faiss",
+    "gpt",
+    "huggingface",
+    "langchain",
+    "llama2",
+    "llamacpp",
+    "llm",
+    "ollama",
+    "openai",
+    "sentence-transformers"
+   ]
+  },
+  "files": 51,
+  "top": [
+   "codeqai (31)",
+   "(root) (9)",
+   "tests (4)",
+   "datasets (3)",
+   ".github (2)",
+   ".streamlit (1)",
+   "notebooks (1)"
+  ],
+  "second": {
+   "codeqai": [
+    "treesitter (16)"
+   ],
+   "tests": [
+    "fixtures (1)"
+   ],
+   ".github": [
+    "workflows (2)"
+   ]
+  },
+  "extensions": [
+   ".py (35)",
+   ".lock (4)",
+   ".json (3)",
+   ".yaml (2)",
+   ".toml (2)",
+   ".md (1)",
+   ".yml (1)",
+   ".ipynb (1)"
+  ],
+  "root_files": [
+   ".gitignore",
+   "LICENSE",
+   "README.md",
+   "conda-linux-64.lock",
+   "conda-osx-64.lock",
+   "conda-win-64.lock",
+   "environment.yml",
+   "poetry.lock",
+   "pyproject.toml"
+  ],
+  "signals": {
+   "notebooks": {
+    "n": 1,
+    "sample": [
+     "notebooks/alpaca_fine_tuning_qwen_2_5_coder_3B.ipynb"
+    ]
+   },
+   "tests": {
+    "n": 4,
+    "sample": [
+     "tests/__init__.py",
+     "tests/conftest.py",
+     "tests/fixtures/vector_entries.py",
+     "tests/vector_store_test.py"
+    ]
+   },
+   "fixtures": {
+    "n": 1,
+    "sample": [
+     "tests/fixtures/vector_entries.py"
+    ]
+   },
+   "data": {
+    "n": 4,
+    "sample": [
+     "codeqai/dataset_extractor.py",
+     "datasets/alpaca_dataset.json",
+     "datasets/completion_dataset.json",
+     "datasets/conversational_dataset.json"
+    ]
+   }
+  }
+ },
+ "bstee615/tree-climber": {
+  "repo": "bstee615/tree-climber",
+  "meta": {
+   "full_name": "bstee615/tree-climber",
+   "description": "Program analysis tools built on tree-sitter (https://github.com/tree-sitter/tree-sitter).",
+   "language": "Python",
+   "spdx": "MIT",
+   "default_branch": "master",
+   "stars": 72,
+   "forks": 13,
+   "open_issues": 7,
+   "size_kb": 10893,
+   "archived": false,
+   "fork": false,
+   "created": "2022-06-15T15:13:11Z",
+   "pushed": "2025-11-24T18:16:50Z",
+   "homepage": "",
+   "topics": [
+    "hacktoberfest"
+   ]
+  },
+  "files": 127,
+  "top": [
+   "src (56)",
+   "test (43)",
+   "docs (10)",
+   "(root) (7)",
+   "lib (5)",
+   ".vscode (3)",
+   ".github (2)",
+   ".claude (1)"
+  ],
+  "second": {
+   "src": [
+    "tree_climber (56)"
+   ],
+   "test": [
+    "oneoff (15)",
+    "c_cfg (6)",
+    "dfg (5)",
+    "java_cfg (5)",
+    "parse_trees (5)"
+   ],
+   "docs": [
+    "plans (8)",
+    "grammars (2)"
+   ],
+   "lib": [
+    "tom-select (2)",
+    "vis-9.1.2 (2)",
+    "bindings (1)"
+   ],
+   ".github": [
+    "workflows (1)"
+   ]
+  },
+  "extensions": [
+   ".py (56)",
+   ".md (15)",
+   ".json (10)",
+   ".c (7)",
+   ".tsx (6)",
+   ".java (6)",
+   ".css (5)",
+   ".js (4)",
+   ".ts (4)",
+   ".toml (3)"
+  ],
+  "root_files": [
+   ".gitignore",
+   "CLAUDE.md",
+   "LICENSE",
+   "README.md",
+   "TODO.md",
+   "pyproject.toml",
+   "uv.lock"
+  ],
+  "signals": {
+   "docs": {
+    "n": 10,
+    "sample": [
+     "docs/grammars/c/node-types.json",
+     "docs/grammars/java/node-types.json",
+     "docs/plans/def-use-solver-plan.md",
+     "docs/plans/extending-languages.md",
+     "docs/plans/fix-dfg-parameter-alias-2025-08-15.md",
+     "docs/plans/fix-function-call-cfg-edges-2025-08-14.md",
+     "docs/plans/frontend-integration.md",
+     "docs/plans/initial-cfg-plan.md",
+     "docs/plans/test-plans/01-c-cfg-comprehensive-testing.md",
+     "docs/plans/test-plans/02-java-cfg-comprehensive-testing.md"
+    ]
+   },
+   "examples": {
+    "n": 4,
+    "sample": [
+     "test/example.c",
+     "test/example.c_cfg.png",
+     "test/example.c_cpg.png",
+     "test/example.c_cpg_bigraph.png"
+    ]
+   },
+   "tests": {
+    "n": 48,
+    "sample": [
+     "docs/plans/test-plans/01-c-cfg-comprehensive-testing.md",
+     "docs/plans/test-plans/02-java-cfg-comprehensive-testing.md",
+     "src/tree_climber/cfg/test_c.py",
+     "src/tree_climber/cfg/test_java.py",
+     "src/tree_climber/viz/test_api.py",
+     "test/c_cfg/README.md",
+     "test/c_cfg/basic_constructs.c",
+     "test/c_cfg/edge_cases.c",
+     "test/c_cfg/nested_structures.c",
+     "test/c_cfg/real_world_patterns.c"
+    ]
+   },
+   "grammars": {
+    "n": 2,
+    "sample": [
+     "docs/grammars/c/node-types.json",
+     "docs/grammars/java/node-types.json"
+    ]
+   },
+   "agent_instructions": {
+    "n": 2,
+    "sample": [
+     ".claude/settings.json",
+     "CLAUDE.md"
+    ]
+   }
+  }
+ },
+ "jgravelle/jcodemunch-mcp": {
+  "repo": "jgravelle/jcodemunch-mcp",
+  "meta": {
+   "full_name": "jgravelle/jcodemunch-mcp",
+   "description": "Cut AI token costs 95%+ on code exploration. The leading MCP server for precise, symbol-level GitHub code retrieval via tree-sitter AST. Works with Claude Code, Cursor & any MCP client. 313B+ tokens saved.",
+   "language": "Python",
+   "spdx": "NOASSERTION",
+   "default_branch": "main",
+   "stars": 2651,
+   "forks": 364,
+   "open_issues": 1,
+   "size_kb": 17859,
+   "archived": false,
+   "fork": false,
+   "created": "2026-02-09T01:58:27Z",
+   "pushed": "2026-09-04T03:12:20Z",
+   "homepage": "https://jcodemunch.com/",
+   "topics": [
+    "ai-coding",
+    "ast",
+    "claude",
+    "claude-code",
+    "cline",
+    "code-intelligence",
+    "codex",
+    "context-window",
+    "copilot",
+    "cursor",
+    "developer-tools",
+    "gemini-cli",
+    "llm",
+    "mcp",
+    "mcp-server",
+    "model-context-protocol",
+    "opencode",
+    "token-optimization",
+    "tree-sitter",
+    "windsurf"
+   ]
+  },
+  "files": 1141,
+  "top": [
+   "tests (569)",
+   "src (277)",
+   "benchmarks (134)",
+   "(root) (48)",
+   "munch-bench (35)",
+   ".github (15)",
+   "docs (15)",
+   "harness (12)",
+   "scripts (9)",
+   "vscode-extension (8)",
+   "schemas (4)",
+   "examples (3)",
+   "speedreview (3)",
+   ".claude-plugin (2)"
+  ],
+  "second": {
+   "tests": [
+    "fixtures (63)",
+    "encoding (5)"
+   ],
+   "src": [
+    "jcodemunch_mcp (277)"
+   ],
+   "benchmarks": [
+    "goldset (34)",
+    "route_recall (13)",
+    "racket_fidelity (9)",
+    "description_smells (7)",
+    "route_binary_pilot (7)",
+    "harness (6)",
+    "replay (6)",
+    "rust_fidelity (6)",
+    "attic (5)",
+    "offload (4)"
+   ],
+   "munch-bench": [
+    "corpus (14)",
+    "munch_bench (9)",
+    "results (7)",
+    "tests (4)"
+   ],
+   ".github": [
+    "workflows (8)",
+    "ISSUE_TEMPLATE (3)",
+    "actions (3)"
+   ],
+   "docs": [
+    "cicd (5)",
+    "harness (5)",
+    "standard (4)"
+   ],
+   "harness": [
+    "results (3)"
+   ],
+   "vscode-extension": [
+    "src (2)"
+   ]
+  },
+  "extensions": [
+   ".py (868)",
+   ".md (82)",
+   ".json (70)",
+   ".ts (18)",
+   ".yaml (15)",
+   ".yml (13)",
+   ".astro (10)",
+   ".rkt (9)",
+   ".go (7)",
+   ".rs (5)"
+  ],
+  "root_files": [
+   ".clabot",
+   ".dockerignore",
+   ".gitattributes",
+   ".gitignore",
+   ".jcodemunch.jsonc",
+   "AGENTS.md",
+   "AGENT_HINTS.md",
+   "AGENT_HOOKS.md",
+   "AGENT_INSTALL_UNIVERSAL.md",
+   "ARCHITECTURE.md",
+   "CAPABILITIES.md",
+   "CHANGELOG.md",
+   "CLAUDE.md",
+   "CLI-AND-ENV.md",
+   "CLIENTS.md",
+   "CODE_OF_CONDUCT.md",
+   "CONFIGURATION.md",
+   "CONTEXT_PROVIDERS.md"
+  ],
+  "signals": {
+   "docs": {
+    "n": 15,
+    "sample": [
+     "docs/cicd/AUDIT.md",
+     "docs/cicd/DESIGN.md",
+     "docs/cicd/FINDINGS.md",
+     "docs/cicd/RUNBOOK.md",
+     "docs/cicd/VERIFICATION.md",
+     "docs/harness/ARCHAEOLOGY.md",
+     "docs/harness/COVERAGE-MAP.md",
+     "docs/harness/DESIGN.md",
+     "docs/harness/FINDINGS.md",
+     "docs/harness/VERIFICATION.md"
+    ]
+   },
+   "examples": {
+    "n": 3,
+    "sample": [
+     "examples/groq_validate.py",
+     "examples/otel-collector/README.md",
+     "examples/otel-collector/jcm-exporter.yaml"
+    ]
+   },
+   "benchmarks": {
+    "n": 173,
+    "sample": [
+     ".github/workflows/benchmark.yml",
+     "benchmarks/METHODOLOGY.md",
+     "benchmarks/RAG_COMPARISON_NOTES.md",
+     "benchmarks/README.md",
+     "benchmarks/REPRODUCING.md",
+     "benchmarks/ab-test-dead-code-2026-03-18.md",
+     "benchmarks/ab-test-naming-audit-2026-03-18.md",
+     "benchmarks/anchor/measure.py",
+     "benchmarks/attic/README.md",
+     "benchmarks/attic/ab_v1_70_0.py"
+    ]
+   },
+   "tests": {
+    "n": 578,
+    "sample": [
+     "benchmarks/ab-test-dead-code-2026-03-18.md",
+     "benchmarks/ab-test-naming-audit-2026-03-18.md",
+     "harness/results/latest.json",
+     "munch-bench/tests/__init__.py",
+     "munch-bench/tests/test_corpus.py",
+     "munch-bench/tests/test_evaluate.py",
+     "munch-bench/tests/test_leaderboard.py",
+     "src/jcodemunch_mcp/tools/get_untested_symbols.py",
+     "src/jcodemunch_mcp/tools/test_summarizer.py",
+     "tests/__init__.py"
+    ]
+   },
+   "fixtures": {
+    "n": 69,
+    "sample": [
+     "benchmarks/replay/fixtures/self_v1_75_0.json",
+     "benchmarks/replay/results/self_v1_75_0-golden.json",
+     "src/jcodemunch_mcp/cli/hooks/snapshot.py",
+     "src/jcodemunch_mcp/tools/get_session_snapshot.py",
+     "tests/fixtures/al/sample.al",
+     "tests/fixtures/arduino/sample.ino",
+     "tests/fixtures/astro/BaseLayout.astro",
+     "tests/fixtures/astro/ClientIsland.astro",
+     "tests/fixtures/astro/ContentPage.astro",
+     "tests/fixtures/astro/DynamicRoute.astro"
+    ]
+   },
+   "schemas": {
+    "n": 21,
+    "sample": [
+     "schemas/confidence-provenance.schema.json",
+     "schemas/evidence-receipt.schema.json",
+     "schemas/ranked-context-response.schema.json",
+     "schemas/retrieval-verdict.schema.json",
+     "src/jcodemunch_mcp/encoding/schemas/__init__.py",
+     "src/jcodemunch_mcp/encoding/schemas/find_importers.py",
+     "src/jcodemunch_mcp/encoding/schemas/find_references.py",
+     "src/jcodemunch_mcp/encoding/schemas/get_blast_radius.py",
+     "src/jcodemunch_mcp/encoding/schemas/get_call_hierarchy.py",
+     "src/jcodemunch_mcp/encoding/schemas/get_dependency_cycles.py"
+    ]
+   },
+   "data": {
+    "n": 54,
+    "sample": [
+     "benchmarks/goldset/corpus/events/handlers.py",
+     "benchmarks/goldset/corpus/events/protocol.py",
+     "benchmarks/goldset/corpus/events/registry.py",
+     "benchmarks/goldset/corpus/events/web.py",
+     "benchmarks/goldset/corpus/go/collect/plist.go",
+     "benchmarks/goldset/corpus/go/collect/queue.go",
+     "benchmarks/goldset/corpus/go/collect/ring.go",
+     "benchmarks/goldset/corpus/go/mower/mower.go",
+     "benchmarks/goldset/corpus/go/talent/recruiter.go",
+     "benchmarks/goldset/corpus/payments/applepay_adapter.py"
+    ]
+   },
+   "diagrams": {
+    "n": 4,
+    "sample": [
+     "src/jcodemunch_mcp/tools/render_diagram.py",
+     "tests/test_render_diagram.py",
+     "tests/test_render_diagram_integration.py",
+     "tests/test_render_diagram_viewer.py"
+    ]
+   },
+   "containers": {
+    "n": 2,
+    "sample": [
+     "Dockerfile",
+     "docker-compose.yml"
+    ]
+   },
+   "agent_instructions": {
+    "n": 283,
+    "sample": [
+     "AGENTS.md",
+     "CLAUDE.md",
+     "benchmarks/offload/results-local__jcodemunch-mcp-0394b683.json",
+     "mcpb/build.py",
+     "mcpb/server/main.py",
+     "src/jcodemunch_mcp/__init__.py",
+     "src/jcodemunch_mcp/__main__.py",
+     "src/jcodemunch_mcp/agent_selector.py",
+     "src/jcodemunch_mcp/cli/__init__.py",
+     "src/jcodemunch_mcp/cli/delivery.py"
+    ]
+   }
+  }
+ },
+ "semgrep/mcp": {
+  "repo": "semgrep/mcp",
+  "meta": {
+   "full_name": "semgrep/mcp",
+   "description": "A MCP server for using Semgrep to scan code for security vulnerabilities.",
+   "language": "Python",
+   "spdx": "MIT",
+   "default_branch": "main",
+   "stars": 685,
+   "forks": 56,
+   "open_issues": 28,
+   "size_kb": 950,
+   "archived": true,
+   "fork": false,
+   "created": "2025-03-17T20:08:14Z",
+   "pushed": "2025-10-28T22:32:31Z",
+   "homepage": "https://mcp.semgrep.ai",
+   "topics": [
+    "mcp",
+    "semgrep"
+   ]
+  },
+  "files": 49,
+  "top": [
+   "(root) (16)",
+   "src (9)",
+   "chart (7)",
+   ".github (6)",
+   "tests (4)",
+   "images (3)",
+   "examples (2)",
+   "scripts (2)"
+  ],
+  "second": {
+   "src": [
+    "semgrep_mcp (9)"
+   ],
+   "chart": [
+    "semgrep-mcp (7)"
+   ],
+   ".github": [
+    "workflows (6)"
+   ],
+   "tests": [
+    "unit (2)",
+    "integration (1)"
+   ]
+  },
+  "extensions": [
+   ".py (16)",
+   ".yaml (8)",
+   ".md (6)",
+   ".yml (4)",
+   ".svg (2)",
+   ".tpl (1)",
+   ".json (1)",
+   ".png (1)",
+   ".toml (1)",
+   ".lock (1)"
+  ],
+  "root_files": [
+   ".dockerignore",
+   ".gitignore",
+   ".gitmodules",
+   ".pre-commit-config.yaml",
+   ".python-version",
+   "CHANGELOG.md",
+   "CODE_OF_CONDUCT.md",
+   "CONTRIBUTING.md",
+   "Dockerfile",
+   "LICENSE",
+   "Makefile",
+   "README.md",
+   "SECURITY.md",
+   "glama.json",
+   "pyproject.toml",
+   "uv.lock"
+  ],
+  "signals": {
+   "examples": {
+    "n": 2,
+    "sample": [
+     "examples/sse_client.py",
+     "examples/streamable_http_client.py"
+    ]
+   },
+   "tests": {
+    "n": 5,
+    "sample": [
+     ".github/workflows/test.yml",
+     "tests/__init__.py",
+     "tests/integration/__init__.py",
+     "tests/unit/__init__.py",
+     "tests/unit/test_safe_join.py"
+    ]
+   },
+   "containers": {
+    "n": 2,
+    "sample": [
+     "Dockerfile",
+     "chart/semgrep-mcp/Chart.yaml"
+    ]
+   },
+   "agent_instructions": {
+    "n": 17,
+    "sample": [
+     "chart/semgrep-mcp/Chart.yaml",
+     "chart/semgrep-mcp/README.md",
+     "chart/semgrep-mcp/templates/_helpers.tpl",
+     "chart/semgrep-mcp/templates/deployment.yaml",
+     "chart/semgrep-mcp/templates/ingress.yaml",
+     "chart/semgrep-mcp/templates/service.yaml",
+     "chart/semgrep-mcp/values.yaml",
+     "scripts/configure_semgrep_mcp.py",
+     "src/semgrep_mcp/__init__.py",
+     "src/semgrep_mcp/__main__.py"
+    ]
+   }
+  }
+ },
+ "Azure-Samples/graphrag-accelerator": {
+  "repo": "Azure-Samples/graphrag-accelerator",
+  "meta": {
+   "full_name": "Azure-Samples/graphrag-accelerator",
+   "description": "One-click deploy of a Knowledge Graph powered RAG (GraphRAG) in Azure",
+   "language": "Python",
+   "spdx": "MIT",
+   "default_branch": "main",
+   "stars": 2409,
+   "forks": 420,
+   "open_issues": 56,
+   "size_kb": 52892,
+   "archived": true,
+   "fork": false,
+   "created": "2024-03-27T18:49:12Z",
+   "pushed": "2025-05-27T13:56:40Z",
+   "homepage": "https://github.com/microsoft/graphrag",
+   "topics": []
+  },
+  "files": 167,
+  "top": [
+   "backend (61)",
+   "infra (54)",
+   "frontend (19)",
+   "(root) (13)",
+   ".github (6)",
+   "docs (4)",
+   "notebooks (4)",
+   ".devcontainer (3)",
+   "docker (2)",
+   ".azdo (1)"
+  ],
+  "second": {
+   "backend": [
+    "tests (27)",
+    "graphrag_app (24)",
+    "scripts (3)",
+    "manifests (2)"
+   ],
+   "infra": [
+    "core (28)",
+    "helm (17)",
+    "managed-app (5)"
+   ],
+   "frontend": [
+    "src (11)",
+    ".streamlit (1)"
+   ],
+   ".github": [
+    "ISSUE_TEMPLATE (2)",
+    "workflows (2)"
+   ],
+   "docs": [
+    "assets (2)"
+   ]
+  },
+  "extensions": [
+   ".py (55)",
+   ".bicep (26)",
+   ".yaml (19)",
+   ".md (15)",
+   ".json (11)",
+   ".parquet (8)",
+   ".sh (4)",
+   ".toml (3)",
+   ".lock (2)",
+   ".ipynb (2)"
+  ],
+  "root_files": [
+   ".dockerignore",
+   ".editorconfig",
+   ".gitattributes",
+   ".gitignore",
+   ".pre-commit-config.yaml",
+   ".secrets.baseline",
+   "CODE_OF_CONDUCT.md",
+   "CONTRIBUTING.md",
+   "LICENSE",
+   "README.md",
+   "SECURITY.md",
+   "TRANSPARENCY.md",
+   "openapi.json"
+  ],
+  "signals": {
+   "docs": {
+    "n": 4,
+    "sample": [
+     "docs/DEPLOYMENT-GUIDE.md",
+     "docs/DEVELOPMENT-GUIDE.md",
+     "docs/assets/graphrag-architecture-diagram.png",
+     "docs/assets/graphrag-architecture-diagram.vsdx"
+    ]
+   },
+   "notebooks": {
+    "n": 2,
+    "sample": [
+     "notebooks/1-Quickstart.ipynb",
+     "notebooks/2-Advanced_Getting_Started.ipynb"
+    ]
+   },
+   "tests": {
+    "n": 30,
+    "sample": [
+     ".github/workflows/tests.yaml",
+     "backend/pytest.ini",
+     "backend/tests/__init__.py",
+     "backend/tests/conftest.py",
+     "backend/tests/data/synthetic-dataset/ABOUT.md",
+     "backend/tests/data/synthetic-dataset/output/create_final_communities.parquet",
+     "backend/tests/data/synthetic-dataset/output/create_final_community_reports.parquet",
+     "backend/tests/data/synthetic-dataset/output/create_final_covariates.parquet",
+     "backend/tests/data/synthetic-dataset/output/create_final_documents.parquet",
+     "backend/tests/data/synthetic-dataset/output/create_final_entities.parquet"
+    ]
+   },
+   "schemas": {
+    "n": 2,
+    "sample": [
+     "infra/core/apim/openapi.json",
+     "openapi.json"
+    ]
+   },
+   "data": {
+    "n": 11,
+    "sample": [
+     "backend/tests/data/synthetic-dataset/ABOUT.md",
+     "backend/tests/data/synthetic-dataset/output/create_final_communities.parquet",
+     "backend/tests/data/synthetic-dataset/output/create_final_community_reports.parquet",
+     "backend/tests/data/synthetic-dataset/output/create_final_covariates.parquet",
+     "backend/tests/data/synthetic-dataset/output/create_final_documents.parquet",
+     "backend/tests/data/synthetic-dataset/output/create_final_entities.parquet",
+     "backend/tests/data/synthetic-dataset/output/create_final_nodes.parquet",
+     "backend/tests/data/synthetic-dataset/output/create_final_relationships.parquet",
+     "backend/tests/data/synthetic-dataset/output/create_final_text_units.parquet",
+     "backend/tests/data/synthetic-dataset/output/graph.graphml"
+    ]
+   },
+   "diagrams": {
+    "n": 2,
+    "sample": [
+     "docs/assets/graphrag-architecture-diagram.png",
+     "docs/assets/graphrag-architecture-diagram.vsdx"
+    ]
+   },
+   "containers": {
+    "n": 4,
+    "sample": [
+     ".devcontainer/Dockerfile",
+     "docker/Dockerfile-backend",
+     "docker/Dockerfile-frontend",
+     "infra/helm/graphrag/Chart.yaml"
+    ]
+   },
+   "iac": {
+    "n": 26,
+    "sample": [
+     "infra/core/acr/acr.bicep",
+     "infra/core/ai-search/ai-search.bicep",
+     "infra/core/aks/aks.bicep",
+     "infra/core/aoai/aoai.bicep",
+     "infra/core/apim/apim.bicep",
+     "infra/core/apim/apim.graphrag-api.bicep",
+     "infra/core/apim/apim.graphrag-docs-api.bicep",
+     "infra/core/cosmosdb/cosmosdb.bicep",
+     "infra/core/identity/identity.bicep",
+     "infra/core/log-analytics/log.bicep"
+    ]
+   }
+  }
+ },
+ "JayLZhou/GraphRAG": {
+  "repo": "JayLZhou/GraphRAG",
+  "meta": {
+   "full_name": "JayLZhou/GraphRAG",
+   "description": "In-depth study of the graphrag ",
+   "language": "Python",
+   "spdx": null,
+   "default_branch": "master",
+   "stars": 1539,
+   "forks": 100,
+   "open_issues": 23,
+   "size_kb": 17965,
+   "archived": false,
+   "fork": false,
+   "created": "2024-11-11T11:53:53Z",
+   "pushed": "2025-07-01T17:41:28Z",
+   "homepage": null,
+   "topics": []
+  },
+  "files": 137,
+  "top": [
+   "Core (108)",
+   "Option (12)",
+   "Config (7)",
+   "(root) (5)",
+   "Data (4)",
+   "Doc (1)"
+  ],
+  "second": {
+   "Core": [
+    "Storage (22)",
+    "Index (12)",
+    "Common (10)",
+    "Query (10)",
+    "Retriever (9)",
+    "Graph (8)",
+    "Schema (8)",
+    "Prompt (7)",
+    "Utils (7)",
+    "Chunk (5)"
+   ],
+   "Option": [
+    "Method (10)"
+   ],
+   "Data": [
+    "HotpotQA (2)"
+   ]
+  },
+  "extensions": [
+   ".py (107)",
+   ".pyc (12)",
+   ".yaml (11)",
+   ".json (2)",
+   ".png (1)",
+   ".md (1)",
+   ".pdf (1)",
+   ".yml (1)"
+  ],
+  "root_files": [
+   ".gitignore",
+   "README.md",
+   "VLDB2025_GraphRAG.pdf",
+   "experiment.yml",
+   "main.py"
+  ],
+  "signals": {
+   "docs": {
+    "n": 1,
+    "sample": [
+     "Doc/workflow.png"
+    ]
+   },
+   "schemas": {
+    "n": 8,
+    "sample": [
+     "Core/Schema/ChunkSchema.py",
+     "Core/Schema/CommunitySchema.py",
+     "Core/Schema/EntityRelation.py",
+     "Core/Schema/GraphSchema.py",
+     "Core/Schema/Message.py",
+     "Core/Schema/RetrieverContext.py",
+     "Core/Schema/TreeSchema.py",
+     "Core/Schema/VdbResult.py"
+    ]
+   },
+   "data": {
+    "n": 2,
+    "sample": [
+     "Data/HotpotQA/Corpus.json",
+     "Data/QueryDataset.py"
+    ]
+   }
+  }
+ },
+ "run-llama/LlamaIndexTS": {
+  "repo": "run-llama/LlamaIndexTS",
+  "meta": {
+   "full_name": "run-llama/LlamaIndexTS",
+   "description": "Data framework for your LLM applications. Focus on server side solution",
+   "language": "TypeScript",
+   "spdx": "MIT",
+   "default_branch": "main",
+   "stars": 3077,
+   "forks": 524,
+   "open_issues": 149,
+   "size_kb": 86547,
+   "archived": true,
+   "fork": false,
+   "created": "2023-06-13T06:41:20Z",
+   "pushed": "2026-03-11T20:07:07Z",
+   "homepage": "https://ts.llamaindex.ai",
+   "topics": [
+    "agent",
+    "chatbot",
+    "claude-ai",
+    "create-llama",
+    "embedding",
+    "groq-ai",
+    "javascript",
+    "llama",
+    "llama-index",
+    "llama3",
+    "llamaindex",
+    "llm",
+    "node",
+    "nodejs",
+    "openai",
+    "react",
+    "typescript"
+   ]
+  },
+  "files": 1467,
+  "top": [
+   "packages (823)",
+   "examples (295)",
+   "docs (159)",
+   "e2e (131)",
+   "(root) (19)",
+   "unit (14)",
+   ".github (10)",
+   "resolution-tests (8)",
+   ".vscode (3)",
+   ".changeset (2)",
+   ".devcontainer (1)",
+   ".husky (1)",
+   "\"packages (1)"
+  ],
+  "second": {
+   "packages": [
+    "providers (335)",
+    "core (171)",
+    "llamaindex (118)",
+    "env (47)",
+    "readers (38)",
+    "tools (28)",
+    "autotool (21)",
+    "community (21)",
+    "wasm-tools (14)",
+    "workflow (13)"
+   ],
+   "examples": [
+    "models (71)",
+    "storage (71)",
+    "agents (25)",
+    "rag (22)",
+    "readers (22)",
+    "data (21)",
+    "deprecated (15)",
+    "multimodal (12)",
+    "misc (10)",
+    "index (8)"
+   ],
+   "docs": [
+    "src (151)"
+   ],
+   "e2e": [
+    "examples (86)",
+    "node (28)",
+    "fixtures (4)",
+    "npm (4)"
+   ],
+   "unit": [
+    "readers (6)",
+    "node-parser (2)",
+    "fixtures (1)",
+    "settings (1)",
+    "tools (1)"
+   ],
+   ".github": [
+    "workflows (6)",
+    "ISSUE_TEMPLATE (4)"
+   ],
+   "resolution-tests": [
+    "src (5)"
+   ]
+  },
+  "extensions": [
+   ".ts (804)",
+   ".json (230)",
+   ".md (138)",
+   ".mdx (103)",
+   ".yml (43)",
+   ".snap (17)",
+   ".tsx (15)",
+   ".js (12)",
+   ".pdf (11)",
+   ".svg (10)"
+  ],
+  "root_files": [
+   ".cjs.swcrc",
+   ".gitattributes",
+   ".gitignore",
+   ".npmrc",
+   ".nvmrc",
+   ".prettierignore",
+   ".swcrc",
+   "CLAUDE.md",
+   "CONTRIBUTING.md",
+   "LICENSE",
+   "README.md",
+   "eslint.config.mjs",
+   "package.json",
+   "pnpm-lock.yaml",
+   "pnpm-workspace.yaml",
+   "prettier.config.mjs",
+   "tsconfig.eslint.json",
+   "tsconfig.json"
+  ],
+  "signals": {
+   "docs": {
+    "n": 165,
+    "sample": [
+     "docs/.gitignore",
+     "docs/CHANGELOG.md",
+     "docs/CLAUDE.md",
+     "docs/astro.config.mjs",
+     "docs/package-lock.json",
+     "docs/package.json",
+     "docs/src/assets/llamaindex-dark.svg",
+     "docs/src/assets/llamaindex-light.svg",
+     "docs/src/assets/logo-chip-enormous.png",
+     "docs/src/components/Header.astro"
+    ]
+   },
+   "examples": {
+    "n": 410,
+    "sample": [
+     "docs/src/content/docs/framework/getting_started/examples.mdx",
+     "docs/src/content/docs/framework/tutorials/_meta.yml",
+     "docs/src/content/docs/framework/tutorials/agents/1_setup.mdx",
+     "docs/src/content/docs/framework/tutorials/agents/2_create_agent.mdx",
+     "docs/src/content/docs/framework/tutorials/agents/3_local_model.mdx",
+     "docs/src/content/docs/framework/tutorials/agents/4_agentic_rag.mdx",
+     "docs/src/content/docs/framework/tutorials/agents/5_rag_and_tools.mdx",
+     "docs/src/content/docs/framework/tutorials/agents/6_llamaparse.mdx",
+     "docs/src/content/docs/framework/tutorials/agents/7_qdrant.mdx",
+     "docs/src/content/docs/framework/tutorials/agents/_meta.yml"
+    ]
+   },
+   "notebooks": {
+    "n": 2,
+    "sample": [
+     "examples/misc/jupyter/nodeparser.ipynb",
+     "examples/misc/jupyter/vectorIndex.ipynb"
+    ]
+   },
+   "tests": {
+    "n": 119,
+    "sample": [
+     ".github/workflows/test.yml",
+     "e2e/examples/cloudflare-worker-agent/test/index.spec.ts",
+     "e2e/examples/cloudflare-worker-agent/test/tsconfig.json",
+     "e2e/examples/cloudflare-worker-agent/vitest.config.ts",
+     "e2e/examples/nextjs-agent/src/app/test/page.tsx",
+     "e2e/npm/test/workflow.e2e.ts",
+     "examples/storage/chromadb/test.ts",
+     "packages/core/tests/agents.test.ts",
+     "packages/core/tests/decorator.test.ts",
+     "packages/core/tests/embeddings.test.ts"
+    ]
+   },
+   "fixtures": {
+    "n": 24,
+    "sample": [
+     "e2e/fixtures/img/llamaindex-white.png",
+     "e2e/fixtures/llm/anthropic.ts",
+     "e2e/fixtures/llm/ollama.ts",
+     "e2e/fixtures/llm/openai.ts",
+     "e2e/node/fixtures/data/Alex.txt",
+     "e2e/node/fixtures/tools.ts",
+     "e2e/node/snapshot/#1177.snap",
+     "e2e/node/snapshot/#1281.snap",
+     "e2e/node/snapshot/agent.snap",
+     "e2e/node/snapshot/agent_stream.snap"
+    ]
+   },
+   "schemas": {
+    "n": 10,
+    "sample": [
+     "packages/core/schema/package.json",
+     "packages/core/src/schema/index.ts",
+     "packages/core/src/schema/node.ts",
+     "packages/core/src/schema/type.ts",
+     "packages/core/src/schema/type/base-output-parser.ts",
+     "\"packages/core/src/schema/type/engine\\342\\200\\223response.ts\"",
+     "packages/core/src/schema/utils/chunk-size-check.ts",
+     "packages/core/src/schema/zod.ts",
+     "packages/tools/src/tools/openapi-action.ts",
+     "packages/tools/tests/openapi-action.test.ts"
+    ]
+   },
+   "data": {
+    "n": 2,
+    "sample": [
+     "examples/data/movie_reviews.csv",
+     "examples/data/titanic_train.csv"
+    ]
+   },
+   "agent_instructions": {
+    "n": 39,
+    "sample": [
+     "CLAUDE.md",
+     "docs/CLAUDE.md",
+     "docs/src/content/docs/framework/integration/mcp-toolbox.mdx",
+     "e2e/CLAUDE.md",
+     "e2e/examples/cloudflare-hono/CLAUDE.md",
+     "e2e/examples/cloudflare-worker-agent/CLAUDE.md",
+     "e2e/examples/nextjs-agent/CLAUDE.md",
+     "e2e/examples/nextjs-edge-runtime/CLAUDE.md",
+     "e2e/examples/nextjs-node-runtime/CLAUDE.md",
+     "e2e/examples/vite-import-llamaindex/CLAUDE.md"
+    ]
+   }
+  }
+ },
+ "diicellman/dspy-rag-fastapi": {
+  "repo": "diicellman/dspy-rag-fastapi",
+  "meta": {
+   "full_name": "diicellman/dspy-rag-fastapi",
+   "description": "FastAPI wrapper around DSPy",
+   "language": "Python",
+   "spdx": "MIT",
+   "default_branch": "main",
+   "stars": 296,
+   "forks": 26,
+   "open_issues": 0,
+   "size_kb": 2935,
+   "archived": false,
+   "fork": false,
+   "created": "2024-02-29T10:00:39Z",
+   "pushed": "2024-03-11T14:34:00Z",
+   "homepage": null,
+   "topics": []
+  },
+  "files": 26,
+  "top": [
+   "backend (15)",
+   "frontend (7)",
+   "(root) (4)"
+  ],
+  "second": {
+   "backend": [
+    "app (9)",
+    "data (1)"
+   ],
+   "frontend": [
+    "pages (3)"
+   ]
+  },
+  "extensions": [
+   ".py (15)",
+   ".lock (2)",
+   ".toml (2)",
+   ".md (1)",
+   ".txt (1)",
+   ".yml (1)"
+  ],
+  "root_files": [
+   ".gitignore",
+   "LICENSE",
+   "README.md",
+   "compose.yml"
+  ],
+  "signals": {
+   "examples": {
+    "n": 1,
+    "sample": [
+     "backend/data/example/paul_graham_essay.txt"
+    ]
+   },
+   "containers": {
+    "n": 2,
+    "sample": [
+     "backend/Dockerfile",
+     "frontend/Dockerfile"
+    ]
+   }
+  }
+ },
+ "khairulislam/ML-conferences": {
+  "repo": "khairulislam/ML-conferences",
+  "meta": {
+   "full_name": "khairulislam/ML-conferences",
+   "description": "List of ML conferences with important dates and accepted paper list",
+   "language": "Jupyter Notebook",
+   "spdx": "MIT",
+   "default_branch": "main",
+   "stars": 254,
+   "forks": 19,
+   "open_issues": 1,
+   "size_kb": 81683,
+   "archived": false,
+   "fork": false,
+   "created": "2023-03-31T15:40:48Z",
+   "pushed": "2026-08-17T20:51:23Z",
+   "homepage": "https://khairulislam.github.io/ML-conferences",
+   "topics": [
+    "ai",
+    "computer-science",
+    "conferences",
+    "machine-learning",
+    "nlp",
+    "software-engineering",
+    "vision"
+   ]
+  },
+  "files": 64,
+  "top": [
+   "accepted-papers (37)",
+   "docs (20)",
+   "(root) (4)",
+   "utils (3)"
+  ],
+  "second": {
+   "accepted-papers": [
+    "AAAI (9)",
+    "CVPR (5)",
+    "IJCAI (5)",
+    "ICCV (4)",
+    "ICLR (4)",
+    "ICML (4)",
+    "NeurIPS (4)",
+    "KDD (1)"
+   ],
+   "docs": [
+    "js (6)",
+    "css (5)",
+    "data (3)"
+   ]
+  },
+  "extensions": [
+   ".pdf (37)",
+   ".css (6)",
+   ".js (6)",
+   ".csv (4)",
+   ".html (4)",
+   ".md (3)",
+   ".py (1)",
+   ".ipynb (1)"
+  ],
+  "root_files": [
+   ".gitignore",
+   "LICENSE",
+   "README.md",
+   "style.css"
+  ],
+  "signals": {
+   "docs": {
+    "n": 20,
+    "sample": [
+     "docs/DESIGN.md",
+     "docs/README.md",
+     "docs/css/base.css",
+     "docs/css/components.css",
+     "docs/css/deadlines.css",
+     "docs/css/stats.css",
+     "docs/css/tokens.css",
+     "docs/data/acceptance_rates_yearly.csv",
+     "docs/data/conferences.csv",
+     "docs/data/conferences_metadata.csv"
+    ]
+   },
+   "notebooks": {
+    "n": 1,
+    "sample": [
+     "utils/miner.ipynb"
+    ]
+   },
+   "data": {
+    "n": 4,
+    "sample": [
+     "docs/data/acceptance_rates_yearly.csv",
+     "docs/data/conferences.csv",
+     "docs/data/conferences_metadata.csv",
+     "utils/AAAI_2024_Papers.csv"
+    ]
+   }
+  }
+ },
+ "soulbliss/NLP-conference-compendium": {
+  "repo": "soulbliss/NLP-conference-compendium",
+  "meta": {
+   "full_name": "soulbliss/NLP-conference-compendium",
+   "description": "Compendium of the resources available from top NLP conferences.",
+   "language": null,
+   "spdx": null,
+   "default_branch": "master",
+   "stars": 458,
+   "forks": 48,
+   "open_issues": 0,
+   "size_kb": 628,
+   "archived": false,
+   "fork": false,
+   "created": "2019-08-31T18:33:53Z",
+   "pushed": "2024-02-22T09:52:59Z",
+   "homepage": null,
+   "topics": [
+    "acl",
+    "emnlp",
+    "naacl",
+    "natural-language-generation",
+    "natural-language-inference",
+    "natural-language-processing",
+    "natural-language-understanding",
+    "nlp-machine-learning"
+   ]
+  },
+  "files": 2,
+  "top": [
+   "images (1)",
+   "(root) (1)"
+  ],
+  "second": {},
+  "extensions": [
+   ".png (1)",
+   ".md (1)"
+  ],
+  "root_files": [
+   "readme.md"
+  ],
+  "signals": {}
+ }
+}

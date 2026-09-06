@@ -1,0 +1,127 @@
+{
+  "nodes": [
+    {
+      "id": "0fd6dd45-bb3e-53ef-a3d5-4e156cd42904",
+      "type": "file",
+      "file": "00-Indexes/Topic - Curated Aggregators & Reference Lists.md",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 240
+    },
+    {
+      "id": "c756075c-1138-53e0-b2f5-f5a4ffb52fa3",
+      "type": "file",
+      "file": "01-Resources/cfpb - open-source-checklist.md",
+      "x": -650,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "b1524394-d21b-5ffc-a2d0-95f38041d9af",
+      "type": "file",
+      "file": "01-Resources/hhstore - annotated-py-projects.md",
+      "x": -220,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "6bac425c-dd91-552b-a20f-098051363ab8",
+      "type": "file",
+      "file": "01-Resources/markusschanta - awesome-jupyter.md",
+      "x": 210,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "992dafb2-f011-50b4-8984-af3dd1dfb323",
+      "type": "file",
+      "file": "01-Resources/orsinium-labs - generated-awesomeness.md",
+      "x": 640,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "61e712aa-ccc5-58ba-bb73-1a04049efb06",
+      "type": "file",
+      "file": "01-Resources/pracdata - awesome-open-source-data-engineering.md",
+      "x": -650,
+      "y": 520,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "78b93928-fb1a-572d-86c7-a8131ce96a4c",
+      "type": "file",
+      "file": "01-Resources/The-Cool-Coders - Project-Ideas-And-Resources.md",
+      "x": -220,
+      "y": 520,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "a1feccd4-0138-5748-ab01-d6a988a521a7",
+      "type": "file",
+      "file": "04-Reviews/scadastrangelove - awesome-ai-security-tools.md",
+      "x": -980,
+      "y": -120,
+      "width": 320,
+      "height": 180
+    }
+  ],
+  "edges": [
+    {
+      "id": "bf4d8c91-cb6a-59d2-a3ec-9d1a2c9af390",
+      "fromNode": "0fd6dd45-bb3e-53ef-a3d5-4e156cd42904",
+      "fromSide": "bottom",
+      "toNode": "c756075c-1138-53e0-b2f5-f5a4ffb52fa3",
+      "toSide": "top"
+    },
+    {
+      "id": "715fca0e-4fb2-53a7-b4d3-810c2c1cd4ab",
+      "fromNode": "0fd6dd45-bb3e-53ef-a3d5-4e156cd42904",
+      "fromSide": "bottom",
+      "toNode": "b1524394-d21b-5ffc-a2d0-95f38041d9af",
+      "toSide": "top"
+    },
+    {
+      "id": "b834f859-65fd-52f6-8f84-74df93f263e0",
+      "fromNode": "0fd6dd45-bb3e-53ef-a3d5-4e156cd42904",
+      "fromSide": "bottom",
+      "toNode": "6bac425c-dd91-552b-a20f-098051363ab8",
+      "toSide": "top"
+    },
+    {
+      "id": "946f26ba-a328-5d57-acb0-4a90065ab4bb",
+      "fromNode": "0fd6dd45-bb3e-53ef-a3d5-4e156cd42904",
+      "fromSide": "bottom",
+      "toNode": "992dafb2-f011-50b4-8984-af3dd1dfb323",
+      "toSide": "top"
+    },
+    {
+      "id": "8bc0e91a-750d-5405-9d30-d686e77a9303",
+      "fromNode": "0fd6dd45-bb3e-53ef-a3d5-4e156cd42904",
+      "fromSide": "bottom",
+      "toNode": "61e712aa-ccc5-58ba-bb73-1a04049efb06",
+      "toSide": "top"
+    },
+    {
+      "id": "e8bddc1d-9c7a-5d05-8069-3fa7e8e73739",
+      "fromNode": "0fd6dd45-bb3e-53ef-a3d5-4e156cd42904",
+      "fromSide": "bottom",
+      "toNode": "78b93928-fb1a-572d-86c7-a8131ce96a4c",
+      "toSide": "top"
+    },
+    {
+      "id": "cb096c0a-51f2-5b1a-b036-cd47009498dd",
+      "fromNode": "0fd6dd45-bb3e-53ef-a3d5-4e156cd42904",
+      "fromSide": "left",
+      "toNode": "a1feccd4-0138-5748-ab01-d6a988a521a7",
+      "toSide": "right"
+    }
+  ]
+}

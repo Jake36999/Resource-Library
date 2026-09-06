@@ -1,0 +1,80 @@
+# What this repository is for
+#
+# The notes are the truth. Everything derived from them is rebuildable from a
+# clean checkout, so none of it belongs in history: a 13 MB SQLite file that is
+# rewritten by every `librarian index` run would add a new copy to every commit
+# and would be the largest thing here within a week.
+#
+# The rule this file encodes is the one `.Data/README.md` already states:
+# `Databases/` is disposable, `surveys/` is evidence.
+
+
+# --- Derived stores: delete them, rebuild them -------------------------------
+#
+#   python -m librarian index               catalogue_index.sqlite
+#   python -m librarian components build    source_components.sqlite
+#
+# `.Data/surveys/` is deliberately NOT ignored. Each file is what a blobless
+# shallow clone returned on a known date and is what the structural claims in
+# the notes are checked against; it cannot be regenerated without the network
+# and the GitHub budget, and regenerating it against today's HEAD would destroy
+# the thing that makes it evidence.
+.Data/Databases/
+*.sqlite
+*.sqlite-wal
+*.sqlite-shm
+*.db-journal
+
+# Embedding vectors ride in the index above; if that ever changes, they are
+# still derived and still belong here.
+.Data/embeddings/
+
+
+# --- Python ------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+build/
+dist/
+.venv/
+venv/
+env/
+
+
+# --- Obsidian ----------------------------------------------------------------
+#
+# The vault's shared configuration is tracked - core plugins, appearance and
+# graph settings describe the vault and should travel with it. Window layout
+# does not: `workspace.json` records which panes this machine had open and
+# changes on every focus change.
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/plugins/*/data.json
+
+
+# --- Working state -----------------------------------------------------------
+# Mode D clones and anything the workbench opens are temporary by construction.
+.Data/workbench/
+.Data/clones/
+scratch/
+*.tmp
+
+
+# --- Credentials --------------------------------------------------------------
+# Nothing here today. Present so a GITHUB_TOKEN cannot arrive by accident.
+.env
+.env.*
+*.pem
+*.key
+*.token
+
+
+# --- OS ----------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini

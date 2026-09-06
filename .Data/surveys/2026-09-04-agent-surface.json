@@ -1,0 +1,157 @@
+{
+ "tree-sitter - tree-sitter": {
+  "instruction": [],
+  "procedure": [],
+  "callable": []
+ },
+ "semgrep - semgrep": {
+  "instruction": [
+   "agents.md",
+   "claude.md"
+  ],
+  "procedure": [],
+  "callable": [
+   "cli/src/semgrep/commands/mcp.py",
+   "cli/src/semgrep/mcp/readme.md",
+   "cli/src/semgrep/mcp/__init__.py",
+   "cli/src/semgrep/mcp/hooks/__init__.py",
+   "cli/src/semgrep/mcp/hooks/inject_secure_defaults.py",
+   "cli/src/semgrep/mcp/hooks/post_tool.py",
+   "cli/src/semgrep/mcp/hooks/settings.py",
+   "cli/src/semgrep/mcp/hooks/stop.py"
+  ]
+ },
+ "Instagram - LibCST": {
+  "instruction": [],
+  "procedure": [],
+  "callable": []
+ },
+ "syntax-tree - mdast": {
+  "instruction": [],
+  "procedure": [],
+  "callable": []
+ },
+ "snorkel-team - snorkel": {
+  "instruction": [],
+  "procedure": [],
+  "callable": []
+ },
+ "urchade - GLiNER": {
+  "instruction": [],
+  "procedure": [],
+  "callable": []
+ },
+ "NorskRegnesentral - skweak": {
+  "instruction": [],
+  "procedure": [],
+  "callable": []
+ },
+ "HCAI-Lab-GT - capabilibara": {
+  "instruction": [],
+  "procedure": [],
+  "callable": []
+ },
+ "microsoft - graphrag": {
+  "instruction": [],
+  "procedure": [
+   ".agents/skills/update-deps/skill.md",
+   ".agents/skills/update-deps/references/migration-gotchas.md"
+  ],
+  "callable": []
+ },
+ "run-llama - llama_index": {
+  "instruction": [
+   "docs/src/content/docs/framework/understanding/putting_it_all_together/agents.md",
+   "docs/src/content/docs/framework/use_cases/agents.md"
+  ],
+  "procedure": [],
+  "callable": [
+   "docs/src/content/docs/framework/module_guides/mcp/_meta.yml",
+   "docs/src/content/docs/framework/module_guides/mcp/convert_existing.md",
+   "docs/src/content/docs/framework/module_guides/mcp/index.md",
+   "docs/src/content/docs/framework/module_guides/mcp/llamacloud_mcp.md",
+   "docs/src/content/docs/framework/module_guides/mcp/llamaindex_mcp.md",
+   "llama-index-integrations/tools/llama-index-tools-mcp/.gitignore",
+   "llama-index-integrations/tools/llama-index-tools-mcp/changelog.md",
+   "llama-index-integrations/tools/llama-index-tools-mcp/license"
+  ]
+ },
+ "neo4j-labs - neocarta": {
+  "instruction": [
+   "claude.md"
+  ],
+  "procedure": [
+   ".claude/skills/neocarta-add-connector-cli-command/skill.md",
+   ".claude/skills/neocarta-add-connector-cli-command/connector-cli-command-contract.md",
+   ".claude/skills/neocarta-add-connector-cli-command/scripts/driver.py",
+   ".claude/skills/neocarta-add-source-connector/skill.md",
+   ".claude/skills/neocarta-add-source-connector/connector-contract.md",
+   ".claude/skills/neocarta-add-source-connector/scripts/driver.py"
+  ],
+  "callable": [
+   "neocarta/_cli/commands/mcp.py",
+   "neocarta/_mcp/readme.md",
+   "neocarta/_mcp/__init__.py",
+   "neocarta/_mcp/cypher/__init__.py",
+   "neocarta/_mcp/cypher/catalog.py",
+   "neocarta/_mcp/cypher/full_text_search.py",
+   "neocarta/_mcp/cypher/hybrid_search.py",
+   "neocarta/_mcp/cypher/osi_catalog.py"
+  ]
+ },
+ "ganarajpr - awesome-dspy": {
+  "instruction": [],
+  "procedure": [],
+  "callable": []
+ },
+ "open-metadata - OpenMetadata": {
+  "instruction": [
+   ".github/copilot-instructions.md",
+   "agents.md",
+   "claude.md",
+   "openmetadata-ui-core-components/claude.md",
+   "skills/vendor/composition-patterns/agents.md",
+   "skills/vendor/react-best-practices/agents.md"
+  ],
+  "procedure": [
+   ".agents/skills/composition-patterns",
+   ".agents/skills/dev-setup",
+   ".agents/skills/java-checkstyle",
+   ".agents/skills/openmetadata-pr-review",
+   ".agents/skills/react-best-practices",
+   ".agents/skills/ui-checkstyle",
+   ".agents/skills/web-design-guidelines",
+   ".claude/skills/agents"
+  ],
+  "callable": [
+   "ingestion/examples/sample_data/ai_governance/mcp_servers.json",
+   "ingestion/src/metadata/ingestion/source/mcp/__init__.py",
+   "ingestion/src/metadata/ingestion/source/mcp/client.py",
+   "ingestion/src/metadata/ingestion/source/mcp/connection.py",
+   "ingestion/src/metadata/ingestion/source/mcp/mcp/__init__.py",
+   "ingestion/src/metadata/ingestion/source/mcp/mcp/connection.py",
+   "ingestion/src/metadata/ingestion/source/mcp/mcp/service_spec.py",
+   "ingestion/src/metadata/ingestion/source/mcp/metadata.py"
+  ]
+ },
+ "recipy - recipy": {
+  "instruction": [],
+  "procedure": [],
+  "callable": []
+ },
+ "Victor-Kipruto-Rop - medallion-lakehouse-platform": {
+  "instruction": [],
+  "procedure": [],
+  "callable": []
+ },
+ "PHACDataHub - data-mesh-ref-impl": {
+  "instruction": [],
+  "procedure": [],
+  "callable": []
+ },
+ "shenhuan2021 - gudu-sql-omni-introduce": {
+  "instruction": [],
+  "procedure": [],
+  "callable": []
+ }
+}

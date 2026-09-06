@@ -1,0 +1,152 @@
+{
+ "rudradesai200/SimpleFS": {
+  "files": [],
+  "class": "Unknown",
+  "names": [],
+  "composite": false,
+  "review": true,
+  "evidence": "no licence text found"
+ },
+ "alexandershaw4/PyBP-Py-BrainPlotter-for-AAL90": {
+  "files": [],
+  "class": "Unknown",
+  "names": [],
+  "composite": false,
+  "review": true,
+  "evidence": "no licence text found"
+ },
+ "carter-kilgour/delta-quality-testing": {
+  "files": [],
+  "class": "Unknown",
+  "names": [],
+  "composite": false,
+  "review": true,
+  "evidence": "no licence text found"
+ },
+ "stephanie-wang/lineage-stash-artifact": {
+  "files": [],
+  "class": "Unknown",
+  "names": [],
+  "composite": false,
+  "review": true,
+  "evidence": "no licence text found"
+ },
+ "whole-tale/provenance-examples": {
+  "files": [],
+  "class": "Unknown",
+  "names": [],
+  "composite": false,
+  "review": true,
+  "evidence": "no licence text found"
+ },
+ "hannesfrank/Course-Knowledge-Graphs": {
+  "files": [],
+  "class": "Unknown",
+  "names": [],
+  "composite": false,
+  "review": true,
+  "evidence": "no licence text found"
+ },
+ "mdebellis/SemanticKG-Design": {
+  "files": [
+   "LICENSE"
+  ],
+  "class": "Permissive",
+  "names": [
+   "CC-BY-4.0"
+  ],
+  "composite": false,
+  "review": false,
+  "evidence": "LICENSE names CC-BY-4.0 (reproduced in full)"
+ },
+ "thinktecture-labs/semantic-kernel-semanticsearch": {
+  "files": [],
+  "class": "Unknown",
+  "names": [],
+  "composite": false,
+  "review": true,
+  "evidence": "no licence text found"
+ },
+ "fighting41love/funNLP": {
+  "files": [],
+  "class": "Unknown",
+  "names": [],
+  "composite": false,
+  "review": true,
+  "evidence": "no licence text found"
+ },
+ "JackieZhangdx/WeakSupervisedSegmentationList": {
+  "files": [],
+  "class": "Unknown",
+  "names": [],
+  "composite": false,
+  "review": true,
+  "evidence": "no licence text found"
+ },
+ "awsdocs/amazon-comprehend-developer-guide": {
+  "files": [
+   "LICENSE",
+   "LICENSE-SUMMARY"
+  ],
+  "class": "Copyleft",
+  "names": [
+   "CC-BY-SA-4.0",
+   "MIT"
+  ],
+  "composite": true,
+  "review": true,
+  "evidence": "LICENSE names CC-BY-SA-4.0, MIT (1 reproduced in full, 1 referred to)"
+ },
+ "open-metadata/docs-v1-legacy": {
+  "files": [],
+  "class": "Unknown",
+  "names": [],
+  "composite": false,
+  "review": true,
+  "evidence": "no licence text found"
+ },
+ "javaparser/javaparser": {
+  "files": [
+   "LICENSE",
+   "LICENSE.APACHE",
+   "LICENSE.LGPL",
+   "LICENSE.GPL"
+  ],
+  "class": "Weak_Copyleft",
+  "names": [
+   "Apache-2.0",
+   "LGPL-3.0"
+  ],
+  "composite": true,
+  "review": true,
+  "evidence": "LICENSE names Apache-2.0, LGPL-3.0 (2 reproduced in full, 0 referred to)"
+ },
+ "jgravelle/jcodemunch-mcp": {
+  "files": [
+   "LICENSE"
+  ],
+  "class": "Permissive",
+  "names": [
+   "MIT"
+  ],
+  "composite": false,
+  "review": false,
+  "evidence": "LICENSE names MIT (reproduced in full)"
+ },
+ "JayLZhou/GraphRAG": {
+  "files": [],
+  "class": "Unknown",
+  "names": [],
+  "composite": false,
+  "review": true,
+  "evidence": "no licence text found"
+ },
+ "soulbliss/NLP-conference-compendium": {
+  "files": [],
+  "class": "Unknown",
+  "names": [],
+  "composite": false,
+  "review": true,
+  "evidence": "no licence text found"
+ }
+}

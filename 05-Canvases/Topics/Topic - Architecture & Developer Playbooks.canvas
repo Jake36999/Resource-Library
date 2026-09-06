@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "b1b56f1f-3efe-55e5-a543-a0a8fb5a38c1",
+      "type": "file",
+      "file": "00-Indexes/Topic - Architecture & Developer Playbooks.md",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 240
+    },
+    {
+      "id": "f848ab4a-2d7a-5039-9ee9-dd7cefa47436",
+      "type": "file",
+      "file": "01-Resources/square - square.github.io.md",
+      "x": -650,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    }
+  ],
+  "edges": [
+    {
+      "id": "694ff2ba-6a15-53d6-bc29-c47112d845b0",
+      "fromNode": "b1b56f1f-3efe-55e5-a543-a0a8fb5a38c1",
+      "fromSide": "bottom",
+      "toNode": "f848ab4a-2d7a-5039-9ee9-dd7cefa47436",
+      "toSide": "top"
+    }
+  ]
+}

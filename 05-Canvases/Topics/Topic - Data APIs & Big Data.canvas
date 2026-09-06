@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "3a5cb988-9dcf-5200-929a-87f65a482005",
+      "type": "file",
+      "file": "00-Indexes/Topic - Data APIs & Big Data.md",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 240
+    },
+    {
+      "id": "916df304-f3d4-54d2-b4c6-efcf2adcd722",
+      "type": "file",
+      "file": "01-Resources/not-a-bank - open-banking-tracker-data.md",
+      "x": -650,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    }
+  ],
+  "edges": [
+    {
+      "id": "b5f42bc1-b3ff-547f-b672-d7d10905e82b",
+      "fromNode": "3a5cb988-9dcf-5200-929a-87f65a482005",
+      "fromSide": "bottom",
+      "toNode": "916df304-f3d4-54d2-b4c6-efcf2adcd722",
+      "toSide": "top"
+    }
+  ]
+}

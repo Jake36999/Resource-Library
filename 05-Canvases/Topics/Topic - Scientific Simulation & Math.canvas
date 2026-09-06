@@ -1,0 +1,111 @@
+{
+  "nodes": [
+    {
+      "id": "5b379eea-62ff-5535-a6fc-9a7824765ce8",
+      "type": "file",
+      "file": "00-Indexes/Topic - Scientific Simulation & Math.md",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 240
+    },
+    {
+      "id": "1450e35b-4bef-5f76-ba37-b03fe9089875",
+      "type": "file",
+      "file": "01-Resources/asreview.md",
+      "x": -650,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "71e97199-e39d-5964-b6fb-5e36255c4a7a",
+      "type": "file",
+      "file": "01-Resources/astropy.md",
+      "x": -220,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "ce2ee225-e61f-5492-b661-261c92b8b861",
+      "type": "file",
+      "file": "01-Resources/gap-system - gap.md",
+      "x": 210,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "cc46e92a-6292-5f18-b311-0c42f90e7e70",
+      "type": "file",
+      "file": "01-Resources/LaurentRDC - scikit-ued.md",
+      "x": 640,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "6a6f4173-b29f-5701-9ce8-d9bfdaa12561",
+      "type": "file",
+      "file": "01-Resources/simbody.md",
+      "x": -650,
+      "y": 520,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "fec768a9-bb6f-5185-b220-88d5f40e1cdb",
+      "type": "file",
+      "file": "01-Resources/sympy.md",
+      "x": -220,
+      "y": 520,
+      "width": 320,
+      "height": 190
+    }
+  ],
+  "edges": [
+    {
+      "id": "cf9b9229-7ebc-58ee-83f8-f6093691336a",
+      "fromNode": "5b379eea-62ff-5535-a6fc-9a7824765ce8",
+      "fromSide": "bottom",
+      "toNode": "1450e35b-4bef-5f76-ba37-b03fe9089875",
+      "toSide": "top"
+    },
+    {
+      "id": "ce8077f1-01af-5815-8bff-388a4c8c3093",
+      "fromNode": "5b379eea-62ff-5535-a6fc-9a7824765ce8",
+      "fromSide": "bottom",
+      "toNode": "71e97199-e39d-5964-b6fb-5e36255c4a7a",
+      "toSide": "top"
+    },
+    {
+      "id": "7894f74e-aa5c-5c84-956e-65d85916f88d",
+      "fromNode": "5b379eea-62ff-5535-a6fc-9a7824765ce8",
+      "fromSide": "bottom",
+      "toNode": "ce2ee225-e61f-5492-b661-261c92b8b861",
+      "toSide": "top"
+    },
+    {
+      "id": "fd9eddd2-4e98-5fab-8af1-725793a2b0fb",
+      "fromNode": "5b379eea-62ff-5535-a6fc-9a7824765ce8",
+      "fromSide": "bottom",
+      "toNode": "cc46e92a-6292-5f18-b311-0c42f90e7e70",
+      "toSide": "top"
+    },
+    {
+      "id": "1627e3a6-4353-5700-8696-e7ac602d53f2",
+      "fromNode": "5b379eea-62ff-5535-a6fc-9a7824765ce8",
+      "fromSide": "bottom",
+      "toNode": "6a6f4173-b29f-5701-9ce8-d9bfdaa12561",
+      "toSide": "top"
+    },
+    {
+      "id": "516660c2-5bda-5dbd-b463-0350c0efbd73",
+      "fromNode": "5b379eea-62ff-5535-a6fc-9a7824765ce8",
+      "fromSide": "bottom",
+      "toNode": "fec768a9-bb6f-5185-b220-88d5f40e1cdb",
+      "toSide": "top"
+    }
+  ]
+}

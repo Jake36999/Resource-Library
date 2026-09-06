@@ -1,0 +1,674 @@
+{
+  "_note": "Each scenario isolates one component of a real system and describes it in that system's own vocabulary, with surrounding architecture named as context that is NOT being developed. Descriptions deliberately avoid the phrasing used in any note, so the test measures retrieval rather than echo. `home_topic` is the field the asker is working in; a useful answer from a different topic counts as alternative discovery. `expected_topics` are the topics an answer might legitimately come from. Some scenarios are expected to fail and carry a `note` saying so - a corpus containing only answerable questions measures nothing.",
+  "scenarios": [
+    {
+      "id": "telemetry-collector-fanout",
+      "system": "this catalogue's own librarian",
+      "component": "librarian.index",
+      "description": "We have a build step that walks a directory of documents, parses each one, and writes rows into a local database plus a full-text table. It runs in under a second today but re-does everything on every run. The rest of the system - the read API, the assertion suite, the view generator - all read from that database and never touch the documents. We want the rebuild to stay cheap as the corpus grows, and we want deleting the database to remain safe.",
+      "expects": {
+        "strong": [
+          "dbt-labs - dbt-core",
+          "tree-sitter - tree-sitter"
+        ],
+        "acceptable": [
+          "duckdb - duckdb",
+          "apache - airflow",
+          "recipy - recipy"
+        ]
+      },
+      "correction": "2026-09-04: `duckdb - duckdb` was listed as a strong answer and is not one - it does no incremental re-derivation. Corrected on the merits, not because the scenario failed; the description gap it exposed in `dbt-labs - dbt-core` was real and was fixed separately.",
+      "expected_topics": [
+        "Data APIs & Big Data",
+        "Code Intelligence & Structural Parsing"
+      ],
+      "home_topic": "Knowledge Management"
+    },
+    {
+      "id": "ranking-signal-weights",
+      "system": "this catalogue's own scout",
+      "component": "scout.rank",
+      "description": "A queue orders incoming candidates using six hand-weighted numbers - how thin the destination area is, how often the candidate was rediscovered, how recently it changed, how permissive its terms are, how popular it is, how much documentation it has. Nobody can tell whether the weights are right. Upstream, discovery hands us candidates; downstream a freeze step batches the top of the queue for review. We only want to change the ordering.",
+      "expects": {
+        "strong": [
+          "snorkel-team - snorkel",
+          "NorskRegnesentral - skweak"
+        ],
+        "acceptable": [
+          "asreview",
+          "urchade - GLiNER"
+        ]
+      },
+      "expected_topics": [
+        "ML Training & MLOps"
+      ],
+      "home_topic": "Knowledge Management"
+    },
+    {
+      "id": "config-validation-surface",
+      "system": "Prometheus",
+      "component": "configuration loading and validation",
+      "description": "A service reads a large declarative configuration file at startup and must reject a malformed one with a message naming what is wrong. The scrape loop, the storage engine and the query layer all assume the configuration parsed cleanly and are out of scope. We want the accepted shape to be written down somewhere a person and a machine can both read, and we want a corpus of good and bad examples to test against.",
+      "expects": {
+        "strong": [
+          "stac-utils - pystac",
+          "open-metadata - OpenMetadata",
+          "hashicorp - terraform"
+        ],
+        "acceptable": [
+          "syntax-tree - mdast",
+          "SigmaHQ - sigma",
+          "duckdb - duckdb"
+        ]
+      },
+      "expected_topics": [
+        "Data APIs & Big Data",
+        "Code Intelligence & Structural Parsing",
+        "Infrastructure & Observability"
+      ],
+      "home_topic": "Infrastructure & Observability"
+    },
+    {
+      "id": "rule-authoring-ui",
+      "system": "a detection platform",
+      "component": "the rule editing interface",
+      "description": "Analysts write detection logic but cannot deploy. Today they file a ticket and an engineer edits a YAML file. The ingestion pipeline, the stream processor and the alert router all consume those files and are not changing. We want the analysts editing directly, with the form generated from whatever defines a valid rule, and validation before anything is saved.",
+      "expects": {
+        "strong": [
+          "G-Research - siembol",
+          "SigmaHQ - sigma"
+        ],
+        "acceptable": [
+          "open-metadata - OpenMetadata",
+          "netdata",
+          "ckan - ckan"
+        ]
+      },
+      "expected_topics": [
+        "Security & SIEM",
+        "Data APIs & Big Data"
+      ],
+      "home_topic": "Security & SIEM"
+    },
+    {
+      "id": "docs-that-rot",
+      "system": "a research documentation set",
+      "component": "the worked examples in the manual",
+      "description": "Our reference manual carries code samples that were correct when written. Some no longer run. The library itself, its release process and its API are unchanged and out of scope - we only want the examples in the prose to stop drifting from the software they describe.",
+      "expects": {
+        "strong": [
+          "sympy",
+          "gap-system - gap"
+        ],
+        "acceptable": [
+          "opengeos - leafmap",
+          "LaurentRDC - scikit-ued",
+          "CadQuery - cadquery",
+          "awslabs - awsome-distributed-ai"
+        ]
+      },
+      "expected_topics": [
+        "Scientific Simulation & Math",
+        "Geospatial & Earth Data"
+      ],
+      "home_topic": "Scientific Simulation & Math"
+    },
+    {
+      "id": "cross-jurisdiction-query",
+      "system": "a multi-organisation analytics programme",
+      "component": "the query gateway between parties",
+      "description": "Two organisations cannot pool their records for legal reasons. One holds the data; the other needs answers. Storage, identity and the analytics engine on each side already exist. We need the layer in between: something that decides which questions may be asked at all, and what may come back, where the people who own that decision are lawyers rather than engineers.",
+      "expects": {
+        "strong": [
+          "PHACDataHub - data-mesh-ref-impl"
+        ],
+        "acceptable": [
+          "NatLabRockies - api-umbrella",
+          "open-metadata - OpenMetadata",
+          "GSA - data.gov"
+        ]
+      },
+      "expected_topics": [
+        "Data APIs & Big Data",
+        "Government & Civic Tech",
+        "Infrastructure & Observability"
+      ],
+      "home_topic": "Government & Civic Tech"
+    },
+    {
+      "id": "find-shape-across-languages",
+      "system": "a large polyglot codebase",
+      "component": "the audit step in CI",
+      "description": "After a disclosure we need to find every place a particular construct appears, across six languages, before the next release. Grep produces thousands of false positives because the construct can be written many ways. The build system, the test runners and the release pipeline are not changing - we want one check added that can express the thing we are looking for precisely.",
+      "expects": {
+        "strong": [
+          "semgrep - semgrep",
+          "tree-sitter - tree-sitter"
+        ],
+        "acceptable": [
+          "Instagram - LibCST",
+          "osquery - osquery",
+          "SigmaHQ - sigma"
+        ]
+      },
+      "expected_topics": [
+        "Code Intelligence & Structural Parsing",
+        "Security & SIEM"
+      ],
+      "home_topic": "Code Intelligence & Structural Parsing"
+    },
+    {
+      "id": "corpus-review-flow",
+      "system": "a curated reference dataset",
+      "component": "the contribution and review step",
+      "description": "We maintain tens of thousands of records describing organisations. Contributors submit changes; today a reviewer reads a diff of one enormous file and cannot tell what actually changed. The publishing site and the consuming API are out of scope. We want a change to one organisation to be legible as a change to one thing, and we want malformed submissions rejected before a human looks at them.",
+      "expects": {
+        "strong": [
+          "not-a-bank - open-banking-tracker-data",
+          "public-apis - public-apis"
+        ],
+        "acceptable": [
+          "github - government.github.com",
+          "scadastrangelove - awesome-ai-security-tools",
+          "ckan - ckan"
+        ]
+      },
+      "expected_topics": [
+        "Data APIs & Big Data",
+        "Curated Aggregators & Reference Lists",
+        "Government & Civic Tech"
+      ],
+      "home_topic": "Curated Aggregators & Reference Lists"
+    },
+    {
+      "id": "extract-fields-changing-schema",
+      "system": "a document processing pipeline",
+      "component": "the field extraction stage",
+      "description": "We pull structured values out of unstructured prose. The set of things we need to pull out changes every few weeks as requirements shift. Rebuilding a trained extractor each time is too slow, and calling a large hosted model for every document is too expensive at our volume. Ingestion, storage and the review UI are unchanged.",
+      "expects": {
+        "strong": [
+          "urchade - GLiNER"
+        ],
+        "acceptable": [
+          "NorskRegnesentral - skweak",
+          "snorkel-team - snorkel",
+          "open-metadata - OpenMetadata",
+          "microsoft - graphrag"
+        ]
+      },
+      "expected_topics": [
+        "ML Training & MLOps",
+        "Knowledge Management"
+      ],
+      "home_topic": "ML Training & MLOps"
+    },
+    {
+      "id": "whole-corpus-question",
+      "system": "an internal knowledge base",
+      "component": "the question answering layer",
+      "description": "Users ask things like what themes run through this material and what has changed in our thinking. Our search returns passages, which answers where a fact is but never what the collection amounts to. Ingestion, chunking and the vector store already work and are out of scope.",
+      "expects": {
+        "strong": [
+          "microsoft - graphrag"
+        ],
+        "acceptable": [
+          "run-llama - llama_index",
+          "neo4j-labs - neocarta",
+          "donnemartin - system-design-primer"
+        ]
+      },
+      "expected_topics": [
+        "Knowledge Management"
+      ],
+      "home_topic": "Knowledge Management"
+    },
+    {
+      "id": "provenance-of-an-output",
+      "system": "a research analysis workflow",
+      "component": "recording how a result was produced",
+      "description": "Somebody produces a chart, saves it, and six months later nobody can say which script, which inputs or which version of the code made it. Analysts work in scripts and will not adopt a workflow engine. Compute, storage and the plotting library are all unchanged - we only want to know afterwards where an output came from.",
+      "expects": {
+        "strong": [
+          "recipy - recipy"
+        ],
+        "acceptable": [
+          "HCAI-Lab-GT - capabilibara",
+          "open-metadata - OpenMetadata",
+          "dbt-labs - dbt-core",
+          "asreview"
+        ]
+      },
+      "expected_topics": [
+        "Data APIs & Big Data",
+        "ML Training & MLOps",
+        "Scientific Simulation & Math"
+      ],
+      "home_topic": "Scientific Simulation & Math"
+    },
+    {
+      "id": "visual-output-regression",
+      "system": "a rendering application",
+      "component": "the regression suite for rendered output",
+      "description": "A change to the renderer sometimes alters output in ways unit tests do not catch, and we only find out when a user reports it. The rendering pipeline, the file format and the UI are not being changed. We want a change in what comes out to fail the build, and we want the failure to say which case broke and why that case exists.",
+      "expects": {
+        "strong": [
+          "openscad - openscad",
+          "penpot - penpot"
+        ],
+        "acceptable": [
+          "react",
+          "twbs - bootstrap",
+          "getsentry - sentry",
+          "Modernizr"
+        ]
+      },
+      "expected_topics": [
+        "CAD & SaaS Design",
+        "Frontend & Design Systems",
+        "Infrastructure & Observability"
+      ],
+      "home_topic": "CAD & SaaS Design"
+    },
+    {
+      "id": "stopping-rule-for-review",
+      "system": "a systematic screening process",
+      "component": "deciding when to stop reviewing",
+      "description": "A person examines candidates one at a time in an order the machine chooses. We have no principled way to say when enough have been examined, so people either stop too early or grind through everything. The candidate store and the interface are not changing - only the ordering and the stopping decision.",
+      "expects": {
+        "strong": [
+          "asreview"
+        ],
+        "acceptable": [
+          "snorkel-team - snorkel",
+          "NorskRegnesentral - skweak",
+          "microsoft - graphrag"
+        ]
+      },
+      "expected_topics": [
+        "Scientific Simulation & Math",
+        "ML Training & MLOps"
+      ],
+      "home_topic": "Scientific Simulation & Math"
+    },
+    {
+      "id": "one-interface-many-formats",
+      "system": "a data ingestion service",
+      "component": "the reader layer",
+      "description": "Consumers need to read material that arrives in dozens of incompatible encodings, and each consumer currently handles the ones it cares about. Adding a new encoding means touching every consumer. The scheduler, the storage layer and the downstream transforms are out of scope.",
+      "expects": {
+        "strong": [
+          "OSGeo - gdal"
+        ],
+        "acceptable": [
+          "run-llama - llama_index",
+          "recipy - recipy",
+          "stac-utils - pystac",
+          "duckdb - duckdb"
+        ]
+      },
+      "expected_topics": [
+        "Geospatial & Earth Data",
+        "Knowledge Management",
+        "Data APIs & Big Data"
+      ],
+      "home_topic": "Data APIs & Big Data"
+    },
+    {
+      "id": "agent-contribution-procedure",
+      "system": "a large open codebase",
+      "component": "the contribution workflow",
+      "description": "Contributors - increasingly automated ones - get the mechanical parts of a change wrong: the wrong test layout, a missing changelog entry, the wrong documentation shape. Our review process catches it late and expensively. The build, the test runners and the release pipeline are unchanged. We want the procedure itself to be something a contributor can execute rather than read.",
+      "expects": {
+        "strong": [
+          "netdata",
+          "getsentry - sentry",
+          "vercel-labs - skills"
+        ],
+        "acceptable": [
+          "apache - airflow",
+          "open-metadata - OpenMetadata",
+          "react",
+          "dbt-labs - dbt-core"
+        ]
+      },
+      "expected_topics": [
+        "Infrastructure & Observability",
+        "Agentic AI & Models",
+        "Data APIs & Big Data"
+      ],
+      "home_topic": "Infrastructure & Observability"
+    },
+    {
+      "id": "environment-capability-probe",
+      "system": "a client-side application",
+      "component": "the feature gate",
+      "description": "Our application branches on which client it thinks it is talking to, using a lookup table of names and versions. The table is always out of date and is wrong for anything new. The rendering layer, the network layer and the build are unchanged - we only want the branching decision made differently.",
+      "expects": {
+        "strong": [
+          "Modernizr"
+        ],
+        "acceptable": [
+          "twbs - bootstrap",
+          "react",
+          "necolas - normalize.css"
+        ]
+      },
+      "expected_topics": [
+        "Frontend & Design Systems"
+      ],
+      "home_topic": "Frontend & Design Systems"
+    },
+    {
+      "id": "gpu-execution-alternative",
+      "system": "a numerical simulation",
+      "component": "the inner solve",
+      "home_topic": "Scientific Simulation & Math",
+      "description": "Our simulation runs on CPU arrays and we have spent months on micro-optimisations. It still runs out of memory at the resolution we need and the step rate is an order of magnitude short. The meshing, the boundary conditions and the output writer are settled and out of scope. We suspect the execution model itself is the constraint rather than any particular routine, and want to know what other ways of running this kind of arithmetic exist.",
+      "expects": {
+        "strong": [],
+        "acceptable": [
+          "simbody",
+          "sympy",
+          "awslabs - awsome-distributed-ai"
+        ]
+      },
+      "expected_topics": [
+        "Scientific Simulation & Math",
+        "ML Training & MLOps"
+      ],
+      "note": "Expected to fail. Nothing in the catalogue covers array-programming or accelerator execution models. This is the scenario that motivated the whole use-contexts argument, kept as a standing coverage test."
+    },
+    {
+      "id": "component-drift-across-teams",
+      "system": "a product front end",
+      "component": "the shared component library",
+      "home_topic": "Frontend & Design Systems",
+      "description": "Four teams each build their own version of the same controls and they drift apart visually and behaviourally. The routing, state management and build tooling are agreed and not in question. We want one set of components with the decisions about spacing and scale defined once, and we want the documentation for them to be impossible to get out of step with what ships.",
+      "expects": {
+        "strong": [
+          "twbs - bootstrap",
+          "penpot - penpot"
+        ],
+        "acceptable": [
+          "react",
+          "Modernizr",
+          "animate-css - animate.css",
+          "nathansmith - 960-Grid-System"
+        ]
+      },
+      "expected_topics": [
+        "Frontend & Design Systems",
+        "CAD & SaaS Design"
+      ]
+    },
+    {
+      "id": "metric-cardinality-explosion",
+      "system": "a monitored service fleet",
+      "component": "the metrics emission path",
+      "home_topic": "Infrastructure & Observability",
+      "description": "Every request emits a measurement tagged with the customer identifier, and our storage bill has become the largest line item. Dashboards and paging rules already exist and are not being rebuilt. We want to keep enough detail to investigate an incident afterwards without keeping every distinct tag combination for ever.",
+      "expects": {
+        "strong": [
+          "prometheus",
+          "netdata",
+          "statsd"
+        ],
+        "acceptable": [
+          "getsentry - sentry",
+          "duckdb - duckdb"
+        ]
+      },
+      "expected_topics": [
+        "Infrastructure & Observability",
+        "Data APIs & Big Data"
+      ]
+    },
+    {
+      "id": "per-tenant-quotas",
+      "system": "a public API",
+      "component": "the request admission layer",
+      "home_topic": "Infrastructure & Observability",
+      "description": "Each of our services counts requests per customer in its own way, so a customer who is throttled by one is not throttled by another and nobody can state the policy. The services themselves, their storage and their business logic are unchanged. We want one place that decides whether a call is allowed and records that it happened.",
+      "expects": {
+        "strong": [
+          "NatLabRockies - api-umbrella"
+        ],
+        "acceptable": [
+          "prometheus",
+          "PHACDataHub - data-mesh-ref-impl",
+          "open-metadata - OpenMetadata"
+        ]
+      },
+      "expected_topics": [
+        "Infrastructure & Observability",
+        "Data APIs & Big Data"
+      ]
+    },
+    {
+      "id": "theory-buried-in-documents",
+      "system": "a research programme",
+      "component": "the literature review step",
+      "home_topic": "Knowledge Management",
+      "description": "The methods we need are described in a few thousand papers and internal reports, not in any codebase. A person reads abstracts in whatever order they arrive and gives up long before the pile is exhausted. Storage, the reference manager and the writing process are out of scope. We want the reading ordered so the useful ones come early, and some basis for saying when to stop.",
+      "expects": {
+        "strong": [
+          "asreview"
+        ],
+        "acceptable": [
+          "microsoft - graphrag",
+          "snorkel-team - snorkel",
+          "urchade - GLiNER",
+          "mhadidg - software-architecture-books"
+        ]
+      },
+      "expected_topics": [
+        "Scientific Simulation & Math",
+        "Knowledge Management",
+        "ML Training & MLOps"
+      ]
+    },
+    {
+      "id": "quality-gate-before-publish",
+      "system": "a nightly data pipeline",
+      "component": "the check before anything is published",
+      "home_topic": "Data APIs & Big Data",
+      "description": "Bad records reach the reporting tables and nobody notices until somebody queries them. Extraction and loading work; the warehouse and the dashboards are unchanged. We want a stage that refuses to promote a batch that fails its expectations, and we want the rejected records kept somewhere we can look at rather than dropped.",
+      "expects": {
+        "strong": [
+          "Victor-Kipruto-Rop - medallion-lakehouse-platform",
+          "dbt-labs - dbt-core"
+        ],
+        "acceptable": [
+          "apache - airflow",
+          "open-metadata - OpenMetadata",
+          "not-a-bank - open-banking-tracker-data"
+        ]
+      },
+      "expected_topics": [
+        "Data APIs & Big Data"
+      ]
+    },
+    {
+      "id": "format-version-migration",
+      "system": "a long-lived file format",
+      "component": "reading files written by older versions",
+      "home_topic": "Geospatial & Earth Data",
+      "description": "Files written by five years of releases are all still in circulation and each release changed the shape slightly. Our reader has grown a thicket of conditionals and nobody is confident it handles the old ones. The writer, the rendering path and the API are unchanged. We want a way to know which shapes exist and to prove we still read each of them.",
+      "expects": {
+        "strong": [
+          "stac-utils - pystac",
+          "geopandas - geopandas",
+          "OSGeo - gdal"
+        ],
+        "acceptable": [
+          "hashicorp - terraform",
+          "astropy",
+          "duckdb - duckdb"
+        ]
+      },
+      "expected_topics": [
+        "Geospatial & Earth Data",
+        "Data APIs & Big Data",
+        "Infrastructure & Observability"
+      ]
+    },
+    {
+      "id": "matching-organisation-names",
+      "system": "a reconciliation service",
+      "component": "matching incoming names to known institutions",
+      "home_topic": "Data APIs & Big Data",
+      "description": "Incoming records name organisations in inconsistent ways - abbreviations, legal suffixes, local spellings - and we must decide which known institution each refers to. The ingestion queue and the review interface exist already. What we lack is a body of real institution names to build and test against; synthetic data has not exposed the cases that break us.",
+      "expects": {
+        "strong": [
+          "not-a-bank - open-banking-tracker-data"
+        ],
+        "acceptable": [
+          "urchade - GLiNER",
+          "NorskRegnesentral - skweak",
+          "open-metadata - OpenMetadata"
+        ]
+      },
+      "expected_topics": [
+        "Data APIs & Big Data",
+        "ML Training & MLOps"
+      ]
+    },
+    {
+      "id": "knowing-when-a-copy-is-stale",
+      "system": "a derived search index",
+      "component": "deciding whether the copy is current",
+      "home_topic": "Knowledge Management",
+      "description": "We keep a copy of upstream records to answer queries quickly. Sometimes it is behind and nobody finds out until a user reports a wrong answer. The query path and the upstream store are not changing. We want the copy to be able to say what state it was derived from, and something that notices when that no longer matches.",
+      "expects": {
+        "strong": [
+          "dbt-labs - dbt-core",
+          "recipy - recipy"
+        ],
+        "acceptable": [
+          "open-metadata - OpenMetadata",
+          "prometheus",
+          "hashicorp - terraform",
+          "tree-sitter - tree-sitter"
+        ]
+      },
+      "expected_topics": [
+        "Data APIs & Big Data",
+        "Knowledge Management",
+        "Code Intelligence & Structural Parsing"
+      ]
+    },
+    {
+      "id": "prototype-nobody-can-rerun",
+      "system": "an analysis notebook",
+      "component": "the path from prototype to something repeatable",
+      "home_topic": "Scientific Simulation & Math",
+      "description": "A result was produced by a notebook that imports from a folder of loose scripts. Six months on, nobody can reproduce the number, including the person who made it. The compute environment and the storage are fine. We want to know, for any output, exactly what produced it, without asking analysts to change how they work.",
+      "expects": {
+        "strong": [
+          "recipy - recipy"
+        ],
+        "acceptable": [
+          "asreview",
+          "opengeos - leafmap",
+          "HCAI-Lab-GT - capabilibara",
+          "LaurentRDC - scikit-ued"
+        ]
+      },
+      "expected_topics": [
+        "Data APIs & Big Data",
+        "Scientific Simulation & Math"
+      ]
+    },
+    {
+      "id": "test-files-we-cannot-obtain",
+      "system": "a parser for an industry format",
+      "component": "the test corpus",
+      "home_topic": "Code Intelligence & Structural Parsing",
+      "description": "We parse a format that appears in dozens of vendor dialects. Our tests use files we wrote ourselves, so they only cover what we already understood. The parser design, the API and the error reporting are settled. We need real examples produced by other people's tools, including malformed ones.",
+      "expects": {
+        "strong": [
+          "OSGeo - gdal",
+          "duckdb - duckdb"
+        ],
+        "acceptable": [
+          "hashicorp - terraform",
+          "SigmaHQ - sigma",
+          "astropy",
+          "geopandas - geopandas",
+          "openscad - openscad"
+        ]
+      },
+      "expected_topics": [
+        "Geospatial & Earth Data",
+        "Data APIs & Big Data",
+        "Code Intelligence & Structural Parsing"
+      ]
+    },
+    {
+      "id": "two-teams-two-vocabularies",
+      "system": "a reporting layer over several databases",
+      "component": "the shared definitions",
+      "home_topic": "Data APIs & Big Data",
+      "description": "Finance and operations use the same words for different quantities and different words for the same quantity, so two dashboards disagree and both are right. The databases, the query engine and the visualisation tool are all staying. We want the meanings written down once, attached to the columns they describe, and reachable by whatever is generating the queries.",
+      "expects": {
+        "strong": [
+          "neo4j-labs - neocarta",
+          "open-metadata - OpenMetadata"
+        ],
+        "acceptable": [
+          "dbt-labs - dbt-core",
+          "ckan - ckan",
+          "microsoft - graphrag"
+        ]
+      },
+      "expected_topics": [
+        "Data APIs & Big Data",
+        "Knowledge Management"
+      ]
+    },
+    {
+      "id": "too-many-alerts",
+      "system": "an on-call rotation",
+      "component": "what gets someone out of bed",
+      "home_topic": "Infrastructure & Observability",
+      "description": "We page on hundreds of distinct conditions and most of them are the same underlying problem seen from different angles. People have stopped reading them. Collection, storage and the dashboards are fine and not being replaced. We want the hundred symptoms of one fault to arrive as one thing, with enough attached to diagnose it.",
+      "expects": {
+        "strong": [
+          "getsentry - sentry"
+        ],
+        "acceptable": [
+          "prometheus",
+          "netdata",
+          "falcosecurity - falco",
+          "microsoft - graphrag"
+        ]
+      },
+      "expected_topics": [
+        "Infrastructure & Observability",
+        "Security & SIEM"
+      ]
+    },
+    {
+      "id": "works-only-when-everything-is-up",
+      "system": "a command line tool",
+      "component": "behaviour when a dependency is missing",
+      "home_topic": "Infrastructure & Observability",
+      "description": "Our tool needs a model server, a container runtime and a remote API. When any one is absent it fails with a stack trace, so people cannot use the parts that would still work. The features themselves are fine. We want each capability to stand down on its own and say what it could not do, rather than taking the whole command with it.",
+      "expects": {
+        "strong": [],
+        "acceptable": [
+          "hashicorp - terraform",
+          "netdata",
+          "prometheus",
+          "Modernizr",
+          "chef"
+        ]
+      },
+      "expected_topics": [
+        "Infrastructure & Observability",
+        "Frontend & Design Systems"
+      ],
+      "note": "Expected to be weak. Graceful degradation is a property this system holds strongly and describes in its own documents, and almost no catalogued source is described by it."
+    }
+  ]
+}

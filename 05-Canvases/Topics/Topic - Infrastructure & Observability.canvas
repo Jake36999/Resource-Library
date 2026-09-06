@@ -1,0 +1,159 @@
+{
+  "nodes": [
+    {
+      "id": "a963564d-a127-5ca1-99da-260541f6f6b8",
+      "type": "file",
+      "file": "00-Indexes/Topic - Infrastructure & Observability.md",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 240
+    },
+    {
+      "id": "b22c69f1-62e4-59a0-9d58-d19471e3fbed",
+      "type": "file",
+      "file": "01-Resources/chef.md",
+      "x": -650,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "491885e0-d98d-5a6d-9419-4459e1fd5c70",
+      "type": "file",
+      "file": "01-Resources/getsentry - sentry.md",
+      "x": -220,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "a5bf84a6-3596-53f8-88ba-4055a95cafce",
+      "type": "file",
+      "file": "01-Resources/hashicorp - terraform.md",
+      "x": 210,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "131a1454-a7db-5e95-812c-ecd5310e02a2",
+      "type": "file",
+      "file": "01-Resources/NatLabRockies - api-umbrella.md",
+      "x": 640,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "c1686bc7-f783-544b-8548-6c4113bf3fa4",
+      "type": "file",
+      "file": "01-Resources/netdata.md",
+      "x": -650,
+      "y": 520,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "9e0de2db-db77-5ade-97da-329c86609276",
+      "type": "file",
+      "file": "01-Resources/openstack.md",
+      "x": -220,
+      "y": 520,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "c1c71417-65e2-5a9f-86d2-c6eb599dae67",
+      "type": "file",
+      "file": "01-Resources/prometheus.md",
+      "x": 210,
+      "y": 520,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "0e8d67e2-f59a-5c06-b6ed-b5459f5d0ce1",
+      "type": "file",
+      "file": "01-Resources/puppetlabs - puppet.md",
+      "x": 640,
+      "y": 520,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "8bd30e0a-8549-53d4-9887-865563678eb5",
+      "type": "file",
+      "file": "01-Resources/statsd.md",
+      "x": -650,
+      "y": 780,
+      "width": 320,
+      "height": 190
+    }
+  ],
+  "edges": [
+    {
+      "id": "2aa3e3db-ddd1-53c6-832d-a267cecf168b",
+      "fromNode": "a963564d-a127-5ca1-99da-260541f6f6b8",
+      "fromSide": "bottom",
+      "toNode": "b22c69f1-62e4-59a0-9d58-d19471e3fbed",
+      "toSide": "top"
+    },
+    {
+      "id": "d0c6baf0-1114-5fc9-8a19-e54b0fe91300",
+      "fromNode": "a963564d-a127-5ca1-99da-260541f6f6b8",
+      "fromSide": "bottom",
+      "toNode": "491885e0-d98d-5a6d-9419-4459e1fd5c70",
+      "toSide": "top"
+    },
+    {
+      "id": "e31e0d75-6329-5a1a-8a35-6d38f78cf3b2",
+      "fromNode": "a963564d-a127-5ca1-99da-260541f6f6b8",
+      "fromSide": "bottom",
+      "toNode": "a5bf84a6-3596-53f8-88ba-4055a95cafce",
+      "toSide": "top"
+    },
+    {
+      "id": "acd18795-51d6-501e-b487-c8bba5b48303",
+      "fromNode": "a963564d-a127-5ca1-99da-260541f6f6b8",
+      "fromSide": "bottom",
+      "toNode": "131a1454-a7db-5e95-812c-ecd5310e02a2",
+      "toSide": "top"
+    },
+    {
+      "id": "33c20a50-f199-59b2-a003-755b29c2bb7f",
+      "fromNode": "a963564d-a127-5ca1-99da-260541f6f6b8",
+      "fromSide": "bottom",
+      "toNode": "c1686bc7-f783-544b-8548-6c4113bf3fa4",
+      "toSide": "top"
+    },
+    {
+      "id": "4a2a8ddf-2cab-58c5-8443-f23041c0a969",
+      "fromNode": "a963564d-a127-5ca1-99da-260541f6f6b8",
+      "fromSide": "bottom",
+      "toNode": "9e0de2db-db77-5ade-97da-329c86609276",
+      "toSide": "top"
+    },
+    {
+      "id": "888f51bb-53e4-534a-8f70-4fcd8f671707",
+      "fromNode": "a963564d-a127-5ca1-99da-260541f6f6b8",
+      "fromSide": "bottom",
+      "toNode": "c1c71417-65e2-5a9f-86d2-c6eb599dae67",
+      "toSide": "top"
+    },
+    {
+      "id": "38adbf8b-8692-5921-be14-5cdf22a1d324",
+      "fromNode": "a963564d-a127-5ca1-99da-260541f6f6b8",
+      "fromSide": "bottom",
+      "toNode": "0e8d67e2-f59a-5c06-b6ed-b5459f5d0ce1",
+      "toSide": "top"
+    },
+    {
+      "id": "09c5760a-5926-54b5-aabc-2c5f76b39ba5",
+      "fromNode": "a963564d-a127-5ca1-99da-260541f6f6b8",
+      "fromSide": "bottom",
+      "toNode": "8bd30e0a-8549-53d4-9887-865563678eb5",
+      "toSide": "top"
+    }
+  ]
+}

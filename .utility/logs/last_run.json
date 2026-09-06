@@ -1,0 +1,15 @@
+{
+  "seed_file": "repositories to chart.md",
+  "resources": 41,
+  "approved_resources": 39,
+  "review_resources": 2,
+  "taxonomy_rows": 41,
+  "glossary_terms": 58,
+  "patterns": 15,
+  "edges": 833,
+  "notes": 130,
+  "canvases": 12,
+  "database": ".utility\\solutions_library.sqlite",
+  "lmstudio_enabled": true,
+  "lmstudio_available": false
+}

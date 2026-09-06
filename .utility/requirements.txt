@@ -1,0 +1,8 @@
+pydantic>=2.13,<3
+# The librarian package: PyYAML parses note frontmatter (a scanner fallback
+# exists), numpy does brute-force cosine over ~1.5k chunks. Neither is needed
+# to read the vault, and both degrade rather than fail.
+PyYAML>=6
+numpy>=1.26
+# Optional: only for serving the consult surface over MCP.
+# mcp>=1.0

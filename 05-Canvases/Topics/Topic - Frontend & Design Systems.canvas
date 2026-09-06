@@ -1,0 +1,111 @@
+{
+  "nodes": [
+    {
+      "id": "f5c414bb-1c7b-5f17-afbe-71885eb0acb0",
+      "type": "file",
+      "file": "00-Indexes/Topic - Frontend & Design Systems.md",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 240
+    },
+    {
+      "id": "c8c6f0ef-1f2a-5531-8117-42922ff12afc",
+      "type": "file",
+      "file": "01-Resources/animate-css - animate.css.md",
+      "x": -650,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "eda76d84-4556-5715-bef4-a735334df8c6",
+      "type": "file",
+      "file": "01-Resources/Modernizr.md",
+      "x": -220,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "9ebbb496-7f12-5948-bc6b-139567400883",
+      "type": "file",
+      "file": "01-Resources/nathansmith - 960-Grid-System.md",
+      "x": 210,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "2911dd0c-1fce-5a12-b9ce-50596128be1e",
+      "type": "file",
+      "file": "01-Resources/necolas - normalize.css.md",
+      "x": 640,
+      "y": 260,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "073b4638-905f-5dda-9568-7d8ecc97d36a",
+      "type": "file",
+      "file": "01-Resources/react.md",
+      "x": -650,
+      "y": 520,
+      "width": 320,
+      "height": 190
+    },
+    {
+      "id": "73839c86-94fc-5da6-b525-c5b4c2550525",
+      "type": "file",
+      "file": "01-Resources/twbs - bootstrap.md",
+      "x": -220,
+      "y": 520,
+      "width": 320,
+      "height": 190
+    }
+  ],
+  "edges": [
+    {
+      "id": "c4582cbb-8cc5-5640-be2f-e3b38c032220",
+      "fromNode": "f5c414bb-1c7b-5f17-afbe-71885eb0acb0",
+      "fromSide": "bottom",
+      "toNode": "c8c6f0ef-1f2a-5531-8117-42922ff12afc",
+      "toSide": "top"
+    },
+    {
+      "id": "cf8bb3be-67cb-5e80-af1d-2e6d8a8a63b7",
+      "fromNode": "f5c414bb-1c7b-5f17-afbe-71885eb0acb0",
+      "fromSide": "bottom",
+      "toNode": "eda76d84-4556-5715-bef4-a735334df8c6",
+      "toSide": "top"
+    },
+    {
+      "id": "4017cd72-45f3-5cb8-b506-04b40a617353",
+      "fromNode": "f5c414bb-1c7b-5f17-afbe-71885eb0acb0",
+      "fromSide": "bottom",
+      "toNode": "9ebbb496-7f12-5948-bc6b-139567400883",
+      "toSide": "top"
+    },
+    {
+      "id": "40f86157-26fe-5c76-be85-081a78ba0e3c",
+      "fromNode": "f5c414bb-1c7b-5f17-afbe-71885eb0acb0",
+      "fromSide": "bottom",
+      "toNode": "2911dd0c-1fce-5a12-b9ce-50596128be1e",
+      "toSide": "top"
+    },
+    {
+      "id": "5579a94b-4b94-572a-9328-09a4b7b01330",
+      "fromNode": "f5c414bb-1c7b-5f17-afbe-71885eb0acb0",
+      "fromSide": "bottom",
+      "toNode": "073b4638-905f-5dda-9568-7d8ecc97d36a",
+      "toSide": "top"
+    },
+    {
+      "id": "802cd1ce-13f0-5549-a3bd-32f1c12eff2b",
+      "fromNode": "f5c414bb-1c7b-5f17-afbe-71885eb0acb0",
+      "fromSide": "bottom",
+      "toNode": "73839c86-94fc-5da6-b525-c5b4c2550525",
+      "toSide": "top"
+    }
+  ]
+}

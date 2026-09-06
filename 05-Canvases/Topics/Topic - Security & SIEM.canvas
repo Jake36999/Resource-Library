@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "32cc79dc-03f4-5d72-97a9-dfface3615aa",
+      "type": "file",
+      "file": "00-Indexes/Topic - Security & SIEM.md",
+      "x": 0,
+      "y": 0,
+      "width": 400,
+      "height": 240
+    },
+    {
+      "id": "a0c4b737-ef28-5f31-87db-1e6fc96c846a",
+      "type": "file",
+      "file": "04-Reviews/G-Research - siembol.md",
+      "x": -980,
+      "y": -120,
+      "width": 320,
+      "height": 180
+    }
+  ],
+  "edges": [
+    {
+      "id": "9695a223-7f82-5bff-9d7e-5da93d14f0c7",
+      "fromNode": "32cc79dc-03f4-5d72-97a9-dfface3615aa",
+      "fromSide": "left",
+      "toNode": "a0c4b737-ef28-5f31-87db-1e6fc96c846a",
+      "toSide": "right"
+    }
+  ]
+}
