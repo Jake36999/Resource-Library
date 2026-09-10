@@ -46,6 +46,11 @@ CATALOGUED = "catalogued"
 SKIPPED = "skipped"
 STATUSES = (QUEUED, CLAIMED, PROPOSED, CATALOGUED, SKIPPED)
 
+# A claim held longer than this is assumed dead. An unattended run that is
+# killed - and one will be - leaves its claim behind, and a queue that can only
+# be unstuck by editing JSON is a queue that quietly stops draining.
+STALE_CLAIM_SECONDS = 3600
+
 REPO_KEY = re.compile(r"^[A-Za-z0-9._-]+/[A-Za-z0-9._-]+$")
 URL_KEY = re.compile(r"github\.com/([A-Za-z0-9._-]+/[A-Za-z0-9._-]+)")
 
@@ -68,6 +73,7 @@ class Entry:
     status: str = QUEUED
     created_at: str = ""
     claimed_by: str = ""
+    claimed_at: str = ""
     proposal_id: str = ""
     note: str = ""
     resolution: str = ""
@@ -212,7 +218,49 @@ def claim(entry_id: str, agent: str) -> Entry:
             policy.BRIEF_REQUIRED,
             f"{entry_id} is {entry.status}; only a queued entry can be worked.")
     updated = Entry(**{**entry.to_dict(), "status": CLAIMED,
-                       "claimed_by": str(agent)})
+                       "claimed_by": str(agent), "claimed_at": _now()})
+    save(updated)
+    return updated
+
+
+def stale(entry: Entry, *, seconds: int = STALE_CLAIM_SECONDS) -> bool:
+    """A claim nobody is working any more.
+
+    An entry claimed before timestamps existed has no `claimed_at` and is
+    treated as stale, which is the right default: it was claimed by a run that
+    has certainly ended.
+    """
+    if entry.status != CLAIMED:
+        return False
+    if not entry.claimed_at:
+        return True
+    try:
+        held = (datetime.now(timezone.utc)
+                - datetime.fromisoformat(entry.claimed_at)).total_seconds()
+    except ValueError:                                      # pragma: no cover
+        return True
+    return held > seconds
+
+
+def workable(*, seconds: int = STALE_CLAIM_SECONDS) -> list[Entry]:
+    """What a run may pick up: anything queued, plus abandoned claims.
+
+    This is the resume story. A killed run does not have to be cleaned up
+    before the next one starts; the next one simply takes back what nobody is
+    holding.
+    """
+    return [e for e in all_entries()
+            if e.status == QUEUED or stale(e, seconds=seconds)]
+
+
+def release(entry_id: str, *, reason: str = "released by hand") -> Entry:
+    """Hand a claim back without resolving the entry."""
+    entry = load(entry_id)
+    if entry.status != CLAIMED:
+        raise ValueError(f"{entry_id} is {entry.status}, not claimed")
+    updated = Entry(**{**entry.to_dict(), "status": QUEUED,
+                       "claimed_by": "", "claimed_at": "",
+                       "resolution": reason})
     save(updated)
     return updated
 

@@ -131,6 +131,45 @@ papered over.
 seventeen unsurveyed resources and the remaining freshness sweep wait for the
 reset or a `GITHUB_TOKEN`.
 
+### Stage 9, 2026-09-10 — the pipeline read against its own catalogue
+
+The first dogfooding pass. `find_donor` was asked about the choices made while
+building the scout — polite scraping, constrained decoding, classifying a
+repository from a file listing — and correctly answered **"nothing here covers
+this"** for the first. It was right to: the sources that would answer it were
+sitting in staging, unpromoted, which is itself the clearest argument yet for
+getting the batch through the airlock.
+
+So the review was done against the staged descriptions instead, and one of
+them paid for the exercise. `humanlayer/12-factor-agents` was read against this
+pipeline factor by factor. Nine hold: prompts are owned outright rather than
+templated by a framework; the context window is clipped per task; tools are
+structured outputs with a schema and a repair turn; control flow is a fixed
+sequence rather than an agent loop; errors are compacted back into the next
+turn; agents are small and focused; every call is a stateless reducer.
+
+**Two did not, and they name a bug already hit.** Factor 5 (unify execution
+state and business state) and factor 6 (launch/pause/resume with simple APIs):
+the eleven-minute hang earlier that day was killed and left
+`agent-of-empires/agent-of-empires` in `claimed` **for ever** — no timestamp on
+the claim, and no way back except editing the JSON by hand. A queue that can
+only be unstuck by hand is a queue that quietly stops draining.
+
+Fixed: a claim records when it was taken, `enrich.stale` judges one abandoned
+after an hour, `enrich.workable` returns queued entries *plus* claims nobody is
+holding, and `librarian queue release` hands one back without resolving it. A
+claim written before timestamps existed is treated as stale, which is correct —
+it was taken by a run that has certainly ended.
+
+That is the catalogue doing the job it was built for, on its own author.
+
+Two forward notes from the same reading, not acted on:
+`D4Vinci/Scrapling` renders JavaScript and adapts to page structure changes,
+neither of which `webfetch` does — relevant the first time a documentation site
+turns out to be a single-page app. `oraios/serena` retrieves at *symbol* level
+through language servers, where `librarian.components` retrieves at *file*
+level from a listing; that is the obvious upgrade path for component search.
+
 ### Stage 8, 2026-09-10 — one axis derived, one measured and rejected
 
 Two axes were blocking promotion on all 42 staged proposals. Both were put to

@@ -460,7 +460,9 @@ def run_queue(*, model: LocalModel, fetchers: Fetchers, limit: int = 10,
     """
     log = RunLog()
     say = progress or (lambda line: None)
-    pending = enrich.all_entries(enrich.QUEUED)[:limit]
+    # Queued entries plus claims nobody is holding any more. A run that was
+    # killed does not have to be cleaned up before the next one starts.
+    pending = enrich.workable()[:limit]
     say(f"{len(pending)} queued entr{'y' if len(pending) == 1 else 'ies'} to chart")
     for index, entry in enumerate(pending, 1):
         log.considered += 1
@@ -471,6 +473,9 @@ def run_queue(*, model: LocalModel, fetchers: Fetchers, limit: int = 10,
                             proposed_by=agent, vault=vault, log=log)
         say(f"[{index}/{len(pending)}] {entry.repo_key} -> "
             f"{outcome.get('outcome')} ({time.monotonic() - started:.0f}s)")
+        # Execution state and business state in one place: the queue entry
+        # itself records what happened, so a run killed after this point loses
+        # nothing but its in-memory counters.
         kind = outcome.get("outcome")
         if kind == "proposed":
             enrich.resolve(entry.entry_id, enrich.PROPOSED,

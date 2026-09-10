@@ -600,6 +600,9 @@ def cmd_queue(args) -> int:
 
     if args.action == "list":
         entries = enrich.all_entries(args.status)
+        for entry in entries:
+            if enrich.stale(entry):
+                print(f"  (stale claim, will be retaken: {entry.entry_id})")
         if not entries:
             print("the queue is empty"
                   + (f" for status {args.status}" if args.status else ""))
@@ -621,6 +624,15 @@ def cmd_queue(args) -> int:
         print(f"{result['status']}: {result.get('note') or result.get('entry_id')}")
         if result.get("next"):
             print(f"  {result['next']}")
+        return 0
+
+    if args.action == "release":
+        try:
+            entry = enrich.release(args.repo, reason=args.why or "released by hand")
+        except ValueError as exc:
+            print(f"refused: {exc}")
+            return 1
+        print(enrich.summarise(entry))
         return 0
 
     if args.action == "skip":
@@ -891,7 +903,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.set_defaults(func=cmd_staging)
 
     p = sub.add_parser("queue", help="sources in use that are not catalogued yet")
-    p.add_argument("action", choices=["list", "add", "skip"])
+    p.add_argument("action", choices=["list", "add", "skip", "release"])
     p.add_argument("repo", nargs="?", default="",
                    help="owner/repo or a github URL; an entry id for skip")
     p.add_argument("--project", default="", help="which project is using it")

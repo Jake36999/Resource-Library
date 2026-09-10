@@ -32,6 +32,7 @@ Scaffold with timber. Steel goes up when the frame is ready for it, and not befo
 | Pulling an external data source into something usable | [[Workflow - Ingest An External Data Source]] |
 | Letting an agent in another project add to this catalogue | [[Workflow - Contribution By Outside Agents]] |
 | Telling a project agent how to use and feed the catalogue | [[Agent Instructions - Using The Library]] |
+| Seeing every workflow at once, and who each belongs to | [Workflows - Who Does What](../05-Canvases/Workflows%20-%20Who%20Does%20What.canvas) — canvas |
 
 ## For Agents
 

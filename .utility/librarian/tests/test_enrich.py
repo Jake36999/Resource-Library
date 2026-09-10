@@ -159,3 +159,49 @@ def test_recording_an_application_still_succeeds_if_queueing_fails(catalogue,
         vault=catalogue)
     assert Path(result["path"]).exists()
     assert result["queued_for_enrichment"] == []
+
+
+# ------------------------------------------------------------ resumability
+
+def test_a_killed_run_does_not_strand_its_claim(catalogue):
+    """`humanlayer/12-factor-agents`, factors 5 and 6 — unify execution state
+    with business state, and launch/pause/resume with simple APIs.
+
+    This is not a hypothetical: an eleven-minute hang was killed and left
+    `agent-of-empires/agent-of-empires` claimed forever, with no timestamp on
+    the claim and no way back except editing the JSON by hand.
+    """
+    result = enrich.log_use("acme/queue", reported_by="agent")
+    enrich.claim(result["entry_id"], "library-agent")
+
+    held = enrich.load(result["entry_id"])
+    assert held.claimed_at, "a claim with no timestamp can never be judged stale"
+    assert not enrich.stale(held), "a fresh claim is not stale"
+    assert held.entry_id not in [e.entry_id for e in enrich.workable()]
+
+    assert enrich.stale(held, seconds=-1), "an old claim is reclaimable"
+    assert held.entry_id in [e.entry_id for e in enrich.workable(seconds=-1)]
+
+
+def test_a_claim_from_before_timestamps_existed_is_stale(catalogue):
+    """It was claimed by a run that has certainly ended."""
+    result = enrich.log_use("acme/queue", reported_by="agent")
+    entry = enrich.load(result["entry_id"])
+    enrich.save(enrich.Entry(**{**entry.to_dict(), "status": enrich.CLAIMED,
+                                "claimed_by": "old-run", "claimed_at": ""}))
+    assert enrich.stale(enrich.load(result["entry_id"]))
+
+
+def test_a_claim_can_be_handed_back_without_resolving_it(catalogue):
+    result = enrich.log_use("acme/queue", reported_by="agent")
+    enrich.claim(result["entry_id"], "library-agent")
+    released = enrich.release(result["entry_id"], reason="wrong agent")
+    assert released.status == enrich.QUEUED
+    assert not released.claimed_by and not released.claimed_at
+    assert released.resolution == "wrong agent"
+
+
+def test_releasing_something_nobody_claimed_is_refused(catalogue):
+    result = enrich.log_use("acme/queue", reported_by="agent")
+    with pytest.raises(ValueError):
+        enrich.release(result["entry_id"])
