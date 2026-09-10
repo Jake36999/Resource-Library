@@ -34,12 +34,35 @@ def test_a_read_only_server_refuses_the_write_and_names_the_flag():
     mcp.check_permitted("record_application", allow_writes=True)
 
 
-def test_exactly_one_tool_writes():
-    """The property the whole surface rests on: safe to expose because the
-    reachable mutation is one append."""
-    assert mcp.WRITE_TOOLS == {"record_application"}
+def test_exactly_one_tool_writes_a_resource_note():
+    """The property the whole surface rests on, restated once agents could
+    contribute.
+
+    It used to read *exactly one tool writes*. That stopped being true when the
+    contribution tier was added, and the honest successor is not a longer write
+    list but a statement of **what each write can reach**: seven tools write,
+    two of them create a note, and exactly one of those creates a note in
+    `01-Resources/`.
+    """
+    assert mcp.VAULT_WRITE_TOOLS == {"record_application", "promote_proposal"}
+    assert mcp.CURATE_TOOLS == {"promote_proposal"}
     assert mcp.read_only_tools() == frozenset(mcp.TOOLS) - mcp.WRITE_TOOLS
-    assert len(mcp.read_only_tools()) == 9
+
+    # Everything else that writes touches `.Data/` and nothing a reader opens.
+    # `log_use` is here rather than in the vault set on purpose: it records
+    # that somebody reached for a source, which is a queue entry, not a claim
+    # about the source.
+    staging_only = mcp.WRITE_TOOLS - mcp.VAULT_WRITE_TOOLS
+    assert staging_only == {"open_brief", "claim_brief", "propose_resource",
+                            "decide_candidate", "close_brief", "log_use"}
+
+
+def test_a_contribute_server_cannot_reach_a_resource_note():
+    """The safety argument for pointing an unattended agent at this vault: the
+    reachable damage is a directory of JSON."""
+    reachable = mcp.TIERS["contribute"] & mcp.VAULT_WRITE_TOOLS
+    assert reachable == {"record_application"}, \
+        "a contribute agent may append an application record and nothing else"
 
 
 # ------------------------------------------------------------------- effects

@@ -267,10 +267,14 @@ def test_clone_refuses_anything_that_is_not_a_repo_key_or_https_url():
 
 # ----------------------------------------------------------------- mcp surface
 
-def test_the_mcp_surface_exposes_exactly_one_write():
+def test_the_mcp_surface_exposes_one_write_into_the_resource_folder():
     from librarian import mcp_server
 
-    assert mcp_server.WRITE_TOOLS == {"record_application"}
+    # One write reaches `01-Resources/`, and it is not in the tier a research
+    # agent runs at. See `test_mcp_surface` for the full statement.
+    assert mcp_server.VAULT_WRITE_TOOLS == {"record_application",
+                                            "promote_proposal"}
+    assert "promote_proposal" not in mcp_server.TIERS["contribute"]
     assert "index_build" not in mcp_server.TOOLS
     assert not any(name.startswith("workbench") for name in mcp_server.TOOLS), \
         "an agent must have no reachable path to Mode D"

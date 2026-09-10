@@ -17,8 +17,12 @@ import json
 from pathlib import Path
 from typing import Any, Callable
 
+from . import brief as brief_mod
 from . import consult
+from . import enrich as enrich_mod
 from . import index as index_mod
+from . import policy
+from . import propose as propose_mod
 from .config import CatalogueConfig, index_db_path, vault_root
 
 SERVER_NAME = "resource-library"
@@ -174,6 +178,156 @@ def tool_catalogue_status() -> dict[str, Any]:
 
 # The whole surface. Nothing outside this dict is reachable through MCP, and
 # exactly one entry writes.
+def tool_log_use(repo_key_or_url: str, project: str = "",
+                 why: str = "") -> dict[str, Any]:
+    """Tell the catalogue you are using something. One call, no ceremony.
+
+    Use this the moment you reach for a repository, whether or not you expect
+    it to be here. Three possible answers:
+
+    - **catalogued** — it is already charted, and the reply names the note.
+      Read that before going further; somebody has already done this work.
+    - **queued** — new to the catalogue. It joins the enrichment queue and a
+      library agent will fetch, survey and stage it. Nothing is claimed about
+      it until then, and you owe nothing further.
+    - **seen_again** — already queued by someone else. The sighting count went
+      up, which is how the queue gets ordered.
+
+    `why` is one sentence about what you are using it for. It is stored as
+    *reported by you*, never as a fact about the project, and it is the only
+    part of the eventual note that will come from real use rather than a README.
+    """
+    try:
+        return enrich_mod.log_use(repo_key_or_url, reported_by="agent",
+                                  project=project, why=why)
+    except ValueError as exc:
+        return {"error": "rejected", "detail": str(exc)}
+
+
+def tool_list_queue(status: str = "queued") -> dict[str, Any]:
+    """Sources someone is using that the catalogue does not hold yet."""
+    return {"queue": [e.to_dict() for e in enrich_mod.all_entries(status)]}
+
+
+# ------------------------------------------------------- contribution (tier 2)
+#
+# Everything below writes, and none of it except `promote_proposal` can touch a
+# note a reader will see. That is the whole safety argument for letting an
+# unattended agent contribute: the reachable damage is a directory of JSON.
+
+def tool_open_brief(project: str, need: str, disqualifiers: list[str],
+                    constraints: dict[str, list[str]] | None = None
+                    ) -> dict[str, Any]:
+    """State what your project needs, in a form the library can act on.
+
+    `disqualifiers` is required: what a candidate must not assume, require or
+    depend on. Without it this is a topic list, and a topic list cannot rule
+    anything out - which is how a source gets charted accurately and is still
+    the wrong answer.
+
+    Returns the brief plus what the catalogue *already* holds for this need, so
+    a brief that needs no research says so before anyone spends a model on it.
+    """
+    try:
+        record = brief_mod.open_brief(project, need, disqualifiers,
+                                      constraints or {}, created_by="agent")
+    except (ValueError, policy.PolicyError) as exc:
+        return {"error": "rejected", "detail": str(exc)}
+    return record.to_dict()
+
+
+def tool_list_briefs(status: str = "") -> dict[str, Any]:
+    """Briefs, optionally filtered to open / claimed / closed."""
+    return {"briefs": [b.to_dict() for b in brief_mod.all_briefs(status)]}
+
+
+def tool_claim_brief(brief_id: str, agent: str) -> dict[str, Any]:
+    """Take responsibility for a brief before working it."""
+    try:
+        return brief_mod.claim(brief_id, agent).to_dict()
+    except policy.PolicyError as exc:
+        return exc.to_result()
+
+
+def tool_propose_resource(repo_key: str, canonical_url: str,
+                          axes: dict[str, str], evidence: dict[str, Any],
+                          brief_id: str = "",
+                          metadata: dict[str, Any] | None = None,
+                          sections: dict[str, str] | None = None
+                          ) -> dict[str, Any]:
+    """Stage a source for the catalogue. Writes to staging, never to the vault.
+
+    Fill the structured fields from what you fetched. Leave `Bottom Line` and
+    `What It Solves` alone - those are written at promotion by whoever stands
+    behind the note, and this tool refuses them.
+
+    `evidence` must show the source was actually fetched: a `survey` name, a
+    `file_count`, or a `fetched_at` with a `source`.
+    """
+    try:
+        proposal = propose_mod.propose(
+            repo_key, canonical_url, axes or {}, evidence or {},
+            brief_id=brief_id, proposed_by="agent",
+            metadata=metadata, sections=sections)
+    except (ValueError, policy.PolicyError) as exc:
+        return {"error": "rejected", "detail": str(exc)}
+    # Say now what promotion would refuse later. A proposal that sits in staging
+    # looking finished and can never be promoted is worse than a refusal.
+    return {**proposal.to_dict(), **propose_mod.readiness(proposal)}
+
+
+def tool_decide_candidate(brief_id: str, repo_key: str, disposition: str,
+                          reason: str = "") -> dict[str, Any]:
+    """Record what happened to one candidate. A rejection needs a reason."""
+    try:
+        return brief_mod.decide(brief_id, repo_key, disposition,
+                                reason=reason).to_dict()
+    except (ValueError, policy.PolicyError) as exc:
+        return {"error": "rejected", "detail": str(exc)}
+
+
+def tool_close_brief(brief_id: str, summary: str,
+                     discard_undisposed: bool = False) -> dict[str, Any]:
+    """End a research session. Refuses while any candidate is undecided.
+
+    Every candidate must be `proposed`, `rejected` (with a reason) or explicitly
+    discarded. The reasons are the point: *its sense model assumes ESP32 input
+    shape* is worth more to the next search than most positive entries, and it
+    exists only if written here.
+    """
+    try:
+        return brief_mod.close(brief_id, summary,
+                               discard_undisposed=discard_undisposed).to_dict()
+    except policy.PolicyError as exc:
+        return exc.to_result()
+
+
+def tool_list_proposals(status: str = "") -> dict[str, Any]:
+    """What is waiting in staging."""
+    return {"proposals": [p.to_dict() for p in propose_mod.all_proposals(status)]}
+
+
+# ---------------------------------------------------------- curation (tier 3)
+
+def tool_promote_proposal(proposal_id: str, bottom_line: str,
+                          what_it_solves: str, primary_topic: str = "",
+                          sections: dict[str, str] | None = None
+                          ) -> dict[str, Any]:
+    """Write a staged proposal into the vault. The only tool that writes truth.
+
+    Requires the interpretation - the sentence a reader acts on - because a
+    note whose Bottom Line was generated is a note nobody has read. The result
+    is `rejected` with the violations if the vault's own integrity checks would
+    not accept the note.
+    """
+    try:
+        return propose_mod.promote(proposal_id, bottom_line, what_it_solves,
+                                   primary_topic=primary_topic,
+                                   sections=sections, promoted_by="agent")
+    except (ValueError, FileExistsError, policy.PolicyError) as exc:
+        return {"error": "rejected", "detail": str(exc)}
+
+
 TOOLS: dict[str, Callable[..., Any]] = {
     "orient": tool_orient,
     "find_donor": tool_find_donor,
@@ -185,9 +339,63 @@ TOOLS: dict[str, Callable[..., Any]] = {
     "search": tool_search,
     "record_application": tool_record_application,
     "catalogue_status": tool_catalogue_status,
+    "log_use": tool_log_use,
+    "list_queue": tool_list_queue,
+    # tier 2 - contribution. Writes, but only into `.Data/`.
+    "open_brief": tool_open_brief,
+    "list_briefs": tool_list_briefs,
+    "claim_brief": tool_claim_brief,
+    "propose_resource": tool_propose_resource,
+    "decide_candidate": tool_decide_candidate,
+    "close_brief": tool_close_brief,
+    "list_proposals": tool_list_proposals,
+    # tier 3 - curation. The only tool that writes a note a reader will see.
+    "promote_proposal": tool_promote_proposal,
 }
 
-WRITE_TOOLS = frozenset({"record_application"})
+# Three tiers, because "exactly one tool writes" stopped being true the moment
+# outside agents were allowed to contribute - and the honest replacement is not
+# a longer write list but a statement of *what each write can reach*.
+#
+#   consult     read, plus one append to `09-Applications/`
+#   contribute  the above, plus briefs and staged proposals in `.Data/`
+#   curate      the above, plus promotion into `01-Resources/`
+#
+# A library agent runs at `contribute` and cannot alter a single note a reader
+# sees. Promotion is a separate grant because it is the only step that changes
+# that, and the step that requires a sentence somebody stands behind.
+CONSULT_TOOLS = frozenset({
+    "orient", "find_donor", "find_pattern", "find_technique", "find_data",
+    "find_precedent", "get_note", "search", "catalogue_status",
+    # `log_use` sits at consult on purpose. It is the cheapest possible
+    # contribution and the one most worth making frictionless: it writes a
+    # queue entry in `.Data/`, claims nothing, and turns "I reached for this"
+    # into a charted source without the caller stopping to chart anything.
+    "record_application", "log_use", "list_queue",
+})
+CONTRIBUTE_TOOLS = frozenset({
+    "open_brief", "list_briefs", "claim_brief", "propose_resource",
+    "decide_candidate", "close_brief", "list_proposals",
+})
+CURATE_TOOLS = frozenset({"promote_proposal"})
+
+TIERS: dict[str, frozenset[str]] = {
+    "consult": CONSULT_TOOLS,
+    "contribute": CONSULT_TOOLS | CONTRIBUTE_TOOLS,
+    "curate": CONSULT_TOOLS | CONTRIBUTE_TOOLS | CURATE_TOOLS,
+}
+
+# Tier membership and effect are different questions: `list_briefs` is a read
+# that happens to live in the contribute tier. Deriving one from the other would
+# mark it a write and hide it from a read-only server.
+WRITE_TOOLS = frozenset({
+    "record_application", "log_use", "open_brief", "claim_brief",
+    "propose_resource", "decide_candidate", "close_brief", "promote_proposal",
+})
+# The writes that can reach a note a reader will open. Named rather than
+# described, so "a contribute agent cannot alter the vault" is a property a
+# test can assert instead of a claim in a docstring.
+VAULT_WRITE_TOOLS = frozenset({"record_application"}) | CURATE_TOOLS
 
 
 def read_only_tools() -> frozenset[str]:
@@ -213,6 +421,41 @@ EFFECTS: dict[str, dict[str, bool]] = {
                  "find_data", "find_precedent", "get_note", "search",
                  "catalogue_status", "capabilities", "capability_schema")
 }
+# Reads that happen to live in the contribution tier.
+EFFECTS.update({
+    name: {"readOnlyHint": True, "destructiveHint": False,
+           "idempotentHint": True, "openWorldHint": False}
+    for name in ("list_briefs", "list_proposals")
+})
+
+# Writes into `.Data/` only. Not destructive - nothing here can remove or alter
+# a note - and not idempotent, because each call moves a brief along.
+EFFECTS.update({
+    name: {"readOnlyHint": False, "destructiveHint": False,
+           "idempotentHint": False, "openWorldHint": False}
+    for name in ("open_brief", "claim_brief", "propose_resource",
+                 "decide_candidate", "close_brief")
+})
+
+# The one that writes a note. `destructiveHint` stays False because promotion
+# only ever creates - it refuses rather than overwriting an existing note - but
+# it is the single call on this surface that changes what a reader sees.
+EFFECTS["list_queue"] = {
+    "readOnlyHint": True, "destructiveHint": False,
+    "idempotentHint": True, "openWorldHint": False,
+}
+# Idempotent by design: logging the same source twice increments a sighting
+# count rather than creating a second entry, so an agent may call it freely.
+EFFECTS["log_use"] = {
+    "readOnlyHint": False, "destructiveHint": False,
+    "idempotentHint": True, "openWorldHint": False,
+}
+
+EFFECTS["promote_proposal"] = {
+    "readOnlyHint": False, "destructiveHint": False,
+    "idempotentHint": False, "openWorldHint": False,
+}
+
 EFFECTS["record_application"] = {
     # Appends one note. Not destructive, and emphatically not idempotent: two
     # identical calls are two records, which is why `consult.record_application`
@@ -227,7 +470,8 @@ class ToolRefused(PermissionError):
     stack trace. `CLOSED_ACTION_REGISTRY` made enforceable at the boundary."""
 
 
-def check_permitted(name: str, *, allow_writes: bool = True) -> None:
+def check_permitted(name: str, *, allow_writes: bool = True,
+                    tier: str = "curate") -> None:
     """The dispatch guard. Discovering a tool does not authorise calling it.
 
     Two refusals, both by name:
@@ -245,6 +489,18 @@ def check_permitted(name: str, *, allow_writes: bool = True) -> None:
             f"Registered: {', '.join(sorted(TOOLS))}. The registry is closed - "
             f"an agent that needs something absent should report being blocked "
             f"rather than improvise.")
+    permitted = TIERS.get(tier)
+    if permitted is None:
+        raise ToolRefused(
+            f"unknown_tier: {tier!r}. Tiers: {', '.join(sorted(TIERS))}.")
+    if name not in permitted:
+        holder = next((t for t in ("consult", "contribute", "curate")
+                       if name in TIERS[t]), "none")
+        raise ToolRefused(
+            f"tier_refused: {name!r} is not in the {tier!r} tier. It is "
+            f"granted at {holder!r}. This server was started at {tier!r} "
+            f"deliberately - restart it with --tier {holder} if that is "
+            f"the intent, rather than working around it.")
     if not allow_writes and name in WRITE_TOOLS:
         raise ToolRefused(
             f"read_only_server: {name!r} writes, and this server was started "
@@ -264,6 +520,36 @@ def check_permitted(name: str, *, allow_writes: bool = True) -> None:
 # same progression as data -> information -> knowledge one layer up: cheap
 # first, expensive only once it is worth it.
 CARDS: dict[str, dict[str, Any]] = {
+    "log_use": {
+        "purpose": "Say you are using a source; get its note or queue it",
+        "use_when": "the moment you reach for any repository",
+        "note": "answers 'we already have this' before you spend time on it"},
+    "list_queue": {"purpose": "Sources in use that are not catalogued yet",
+                   "use_when": "you are a library agent looking for work"},
+    "open_brief": {
+        "purpose": "Ask the library to find something, with constraints",
+        "use_when": "your project needs sources you do not have yet",
+        "note": "states what must be ruled out, not just the topic"},
+    "list_briefs": {"purpose": "Requests outstanding, claimed or closed",
+                    "use_when": "you are a library agent looking for work"},
+    "claim_brief": {"purpose": "Take responsibility for one brief",
+                    "use_when": "before you start researching it"},
+    "propose_resource": {
+        "purpose": "Stage a source you fetched, into the airlock",
+        "use_when": "you have evidence and the structured fields",
+        "note": "cannot touch the vault; interpretation is refused here"},
+    "decide_candidate": {
+        "purpose": "Say what happened to something you considered",
+        "use_when": "you ruled a source in or out",
+        "note": "a rejection reason is the negative result nobody writes down"},
+    "close_brief": {"purpose": "End the session; refuses while anything is undecided",
+                    "use_when": "the research is finished"},
+    "list_proposals": {"purpose": "What is waiting in staging",
+                       "use_when": "you are about to review or promote"},
+    "promote_proposal": {
+        "purpose": "Write a staged proposal into the catalogue",
+        "use_when": "you have read it and can say what it is for",
+        "note": "requires the Bottom Line; this is the only write a reader sees"},
     "orient": {"purpose": "What is here, and where does a subject live",
                "use_when": "you do not yet know what the catalogue covers"},
     "find_donor": {"purpose": "What could I take, given what I can actually run",
@@ -348,7 +634,8 @@ def tool_capability_schema(name: str) -> dict[str, Any]:
 
 
 # ------------------------------------------------------------------- server
-def build_server(*, allow_writes: bool = True):            # pragma: no cover - needs SDK
+def build_server(*, allow_writes: bool = True,
+                 tier: str = "curate"):                    # pragma: no cover - needs SDK
     """Wire the tools onto FastMCP. Returns None when the SDK is absent.
 
     Every tool carries its MCP annotations so a client can reason about effect
@@ -366,23 +653,32 @@ def build_server(*, allow_writes: bool = True):            # pragma: no cover - 
     surface["capabilities"] = tool_capabilities
     surface["capability_schema"] = tool_capability_schema
 
+    granted = TIERS.get(tier, TIERS["curate"]) | {"capabilities",
+                                                  "capability_schema"}
     for name, function in surface.items():
+        # A tool outside the tier is not registered at all, rather than
+        # registered and refused: an agent should not see a capability it can
+        # never reach, and progressive disclosure is cheaper when the list is
+        # already the truth.
+        if name not in granted:
+            continue
         if not allow_writes and name in WRITE_TOOLS:
             continue
-        server.add_tool(_guarded(name, function, allow_writes),
+        server.add_tool(_guarded(name, function, allow_writes, tier),
                         name=name,
                         annotations=EFFECTS.get(name))
     return server
 
 
-def _guarded(name: str, function: Callable[..., Any], allow_writes: bool):
+def _guarded(name: str, function: Callable[..., Any], allow_writes: bool,
+             tier: str = "curate"):
     """Enforcement at the boundary, not merely a declaration in a table."""
     import functools
 
     @functools.wraps(function)
     def wrapper(*args: Any, **kwargs: Any) -> Any:
         try:
-            check_permitted(name, allow_writes=allow_writes)
+            check_permitted(name, allow_writes=allow_writes, tier=tier)
         except ToolRefused as exc:
             return {"error": "refused", "detail": str(exc)}
         return function(*args, **kwargs)
@@ -400,6 +696,11 @@ def main(argv: list[str] | None = None) -> int:            # pragma: no cover - 
                         help="print the tool surface and exit")
     parser.add_argument("--read-only", action="store_true",
                         help="refuse record_application; serve reads only")
+    parser.add_argument("--tier", default="curate", choices=sorted(TIERS),
+                        help="how much of the surface to expose: consult "
+                             "(read + application records), contribute (adds "
+                             "briefs and staged proposals, cannot alter a "
+                             "note), curate (adds promotion into the vault)")
     parser.add_argument("--http", action="store_true",
                         help="serve over loopback HTTP instead of stdio")
     parser.add_argument("--port", type=int, default=8321)
@@ -410,12 +711,15 @@ def main(argv: list[str] | None = None) -> int:            # pragma: no cover - 
 
     if args.list:
         print(json.dumps({"server": SERVER_NAME,
+                          "tier": args.tier,
+                          "granted": sorted(TIERS[args.tier]),
                           "read_only": sorted(read_only_tools()),
                           "writes": sorted(WRITE_TOOLS),
+                          "reaches_the_vault": sorted(VAULT_WRITE_TOOLS),
                           "effects": EFFECTS}, indent=2))
         return 0
 
-    server = build_server(allow_writes=not args.read_only)
+    server = build_server(allow_writes=not args.read_only, tier=args.tier)
     if server is None:
         print("The MCP SDK is not installed; `pip install mcp` to serve. The "
               "tool functions in librarian.mcp_server remain importable and "

@@ -30,6 +30,8 @@ Scaffold with timber. Steel goes up when the frame is ready for it, and not befo
 | Deciding whether to adopt an external dependency | [[Workflow - Adopt A Dependency]] |
 | Getting a running system to tell you when it breaks | [[Workflow - Stand Up Observability]] |
 | Pulling an external data source into something usable | [[Workflow - Ingest An External Data Source]] |
+| Letting an agent in another project add to this catalogue | [[Workflow - Contribution By Outside Agents]] |
+| Telling a project agent how to use and feed the catalogue | [[Agent Instructions - Using The Library]] |
 
 ## For Agents
 

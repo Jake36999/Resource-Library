@@ -247,6 +247,28 @@ def component_db_path() -> Path:
     return database_dir() / "source_components.sqlite"
 
 
+def brief_dir() -> Path:
+    """Research briefs: what a project asked the library to find.
+
+    Working state, not truth - a brief records a request and its dispositions,
+    it never asserts anything about a source. Durable rather than disposable,
+    because the reason a candidate was rejected is the negative result nobody
+    otherwise writes down.
+    """
+    return data_root() / "briefs"
+
+
+def staging_dir() -> Path:
+    """Proposed resource notes, before a person or a project agent promotes one.
+
+    Nothing here is in the vault and nothing here is indexed. This is the airlock
+    that makes it safe to let an unattended agent contribute: it may fill in
+    structured fields from evidence, and it may not put a word in front of a
+    reader.
+    """
+    return data_root() / "staging" / "proposals"
+
+
 # ------------------------------------------------------- distribution posture
 
 DEFAULT_POSTURE = "private"

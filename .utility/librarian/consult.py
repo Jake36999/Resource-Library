@@ -1760,6 +1760,22 @@ def record_application(record: dict[str, Any], *, vault: Path | None = None,
 
     path.write_text("\n".join(lines), encoding="utf-8")
 
+    # The moment a source proved useful enough to write a record about is the
+    # moment it is worth charting, and the caller has already typed the name.
+    # Anything named here that the catalogue does not hold joins the enrichment
+    # queue rather than leaving a link that resolves to nothing.
+    queued: list[dict[str, Any]] = []
+    try:
+        from . import enrich
+
+        queued = enrich.queue_unknown(
+            list(record.get("resources_used", []))
+            + list(record.get("applied_resources", [])),
+            reported_by=attested_by, project=project,
+            why=f"used on {project}: {record['outcome']}", vault=root)
+    except Exception:                                       # pragma: no cover
+        queued = []
+
     # Markdown is truth; the index catches up. Failing to refresh must not
     # fail the write, because the note is already the authoritative record.
     refreshed = True
@@ -1767,7 +1783,9 @@ def record_application(record: dict[str, Any], *, vault: Path | None = None,
         index_mod.refresh(root, db_path, since=time.time() - 5)
     except Exception:                                       # pragma: no cover
         refreshed = False
-    return {"path": str(path), "name": safe, "attested_by": attested_by,
+    return {"queued_for_enrichment": [q for q in queued
+                                      if q.get("status") == "queued"],
+            "path": str(path), "name": safe, "attested_by": attested_by,
             "index_refreshed": refreshed}
 
 

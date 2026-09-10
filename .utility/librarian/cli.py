@@ -465,9 +465,228 @@ def cmd_serve(args) -> int:
         argv.append("--list")
     if args.read_only:
         argv.append("--read-only")
+    argv += ["--tier", args.tier]
     if args.http:
         argv += ["--http", "--host", args.host, "--port", str(args.port)]
     return mcp_server.main(argv)
+
+
+def cmd_brief(args) -> int:
+    """Requests, from the human side. The same calls an agent makes over MCP."""
+    from . import brief as brief_mod
+
+    action = args.action
+    if action == "list":
+        found = brief_mod.all_briefs(args.status)
+        if not found:
+            print("no briefs" + (f" with status {args.status}" if args.status else ""))
+            return 0
+        for record in found:
+            print(brief_mod.summarise(record))
+            print()
+        return 0
+
+    if action == "open":
+        constraints = {}
+        for pair in args.constraint or []:
+            axis, _, values = pair.partition("=")
+            if not values:
+                print(f"--constraint wants axis=value, got {pair!r}")
+                return 2
+            constraints.setdefault(axis.strip(), []).extend(
+                v.strip() for v in values.split("|") if v.strip())
+        try:
+            record = brief_mod.open_brief(args.project, args.need,
+                                          args.rules_out or [], constraints,
+                                          created_by="user")
+        except (ValueError, policy_error()) as exc:
+            print(f"refused: {exc}")
+            return 1
+        print(brief_mod.summarise(record))
+        return 0
+
+    if action == "show":
+        print(brief_mod.summarise(brief_mod.load(args.brief_id)))
+        return 0
+
+    if action == "close":
+        try:
+            record = brief_mod.close(args.brief_id, args.summary,
+                                     discard_undisposed=args.discard)
+        except policy_error() as exc:
+            print(f"refused: {exc}")
+            return 1
+        print(brief_mod.summarise(record))
+        return 0
+
+    print(f"unknown action {action!r}")
+    return 2
+
+
+def cmd_staging(args) -> int:
+    """The airlock: what agents proposed, and the one command that admits it."""
+    from . import propose as propose_mod
+
+    if args.action == "list":
+        waiting = propose_mod.all_proposals(args.status)
+        if not waiting:
+            print("staging is empty")
+            return 0
+        for proposal in waiting:
+            axes = ", ".join(f"{a}={v}" for a, v in sorted(proposal.axes.items()))
+            print(f"{proposal.proposal_id}  [{proposal.status}]")
+            print(f"  {proposal.repo_key}  {proposal.canonical_url}")
+            print(f"  by {proposal.proposed_by}"
+                  + (f" against {proposal.brief_id}" if proposal.brief_id else ""))
+            if axes:
+                print(f"  {axes}")
+            print()
+        return 0
+
+    if args.action == "rederive":
+        lister = None
+        if args.deep:
+            # `agent_surface` is a ladder of paths and a staged proposal keeps
+            # none, so filling it needs the tree again. A blobless listing over
+            # the git protocol costs no API budget.
+            from scout.survey import list_tree
+
+            def lister(key: str) -> list[str]:
+                try:
+                    return list_tree(key)
+                except Exception as exc:              # noqa: BLE001
+                    print(f"  {key}: no listing ({exc})")
+                    return []
+
+        touched = 0
+        for proposal in propose_mod.all_proposals(propose_mod.STAGED):
+            paths = lister(proposal.repo_key) if lister else None
+            result = propose_mod.rederive(proposal, paths=paths)
+            if result["changed"]:
+                touched += 1
+                print(f"{result['repo_key']}: {result['changed']}")
+        print(f"{touched} proposal(s) updated; no model calls, no network")
+        return 0
+
+    if args.action == "show":
+        proposal = propose_mod.load(args.proposal_id)
+        print(propose_mod.render(proposal, {
+            "Bottom Line": "<written at promotion>",
+            "What It Solves": "<written at promotion>"}))
+        return 0
+
+    if args.action == "promote":
+        result = propose_mod.promote(
+            args.proposal_id, args.bottom_line, args.what_it_solves,
+            primary_topic=args.topic, dry_run=args.dry_run)
+        if result.get("status") == "rejected":
+            print("rejected - the vault would not accept this note:")
+            for violation in result["violations"]:
+                print(f"  - {violation}")
+            return 1
+        if result.get("status") == "would_write":
+            print(result["text"])
+            return 0
+        print(f"wrote {result['path']}")
+        return 0
+
+    print(f"unknown action {args.action!r}")
+    return 2
+
+
+def cmd_queue(args) -> int:
+    """Sources someone is using that the catalogue does not hold."""
+    from . import enrich
+
+    if args.action == "list":
+        entries = enrich.all_entries(args.status)
+        if not entries:
+            print("the queue is empty"
+                  + (f" for status {args.status}" if args.status else ""))
+            return 0
+        # Most-sighted first: something three projects reached for
+        # independently is worth charting before something nobody repeated.
+        for entry in sorted(entries, key=lambda e: -e.sightings):
+            print(enrich.summarise(entry))
+            print()
+        return 0
+
+    if args.action == "add":
+        try:
+            result = enrich.log_use(args.repo, reported_by="user",
+                                    project=args.project, why=args.why)
+        except ValueError as exc:
+            print(f"refused: {exc}")
+            return 1
+        print(f"{result['status']}: {result.get('note') or result.get('entry_id')}")
+        if result.get("next"):
+            print(f"  {result['next']}")
+        return 0
+
+    if args.action == "skip":
+        try:
+            entry = enrich.resolve(args.repo, enrich.SKIPPED,
+                                   resolution=args.why)
+        except (ValueError, policy_error()) as exc:
+            print(f"refused: {exc}")
+            return 1
+        print(enrich.summarise(entry))
+        return 0
+
+    print(f"unknown action {args.action!r}")
+    return 2
+
+
+def cmd_populate(args) -> int:
+    """Run the local-model library agent over a brief or the queue.
+
+    Refuses rather than half-running when LM Studio is not reachable: a
+    population pass that silently charts nothing looks exactly like a
+    population pass that found nothing.
+    """
+    from . import populate
+    from .localmodel import LocalModel, ModelUnavailable
+
+    try:
+        model = LocalModel.connect()
+    except ModelUnavailable as exc:
+        print(f"no local model: {exc}")
+        return 2
+
+    try:
+        fetchers = populate.Fetchers.live()
+    except ImportError as exc:
+        print(f"the scouting pipeline is not importable: {exc}")
+        return 2
+
+    if args.what == "queue":
+        def say(line: str) -> None:
+            print(line, flush=True)
+
+        log = populate.run_queue(model=model, fetchers=fetchers,
+                                 limit=args.limit, agent=args.agent,
+                                 progress=say)
+    elif args.what == "brief":
+        if not args.brief_id:
+            print("populate brief needs a brief id")
+            return 2
+        log = populate.run_brief(args.brief_id, model=model, fetchers=fetchers,
+                                 limit=args.limit, agent=args.agent)
+    else:
+        print(f"unknown target {args.what!r}")
+        return 2
+
+    for line in log.notes:
+        print(f"  {line}")
+    print(log.summary())
+    print("nothing reached the vault; review with `librarian staging list`")
+    return 0
+
+
+def policy_error():
+    from .policy import PolicyError
+
+    return PolicyError
 
 
 def webapp_default_port() -> int:
@@ -639,11 +858,66 @@ def build_parser() -> argparse.ArgumentParser:
                    help="read the clone without a sandbox; nothing may be executed")
     p.set_defaults(func=cmd_workbench)
 
+    p = sub.add_parser("brief", help="research requests: open, list, show, close")
+    p.add_argument("action", choices=["open", "list", "show", "close"])
+    p.add_argument("brief_id", nargs="?", default="")
+    p.add_argument("--project", default="", help="who is asking")
+    p.add_argument("--need", default="", help="what they need, in their words")
+    p.add_argument("--rules-out", action="append", dest="rules_out",
+                   help="what a candidate must not assume; required, repeatable")
+    p.add_argument("--constraint", action="append",
+                   help="axis=Value or axis=Value|Value, repeatable")
+    p.add_argument("--status", default="", help="filter: open, claimed, closed")
+    p.add_argument("--summary", default="", help="required to close")
+    p.add_argument("--discard", action="store_true",
+                   help="close despite undecided candidates, on the record")
+    p.set_defaults(func=cmd_brief)
+
+    p = sub.add_parser("staging", help="the airlock: proposed notes awaiting review")
+    p.add_argument("action",
+                   choices=["list", "show", "promote", "rederive"])
+    p.add_argument("proposal_id", nargs="?", default="")
+    p.add_argument("--status", default="", help="filter: staged, promoted")
+    p.add_argument("--bottom-line", dest="bottom_line", default="",
+                   help="required to promote; the sentence a reader acts on")
+    p.add_argument("--what-it-solves", dest="what_it_solves", default="",
+                   help="required to promote")
+    p.add_argument("--topic", default="", help="primary_topic for the note")
+    p.add_argument("--dry-run", action="store_true",
+                   help="render the note without writing it")
+    p.add_argument("--deep", action="store_true",
+                   help="re-list each repository so path-derived axes "
+                        "(agent_surface) can be filled; no API budget")
+    p.set_defaults(func=cmd_staging)
+
+    p = sub.add_parser("queue", help="sources in use that are not catalogued yet")
+    p.add_argument("action", choices=["list", "add", "skip"])
+    p.add_argument("repo", nargs="?", default="",
+                   help="owner/repo or a github URL; an entry id for skip")
+    p.add_argument("--project", default="", help="which project is using it")
+    p.add_argument("--why", default="", help="one sentence; required to skip")
+    p.add_argument("--status", default="", help="filter: queued, claimed, skipped")
+    p.set_defaults(func=cmd_queue)
+
+    p = sub.add_parser("populate",
+                       help="run the local-model library agent (LM Studio)")
+    p.add_argument("what", choices=["brief", "queue"])
+    p.add_argument("brief_id", nargs="?", default="")
+    p.add_argument("--limit", type=int, default=8,
+                   help="stop after this many proposals")
+    p.add_argument("--agent", default="library-agent",
+                   help="recorded as ingestion_agent on what it stages")
+    p.set_defaults(func=cmd_populate)
+
     p = sub.add_parser("serve", help="the MCP surface, over stdio or loopback HTTP")
     p.add_argument("--list", action="store_true",
                    help="print the tool surface and its declared effects")
     p.add_argument("--read-only", action="store_true",
-                   help="do not expose record_application")
+                   help="do not expose any write")
+    p.add_argument("--tier", default="curate",
+                   choices=["consult", "contribute", "curate"],
+                   help="how much of the surface to expose; a library agent "
+                        "wants contribute, which cannot alter a note")
     p.add_argument("--http", action="store_true",
                    help="serve over loopback HTTP instead of stdio")
     p.add_argument("--host", default="127.0.0.1",

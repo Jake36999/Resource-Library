@@ -54,6 +54,19 @@ REVIEW_APPROVAL_REQUIRED = "REVIEW_APPROVAL_REQUIRED"
 COHORT_FROZEN_REQUIRED = "COHORT_FROZEN_REQUIRED"
 SENSITIVITY_REVIEW = "SENSITIVITY_REVIEW"
 
+# --------------------------------------------------- contribution (stage 5)
+#
+# An outside agent may add to the catalogue. These are the four rules that make
+# that safe, and each one refuses by name rather than by silence.
+
+STAGING_BEFORE_VAULT = "STAGING_BEFORE_VAULT"
+# A scouting prompt may look at anything; a scouting reply may only take a
+# shape the caller declared. Open question, closed answer.
+OPEN_ANALYSIS_STRICT_RETURN = "OPEN_ANALYSIS_STRICT_RETURN"
+BRIEF_REQUIRED = "BRIEF_REQUIRED"
+DISPOSITION_REQUIRED = "DISPOSITION_REQUIRED"
+INTERPRETATION_IS_NOT_MACHINE_WORK = "INTERPRETATION_IS_NOT_MACHINE_WORK"
+
 # The only write Mode C may perform. Anything else touching the vault from a
 # read path is a defect, not a special case.
 CONSULT_WRITE_ALLOWED = frozenset({"record_application"})
@@ -76,6 +89,19 @@ REGISTERED_ACTIONS = frozenset({
     # workbench, Mode D only
     "workbench_open", "workbench_document", "workbench_close",
     "access_point_verify",
+    # contribution: briefs and staged proposals. None of these reaches
+    # `01-Resources/` except `promote_proposal`, which is its own tier.
+    "open_brief", "list_briefs", "claim_brief", "close_brief",
+    "propose_resource", "list_proposals", "promote_proposal",
+    # the other direction: something already in use that is not catalogued
+    "log_use", "list_queue",
+})
+
+# Writes that never touch the vault. An agent holding only these can fill the
+# staging area all day and cannot change a single note a reader will see.
+STAGING_ONLY_ACTIONS = frozenset({
+    "open_brief", "claim_brief", "close_brief",
+    "propose_resource", "log_use",
 })
 
 # Actions a sweep (Mode A) may never reach. Unattended execution of

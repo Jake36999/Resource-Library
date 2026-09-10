@@ -39,7 +39,7 @@ def test_the_parser_builds_and_every_subcommand_is_reachable():
     names = set(action.choices)
     assert {"query", "index", "integrity", "serve", "web", "coverage",
             "components", "freshness", "relevance", "provenance",
-            "duplicates"} <= names
+            "duplicates", "brief", "staging"} <= names
     for name in names:
         assert action.choices[name] is not None
 

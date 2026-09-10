@@ -30,6 +30,15 @@
 .Data/embeddings/
 
 
+# --- The airlock ---------------------------------------------------------------
+#
+# Staged proposals are in-flight work, not evidence: a proposal is either
+# promoted, at which point the note is the record, or abandoned. `.Data/briefs/`
+# is deliberately NOT ignored - a brief holds why a candidate was rejected, and
+# that is the negative result nothing else in the vault records.
+.Data/staging/
+
+
 # --- Python ------------------------------------------------------------------
 __pycache__/
 *.py[cod]

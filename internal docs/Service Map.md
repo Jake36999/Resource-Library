@@ -131,6 +131,275 @@ papered over.
 seventeen unsurveyed resources and the remaining freshness sweep wait for the
 reset or a `GITHUB_TOKEN`.
 
+### Stage 8, 2026-09-10 — one axis derived, one measured and rejected
+
+Two axes were blocking promotion on all 42 staged proposals. Both were put to
+the corpus before either was built.
+
+**`agent_surface` is not interpretive at all.** [[Note Content Model]] defines
+it as a ladder of paths — `Documented` (an `AGENTS.md`, `CLAUDE.md`, `.cursor/`
+or equivalent), `Procedural` (executable skills under `.claude/skills/`,
+`.agents/skills/`, `.opencode/skills/`), `Callable` (the source *is* an
+agent-invocable interface, usually an MCP server), recorded at the highest rung
+it reaches. Putting a file-listing question to a model reading a README was the
+same error as putting the licence to one.
+
+Measured against the 130 hand-charted sources: mere presence of an
+`agent_instructions` path predicts `agent_surface != None` at **0.985**, and the
+full ladder derives at **0.958** (114 of 119 with path evidence). Four of the
+five misses are `Callable` or `Documented` under-rated because the evidence sits
+deeper than the ten-path sample those older surveys kept; surveys after
+2026-09-05 store complete listings, so new intake does better. One rule was
+added after looking at the misses: a repository *named* `mcp` is one, because
+`semgrep/mcp` was charted `Callable` and derived `None`.
+
+A companion rule follows from the definition rather than from the measurement:
+**a path-defined axis is never put to a model even when derivation fails.** A
+model reading a README cannot know whether `.claude/skills/` exists, so with no
+listing the axis is left empty. `derive.PATH_DEFINED` names that set.
+
+**`interface_protocol` was measured and rejected.** File shape cannot separate
+it: `CLI` (n=36), `Python_SDK` (n=37) and `REST` (n=16) are all `.py`-dominated
+and carry identical root files. Reading the manifest instead answered 22 of 45
+sources at **0.409** — a category error rather than a tuning problem, because
+*a dependency list is not an interface declaration*. A library depending on
+`fastapi` for its own test server was read as a REST service three times. The
+prose branch alone was swept across seven thresholds and **precision never
+exceeded 0.80** while recall fell from 0.46 to 0.29.
+
+For an axis `find_donor` eliminates on, one wrong value in five is worse than an
+empty one: it removes a source from answers it belongs in and adds it to ones it
+does not. The function is kept, unwired, with the numbers in its docstring —
+the way `rank_configs.json` keeps `coverage-idf` — so the rejection stays
+reproducible and a future attempt has something to beat. What would beat it is
+reading the *declaration* rather than the dependency list.
+
+**A silent no-op, found on the way.** `scout.survey.shape` writes extensions as
+`[".py (150)"]`; both the ecosystem fallback and the prose rule tested
+`isinstance(dict)` and therefore did nothing whatsoever against a live survey.
+Neither had ever fired outside a hand-built fixture. `derive.extension_counts`
+now reads both shapes and the test fixtures use the form the survey actually
+writes.
+
+`librarian staging rederive --deep` re-lists each repository over the git
+protocol — no API budget — so path-derived axes can be filled on proposals
+staged before the rule existed. Across the 42: `None` 24, `Procedural` 8,
+`Documented` 7, `Callable` 3.
+
+Axis fill across the batch moved from 4-7 to 5-8 of ten. Promotion is still
+blocked on `deployment_target` and `data_locality`, which nothing here can read,
+and on `interface_protocol`, which was measured and left alone.
+
+### Stage 7, 2026-09-09 — the first real intake, and four things it broke
+
+Forty-three sources from the user's own reading, queued through `log_use` and
+run through `librarian populate queue`. One was already catalogued and the
+system said so with the note name; one was not a repository at all. The rest
+went to the local-model scout.
+
+Four defects, none of which any amount of reasoning would have found:
+
+**The model selector picked a DAG model and hung for eleven minutes.** LM Studio
+reports `state: None` and `type: None` for every model on this install, so the
+adapter's "prefer a loaded chat model" scoring degenerates to alphabetical
+order — and `dag-llama3` sorts first. Fixed with an explicit exclusion list
+(embedding, vision, OCR, TTS, rerank, DAG) and preference lists per role:
+`fast` for closed-vocabulary answers, `standard` for description. A task can
+still be pinned to an exact model in `library_config.json`.
+
+**The run printed nothing for eleven minutes**, which is indistinguishable from
+a hang. `populate` now streams per-candidate progress with elapsed time.
+
+**A bigger model was worse, and that settled a design question.** Asked the
+eight interpretive axes for the same repository, `qwen3-4b` answered
+`confident: false` on seven; `qwen3-8b` answered `confident: true` on four —
+including `ecosystem: Web_Frontend` with the evidence line `main language:
+Rust`. The 4B's low confidence was correct calibration and the 8B converted
+uncertainty into confident error. **Honouring `confident: false` is therefore
+load-bearing, not fastidiousness**, and escalating model size is the wrong
+lever for this failure.
+
+**`license_class` was empty on most of the batch.** GitHub reports no usable
+licence for a great many repositories that plainly have one — a composite
+LICENSE, an uncommon licence, a file its classifier did not recognise. That
+field is what `find_donor` eliminates on, so an empty one removes a source from
+every constrained answer, silently. `derive` now reads the LICENSE file itself
+through `scout.rank.license_from_text`, and records `Unknown` only after having
+looked. `security_compliance` joined the derived set for the same reason: the
+enumeration is two values, one is the default, and the real question ("is this
+security material?") is a keyword question rather than a judgement.
+
+Axis fill went from 2-3 of ten to 4-5. The rest is the honest remainder.
+
+#### The taxonomy gap is now measured rather than predicted
+
+`ecosystem` is empty on nearly every source in this batch, because the
+enumeration has no value for **Rust, TypeScript, JavaScript, Java, C#, C++,
+Ruby, PHP, Kotlin, Swift or Haskell**. `derive` deliberately returns nothing
+rather than forcing `Mixed`, which would say something false about a
+single-language repository — so the gap surfaces as a field a person must fill,
+on almost every note.
+
+This is the strain [[Meta Analysis And Final Shape 2026-09-04]] predicted,
+arriving at the first intake outside the original cohort's subject matter. It
+is a `NO_SCHEMA_DRIFT` decision and belongs to the user, not to a process.
+
+### Stage 6b, 2026-09-09 — fetching from the open web
+
+`librarian.webfetch` exists for two reasons. READMEs now come from
+`raw.githubusercontent.com`, which serves the same bytes as the API's readme
+endpoint and costs nothing against the sixty-an-hour unauthenticated budget —
+the difference between charting twenty-eight repositories in a window and
+fifty-six. LICENSE files come the same way. And a catalogue restricted to
+GitHub is restricted to a fraction of what is worth recording, so the same
+fetcher reads ordinary pages, reducing HTML with the standard library's own
+parser and dropping `<script>`, `<style>` and `<nav>` rather than flattening
+navigation into the prose.
+
+`robots.txt` is honoured, one request per host at a time, a real User-Agent, a
+size cap. That is enforced here or not at all.
+
+**And the first version got `robots.txt` wrong in the direction that hides.**
+`RobotFileParser.read()` fetches with urllib's default `Python-urllib/3.x`,
+which a great many hosts answer with 403 — and the parser reads a 403 as
+*disallow everything*. A site whose `robots.txt` disallows only `/admin` was
+refused entirely, and every host that blocks the default agent would have been.
+It failed closed, which is the safe direction and still wrong. Fixed by
+fetching `robots.txt` with our own agent and parsing it ourselves; a genuine
+401 or 403 seen while presenting a real agent still means disallow-all.
+
+### Stage 6 done, 2026-09-09 — the local-model scout, and what it got wrong
+
+`librarian populate` runs the whole intake unattended on LM Studio: search,
+fetch, screen, survey, classify, describe, stage. It never touches the vault —
+everything lands in staging and is subject to the same four refusals as any
+other agent's work.
+
+**The design rule is `OPEN_ANALYSIS_STRICT_RETURN`.** A scouting prompt must
+not tell the model what the catalogue hopes to hear — *"is this a good donor
+for a CSI pipeline?"* gets agreement, because a small model asked a leading
+question agrees. So the instruction is open (*what is this, and what is it made
+of?*) and the return is closed: an enumeration, a bounded list, validated on
+arrival, retried once with the error, then refused. Nothing in a task prompt
+mentions briefs, staging, promotion or the catalogue, and a test asserts that,
+because a model that knows it is filling in a form tries to fill in the form.
+
+**One job, one chunk, no history.** Fourteen small calls per candidate rather
+than one large one. Ten enumerations in a single reply is where small models
+drift — they repeat a value across axes or pick the first plausible one and
+stop reading; asked *which of these four words describes how mature this is*,
+with the four words in front of them, they are dependable.
+
+#### The first live run got four of ten axes wrong, and it reshaped the design
+
+Run against `sql-parser-cst` on a 4B model, with the evidence in front of it:
+
+| Axis | Answered | Actually |
+| --- | --- | --- |
+| `license_class` | Unknown | `declared licence: GPL-3.0` was in the text |
+| `ecosystem` | Python | `main language: TypeScript` was in the text |
+| `maturity_stage` | Reference | actively developed |
+| `hardware_footprint` | Low_VRAM | a parser; confidently wrong, unflagged |
+
+It also wrote *"Uses tree-sitter for parsing"* into **Architecture & Mechanics**
+for a project whose documentation never mentions tree-sitter — an invented name
+in a section a machine is allowed to write.
+
+Three changes followed, and the first is the one that matters:
+
+1. **A fact is never put to a model.** `librarian.derive` reads
+   `license_class` from the SPDX identifier, `ecosystem` from the language,
+   `maturity_stage` from the archived flag and push date, and
+   `hardware_footprint` from whether a GPU is mentioned at all. Asking is
+   strictly worse than reading — it converts a fact into a guess, and the guess
+   is indistinguishable from the fact downstream. Six genuinely interpretive
+   axes remain for the model.
+2. **`confident: false` is honoured.** The schema always asked for it; the code
+   took the value anyway, which made the flag decoration. An unconfident answer
+   is now dropped, `readiness` reports the gap, and a person fills it.
+3. **Every bullet is checked against the evidence.** A bullet whose
+   distinctive words do not occur in the text the model was given is dropped.
+   Crude on purpose — it cannot catch a wrong claim built from right words, and
+   it reliably catches an invented name, which is the shape these failures take.
+
+Re-run after the fixes: licence `Copyleft`, maturity `Active`, footprint
+`CPU_Only`, no hallucinated bullets, and **21s per candidate over 10 calls**
+rather than 105s over 16. `ecosystem` came back empty and stayed empty —
+TypeScript has no value in this vault's enumeration, so the taxonomy gap now
+surfaces as a field a person must fill rather than as `Python`. That is the
+strain predicted in [[Meta Analysis And Final Shape 2026-09-04]], arriving
+early and arriving visibly.
+
+Two smaller defects, both found by running it: the ecosystem fallback walked
+down the extension histogram until something mapped and reported `Markdown` for
+a repository of 250 `.ts` files and 30 `.md` ones; and grounding was checked
+against the terse shape chunk rather than the whole evidence, dropping correct
+bullets phrased in English.
+
+#### The other direction: `log_use`
+
+A brief is *"find me something that does X"*. The commoner case is an agent
+already using a repository the catalogue has never heard of, mid-task, where
+the cost of stopping to chart it is exactly high enough that nobody does.
+
+`log_use` costs one call, accepts a URL, and answers *already catalogued, here
+is the note* / *queued* / *seen again*. `record_application` feeds it
+automatically — anything it names that the catalogue does not hold is queued
+rather than left as a dangling link, because the moment a source proved useful
+is the moment worth catching it. Sightings are counted, so something three
+projects reached for independently is charted before something nobody repeated.
+
+### Stage 5 done, 2026-09-09 — outside agents can contribute, and cannot break it
+
+Four projects are about to use this catalogue and add to it. The gap was
+concrete: the MCP surface had exactly one write, `record_application`, and the
+only path that created a resource note was `scout.deep_dive.publish` — part of
+the Mode A cohort sweep. So "research and log what you find" meant four agents
+writing markdown into `01-Resources/` with nothing checking it until
+`librarian integrity` ran afterwards.
+
+**The request is now an artefact.** `librarian brief` records what a project
+needs with three fields that a topic list does not have: closed-vocabulary
+`constraints` that eliminate, free-text `disqualifiers` that are *required*,
+and a coverage verdict computed at open time. The disqualifier field exists
+because of a real loss — RuView was charted accurately and was still the wrong
+answer, since its sense model assumes ESP32 input shape and the project has an
+Intel 5300. No taxonomy anticipates that; only the asker knows it.
+
+**Contribution is two steps split along the layer boundary.** `propose` accepts
+structured fields from evidence and writes to `.Data/staging/`; `promote`
+requires the Bottom Line and writes to `01-Resources/`. A local model fills ten
+closed enumerations from a survey perfectly well and writes plausible mush, and
+mush passes every structural check there is — so
+`INTERPRETATION_IS_NOT_MACHINE_WORK` refuses prose from a machine outright.
+Data is automatable; information is not.
+
+**Closing a brief is where the negative results come from.** A brief will not
+close while a candidate is undecided, and a rejection without a reason is
+refused. `DOCUMENT_BEFORE_DESTROY`, one level up from the workbench.
+
+**"Exactly one tool writes" is retired and replaced.** It stopped being true
+and the honest successor is not a longer write list but a statement of what
+each write can reach: seven tools write, two create a note, one creates a note
+in `01-Resources/`, and it is not in the tier a research agent runs at. Both
+tests that pinned the old property were rewritten rather than deleted, because
+deleting them would have removed a guarantee instead of restating it.
+
+Three defects, all found by running it rather than reasoning about it:
+
+- **`content_model.load` returns `error` for both *missing* and *broken*.** Two
+  new call sites treated missing as fatal, which would have made the first
+  proposal in a fresh vault impossible — the exact case a separable tool has to
+  support. The module already draws that line; the new code had to follow it.
+- **A proposal could be staged that could never be promoted.** Readiness is now
+  computed at propose time by rendering the note and running the real checks
+  over it, so an agent hears `blocked_on: missing github_stars` while it still
+  has the connection open rather than a day later.
+- **Coverage-on-open read `verdict.verdict`, which does not exist**, and a bare
+  `except Exception` reported it as "coverage unknown" for a whole session.
+  Fixed, the catch narrowed, and a test added that was demonstrated failing
+  before it was trusted.
+
 ### Stage 4 done, 2026-09-06 — the person surface
 
 `librarian web` serves one page from `127.0.0.1` and holds **no retrieval
@@ -410,6 +679,13 @@ of them turned up a defect that was already there:
 | `librarian.workbench` | Mode D: open, document, close; `close` refuses without a record | Make the valuable by-product of a temporary environment the price of destroying it | [[recipy - recipy]] · [[cfpb - open-source-checklist]] |
 | `librarian.mcp_server` | The agent surface; read-only but one write | Expose a capability to a consumer you do not control, with the permitted actions enumerated | [[neo4j-labs - neocarta]] · [[open-metadata - OpenMetadata]] · [[vercel-labs - skills]] |
 | `librarian.webapp` | The person surface; loopback-only, dependency-free, no retrieval logic | Put a third front end on one engine without letting it acquire an opinion of its own | [[nene - sql-parser-cst]] · [[open-metadata - OpenMetadata]] |
+| `librarian.brief` | Research requests, dispositions, and why a candidate was refused | Make the request an artefact, so a search can be judged against what was actually asked | [[dbt-labs - dbt-core]] · [[open-metadata - OpenMetadata]] |
+| `librarian.propose` | The airlock: stage from evidence, promote with interpretation | Let an untrusted producer contribute structured data without letting it address the reader | [[SigmaHQ - sigma]] · [[cfpb - open-source-checklist]] |
+| `librarian.localmodel` | One task, one chunk, a validated shape or a refusal | Use a weak model safely by closing the return rather than widening the prompt | [[SigmaHQ - sigma]] · [[stac-utils - pystac]] |
+| `librarian.derive` | Axis values read from metadata, and a grounding check on generated bullets | Never ask a model what a fetched field already says | [[dbt-labs - dbt-core]] |
+| `librarian.enrich` | The queue: sources in use that are not catalogued | Make the cheapest contribution the one that costs nothing | [[recipy - recipy]] |
+| `librarian.populate` | The unattended scout: search, screen, classify, stage | Run an untrusted producer against a strict airlock rather than trusting it | [[open-metadata - OpenMetadata]] |
+| `librarian.webfetch` | Polite HTTP: robots, rate, HTML to text, and raw GitHub | Read the open web without a quota, and without becoming the crawler somebody blocks | `D4Vinci/Scrapling` (staged) |
 
 ---
 

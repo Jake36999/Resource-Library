@@ -284,9 +284,26 @@ degrade a result, it removes a resource from every constrained answer silently.
 Adding a value means editing this table, deliberately, and saying why in the note that
 prompted it.
 
+**2026-09-09 - six languages added to `ecosystem`:** `Rust`, `TypeScript`,
+`JavaScript`, `Java`, `CSharp`, `CPlusPlus`. The first intake outside the original
+cohort's subject matter left `ecosystem` empty on nearly every source, because the
+enumeration had no value for the language the repository was actually written in.
+`librarian.derive` returns nothing rather than forcing `Mixed`, which would say
+something false about a single-language repository - so the gap surfaced as a field
+a person had to fill on almost every note.
+
+`CSharp` and `CPlusPlus` rather than `C#` and `C++`: FTS5's `porter unicode61`
+tokenizer reduces both punctuated forms to the single token `c`, so a search for one
+matches the other and every stray `c` besides. Measured, not assumed. The rest of
+this enumeration has always been punctuation-free (`Web_CSS`, `Data_Platform`) for
+the same reason.
+
+Ruby, PHP, Kotlin, Swift and Haskell still have no value. They are left unmapped
+deliberately: an axis that is empty says so, and one that is wrong does not.
+
 | Axis | Permitted values |
 | --- | --- |
-| ecosystem | CAD_Modeling, Data_Platform, Geo_Data, Go, Infrastructure_Automation, Markdown, Mixed, Model_Serving, Observability, Python, Security_Analytics, Shell, Web_CSS, Web_Frontend |
+| ecosystem | CAD_Modeling, CPlusPlus, CSharp, Data_Platform, Geo_Data, Go, Infrastructure_Automation, Java, JavaScript, Markdown, Mixed, Model_Serving, Observability, Python, Rust, Security_Analytics, Shell, TypeScript, Web_CSS, Web_Frontend |
 | domain_primary | Agentic_AI, Architecture, Civic_Tech, Code_Intelligence, Data, Data_Lineage, Design, Discovery, Frontend, Geospatial, Infrastructure, Knowledge_Management, ML_Training, Scientific_Computation, Security |
 | maturity_stage | Abandoned, Active, Production_Ready, Reference |
 | license_class | Copyleft, Permissive, Source_Available, Unknown, Weak_Copyleft |
