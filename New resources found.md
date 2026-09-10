@@ -1,7 +1,10 @@
 **Useful for resource library tools**
 https://github.com/D4Vinci/Scrapling.git
 https://github.com/diegosouzapw/OmniRoute.git
-https://github.com/public-apis/public-apis.git -- a prepopulated archive of API's -- we should extract these and log them
+https://github.com/public-apis/public-apis.git -- a prepopulated archive of API's -- we 
+
+https://github.com/coderamp-labs/gitingest.git
+should extract these and log them
 
 **Useful across AI development projects**
 https://github.com/v-gen-ai/Calibri.git

@@ -1,612 +1,76 @@
 {
-  "nodes": [
-    {
-      "id": "lane-person",
-      "type": "group",
-      "label": "The person",
-      "x": -1940,
-      "y": -100,
-      "width": 720,
-      "height": 2000,
-      "color": "4"
-    },
-    {
-      "id": "lane-project",
-      "type": "group",
-      "label": "A project agent  \u00b7  tier: consult",
-      "x": -1180,
-      "y": -100,
-      "width": 720,
-      "height": 1960,
-      "color": "5"
-    },
-    {
-      "id": "lane-library",
-      "type": "group",
-      "label": "The library agent  \u00b7  tier: contribute",
-      "x": -420,
-      "y": -100,
-      "width": 720,
-      "height": 2060,
-      "color": "6"
-    },
-    {
-      "id": "lane-scout",
-      "type": "group",
-      "label": "The unattended local-model scout",
-      "x": 340,
-      "y": -100,
-      "width": 720,
-      "height": 2060,
-      "color": "3"
-    },
-    {
-      "id": "lane-vault",
-      "type": "group",
-      "label": "The airlock, and the truth  \u00b7  tier: curate",
-      "x": 1100,
-      "y": -100,
-      "width": 720,
-      "height": 1980,
-      "color": "1"
-    },
-    {
-      "id": "p0",
-      "type": "text",
-      "text": "# The person\n\nYou own the sentence a reader acts on. **Nothing else in this system can write one.**",
-      "x": -1900,
-      "y": 0,
-      "width": 640,
-      "height": 160,
-      "color": "4"
-    },
-    {
-      "id": "p1",
-      "type": "text",
-      "text": "## 1 \u00b7 Find something\n\n```\nlibrarian web\nlibrarian query donor \"...\"\n```\n\nA catalogue, not a search box: drop-downs are built from the result set, and a count is the size of what survives choosing it.\n\nCounts reconcile. A constraint that removed the best answer says so, in red, at the top.",
-      "x": -1900,
-      "y": 200,
-      "width": 640,
-      "height": 300,
-      "color": "4"
-    },
-    {
-      "id": "p2",
-      "type": "text",
-      "text": "## 2 \u00b7 Log what you used\n\n```\nlibrarian queue add <url> --why \"...\"\n```\n\nA URL is fine. Three answers: **already catalogued** (with the note), **queued**, **seen again**.\n\nLog it even if you rejected it \u2014 say so in `--why`. The queue is cheap; rediscovering the same dead end next quarter is not.",
-      "x": -1900,
-      "y": 540,
-      "width": 640,
-      "height": 300,
-      "color": "4"
-    },
-    {
-      "id": "p3",
-      "type": "text",
-      "text": "## 3 \u00b7 Review the airlock\n\n```\nlibrarian staging list\nlibrarian staging show <id>\n```\n\n`show` renders the note **exactly as it would be written**, so nothing is a surprise after the fact.",
-      "x": -1900,
-      "y": 880,
-      "width": 640,
-      "height": 240,
-      "color": "4"
-    },
-    {
-      "id": "p4",
-      "type": "text",
-      "text": "## 4 \u00b7 Promote\n\n```\nlibrarian staging promote <id> \\\n  --bottom-line \"...\" \\\n  --what-it-solves \"...\"\n```\n\nThe only write a reader ever sees. It **refuses without the interpretation**, and it runs the vault's own integrity checks *before* writing \u2014 a note the vault would reject is reported, not written.",
-      "x": -1900,
-      "y": 1160,
-      "width": 640,
-      "height": 320,
-      "color": "4"
-    },
-    {
-      "id": "p5",
-      "type": "text",
-      "text": "## 5 \u00b7 Maintain\n\n```\nlibrarian integrity\nlibrarian views --check\nlibrarian relevance --scenarios 0\nlibrarian staging rederive --deep\n```\n\nRun `rederive` after **any** taxonomy change: it replays the new rules over everything already staged, with no model calls and no network.",
-      "x": -1900,
-      "y": 1520,
-      "width": 640,
-      "height": 300,
-      "color": "4"
-    },
-    {
-      "id": "j0",
-      "type": "text",
-      "text": "# A project agent\n\n```\nlibrarian serve --tier consult\n```\n\nRuns inside `Mark-XLVIII`, `quantule_mapper`, `knowledge_compiler_engine`, `network_management` \u2014 not inside the vault.",
-      "x": -1140,
-      "y": 0,
-      "width": 640,
-      "height": 200,
-      "color": "5"
-    },
-    {
-      "id": "j1",
-      "type": "text",
-      "text": "## Ask before building\n\n`find_donor(need, constraints)`\n\nIf nothing fits, the reply says **\"nothing here covers this\"** as plainly as it reports a match.\n\nThat is a real answer. Do not treat a weak match as an endorsement.",
-      "x": -1140,
-      "y": 240,
-      "width": 640,
-      "height": 260,
-      "color": "5"
-    },
-    {
-      "id": "j2",
-      "type": "text",
-      "text": "## Log every source you touch\n\n`log_use(url, project, why)`\n\nOne call, no ceremony, nothing owed afterwards. The `why` is stored as *reported by you* \u2014 never as a fact about the project \u2014 and it is the only part of the eventual note that will come from real use rather than a README.",
-      "x": -1140,
-      "y": 540,
-      "width": 640,
-      "height": 300,
-      "color": "5"
-    },
-    {
-      "id": "j3",
-      "type": "text",
-      "text": "## Ask for what is missing\n\n`open_brief(project, need, disqualifiers, constraints)`\n\n**`disqualifiers` is required.** Not the topic \u2014 what a candidate must not assume, require or depend on.\n\n> RuView was found, researched and charted accurately, and still cost a leg of the project: its sense model assumes ESP32 input shape and the hardware is an Intel 5300. No taxonomy anticipates that. Only the asker knows it.",
-      "x": -1140,
-      "y": 880,
-      "width": 640,
-      "height": 380,
-      "color": "5"
-    },
-    {
-      "id": "j4",
-      "type": "text",
-      "text": "## Record what actually worked\n\n`record_application(...)`\n\n`what_the_catalogue_should_learn` is what turns a diary entry into a requirement.\n\nAny source it names that the catalogue does not hold is **queued automatically** \u2014 you do not log it twice.",
-      "x": -1140,
-      "y": 1300,
-      "width": 640,
-      "height": 280,
-      "color": "5"
-    },
-    {
-      "id": "j5",
-      "type": "text",
-      "text": "## What it cannot do\n\nWrite a note. By design: a resource note carries a sentence a reader acts on, and that is written by whoever stands behind it.",
-      "x": -1140,
-      "y": 1620,
-      "width": 640,
-      "height": 160,
-      "color": "5"
-    },
-    {
-      "id": "l0",
-      "type": "text",
-      "text": "# The library agent\n\n```\nlibrarian serve --tier contribute\n```\n\nHolds no path into `01-Resources/`. The reachable damage is a directory of JSON.",
-      "x": -380,
-      "y": 0,
-      "width": 640,
-      "height": 180,
-      "color": "6"
-    },
-    {
-      "id": "l1",
-      "type": "text",
-      "text": "## Take work\n\n```\nlist_briefs()  \u2192  claim_brief(id, agent)\nlist_queue()\n```\n\nA brief is *find me something that does X*. The queue is the commoner case: *someone is already using this and we have never heard of it*.",
-      "x": -380,
-      "y": 220,
-      "width": 640,
-      "height": 260,
-      "color": "6"
-    },
-    {
-      "id": "l2",
-      "type": "text",
-      "text": "## Screen against the brief\n\nOne cheap model call, asked negatively: **what does this text contradict?**\n\n`keep` \u00b7 `reject` \u00b7 **`unclear`**\n\nAsked whether something is suitable, a small model agrees. Asked for a contradiction, it has to point at a sentence. `unclear` is a normal answer \u2014 most texts will not say.",
-      "x": -380,
-      "y": 520,
-      "width": 640,
-      "height": 320,
-      "color": "6"
-    },
-    {
-      "id": "l3",
-      "type": "text",
-      "text": "## Stage what survives\n\n`propose_resource(repo_key, url, axes, evidence, ...)`\n\nFour refusals, each by name:\n\n- `EVIDENCE_REQUIRED` \u2014 nothing was fetched\n- `NO_SCHEMA_DRIFT` \u2014 axis value outside its enumeration\n- `STAGING_BEFORE_VAULT` \u2014 already charted; here is the note\n- `INTERPRETATION_IS_NOT_MACHINE_WORK`",
-      "x": -380,
-      "y": 880,
-      "width": 640,
-      "height": 340,
-      "color": "6"
-    },
-    {
-      "id": "l4",
-      "type": "text",
-      "text": "## Dispose of everything seen\n\n`decide_candidate(brief, repo, \"rejected\", reason)`\n\nThe reason **is** the negative result. *\"Sense model assumes ESP32 CSI shape\"* is worth more to the next search than most positive entries \u2014 and it exists only because something insisted on it here.",
-      "x": -380,
-      "y": 1260,
-      "width": 640,
-      "height": 300,
-      "color": "6"
-    },
-    {
-      "id": "l5",
-      "type": "text",
-      "text": "## Close\n\n`close_brief(id, summary)`\n\nRefuses while any candidate is undecided. `DOCUMENT_BEFORE_DESTROY`, one level up from the workbench.\n\n`--discard` exists, and is not silent: each dropped candidate is recorded with a reason.",
-      "x": -380,
-      "y": 1600,
-      "width": 640,
-      "height": 280,
-      "color": "6"
-    },
-    {
-      "id": "s0",
-      "type": "text",
-      "text": "# The local-model scout\n\n```\nlibrarian populate queue --limit N\nlibrarian populate brief <id>\n```\n\nLM Studio, roughly 110s per source, free. It stages; it never writes a note.",
-      "x": 380,
-      "y": 0,
-      "width": 640,
-      "height": 200,
-      "color": "3"
-    },
-    {
-      "id": "s1",
-      "type": "text",
-      "text": "## Read, don't ask\n\nA fact is **never** put to a model. `derive` reads it:\n\n| axis | from |\n|---|---|\n| `license_class` | SPDX, else the LICENSE file |\n| `ecosystem` | the language |\n| `maturity_stage` | archived flag + push date |\n| `security_compliance` | keywords |\n| `agent_surface` | the path ladder \u2014 **0.958** |\n\n> Asked for a licence with `GPL-3.0` in the text above the question, a 4B model answered `Unknown`.",
-      "x": 380,
-      "y": 240,
-      "width": 640,
-      "height": 420,
-      "color": "3"
-    },
-    {
-      "id": "s2",
-      "type": "text",
-      "text": "## Ask only what must be judged\n\nOne enumeration per call, temperature 0, no history, no knowledge of the pipeline.\n\n`confident: false` \u2192 **dropped, not recorded.**\n\n> A bigger model was *more confident and more wrong*: `qwen3-8b` answered `ecosystem: Web_Frontend`, confidently, citing its own evidence line `main language: Rust`.",
-      "x": 380,
-      "y": 700,
-      "width": 640,
-      "height": 340,
-      "color": "3"
-    },
-    {
-      "id": "s3",
-      "type": "text",
-      "text": "## Describe from evidence\n\nWhat Is Inside \u00b7 Architecture & Mechanics \u00b7 Integration & Use Cases\n\nEvery bullet is checked against the text the model was given. An invented name is dropped.\n\n> The first run wrote *\"Uses tree-sitter for parsing\"* for a project whose documentation never mentions tree-sitter.",
-      "x": 380,
-      "y": 1080,
-      "width": 640,
-      "height": 300,
-      "color": "3"
-    },
-    {
-      "id": "s4",
-      "type": "text",
-      "text": "## Never the interpretation\n\n`Bottom Line` and `What It Solves` are **refused** from any machine.\n\nA small model fills enumerations well and writes plausible mush \u2014 and mush passes every structural check there is.",
-      "x": 380,
-      "y": 1420,
-      "width": 640,
-      "height": 220,
-      "color": "3"
-    },
-    {
-      "id": "s5",
-      "type": "text",
-      "text": "## Resume\n\nA killed run strands nothing: a claim nobody is holding is retaken by the next run.\n\n```\nlibrarian queue release <id>\n```",
-      "x": 380,
-      "y": 1680,
-      "width": 640,
-      "height": 200,
-      "color": "3"
-    },
-    {
-      "id": "v0",
-      "type": "text",
-      "text": "# The airlock\n\n`.Data/staging/`\n\nNothing here is in the vault. Nothing here is indexed. Nothing here reaches a reader.",
-      "x": 1140,
-      "y": 0,
-      "width": 640,
-      "height": 180,
-      "color": "1"
-    },
-    {
-      "id": "v1",
-      "type": "text",
-      "text": "## Why the split is here\n\nIt follows the line the vault already draws between its layers:\n\n| step | who | produces |\n|---|---|---|\n| `propose` | any agent, incl. a local model | **data** |\n| `promote` | a person, or an agent that used it | **information** |\n\nFilling ten closed enumerations from a survey is constrained choice. Writing the sentence a reader acts on is not.",
-      "x": 1140,
-      "y": 220,
-      "width": 640,
-      "height": 360,
-      "color": "1"
-    },
-    {
-      "id": "v2",
-      "type": "text",
-      "text": "## readiness\n\nEvery proposal comes back saying what promotion *would* refuse \u2014 at propose time, while the agent still has the connection open.\n\n```\n{\"ready\": false,\n \"blocked_on\": [\"missing 'github_stars'\", ...]}\n```\n\nA proposal that sits in staging looking finished and can never be promoted is worse than a refused one.",
-      "x": 1140,
-      "y": 620,
-      "width": 640,
-      "height": 320,
-      "color": "1"
-    },
-    {
-      "id": "v3",
-      "type": "text",
-      "text": "## One validator, not two\n\nPromotion calls the **same three integrity checks** `librarian integrity` runs, on a one-note list \u2014 not a second copy of the rules that would drift from the first.",
-      "x": 1140,
-      "y": 980,
-      "width": 640,
-      "height": 200,
-      "color": "1"
-    },
-    {
-      "id": "v4",
-      "type": "text",
-      "text": "# 01-Resources/\n\n**The truth.**\n\nReached by exactly one tool \u2014 `promote_proposal`, tier `curate` \u2014 and only with a sentence somebody stands behind.",
-      "x": 1140,
-      "y": 1220,
-      "width": 640,
-      "height": 200,
-      "color": "1"
-    },
-    {
-      "id": "v5",
-      "type": "text",
-      "text": "## The tiers\n\n```\nconsult     reads + application records\ncontribute  + briefs, queue, staging\n            (cannot alter a note)\ncurate      + promotion\n```\n\nThe old guarantee was *exactly one tool writes*. Its honest successor is **what each write can reach**: seven write, two create a note, one creates a note in `01-Resources/` \u2014 and it is not in the tier a research agent runs at.",
-      "x": 1140,
-      "y": 1460,
-      "width": 640,
-      "height": 340,
-      "color": "1"
-    }
-  ],
-  "edges": [
-    {
-      "id": "e0",
-      "fromNode": "p0",
-      "fromSide": "bottom",
-      "toNode": "p1",
-      "toSide": "top"
-    },
-    {
-      "id": "e1",
-      "fromNode": "p1",
-      "fromSide": "bottom",
-      "toNode": "p2",
-      "toSide": "top"
-    },
-    {
-      "id": "e2",
-      "fromNode": "p2",
-      "fromSide": "bottom",
-      "toNode": "p3",
-      "toSide": "top"
-    },
-    {
-      "id": "e3",
-      "fromNode": "p3",
-      "fromSide": "bottom",
-      "toNode": "p4",
-      "toSide": "top"
-    },
-    {
-      "id": "e4",
-      "fromNode": "p4",
-      "fromSide": "bottom",
-      "toNode": "p5",
-      "toSide": "top"
-    },
-    {
-      "id": "e5",
-      "fromNode": "j0",
-      "fromSide": "bottom",
-      "toNode": "j1",
-      "toSide": "top"
-    },
-    {
-      "id": "e6",
-      "fromNode": "j1",
-      "fromSide": "bottom",
-      "toNode": "j2",
-      "toSide": "top"
-    },
-    {
-      "id": "e7",
-      "fromNode": "j2",
-      "fromSide": "bottom",
-      "toNode": "j3",
-      "toSide": "top"
-    },
-    {
-      "id": "e8",
-      "fromNode": "j3",
-      "fromSide": "bottom",
-      "toNode": "j4",
-      "toSide": "top"
-    },
-    {
-      "id": "e9",
-      "fromNode": "j4",
-      "fromSide": "bottom",
-      "toNode": "j5",
-      "toSide": "top"
-    },
-    {
-      "id": "e10",
-      "fromNode": "l0",
-      "fromSide": "bottom",
-      "toNode": "l1",
-      "toSide": "top"
-    },
-    {
-      "id": "e11",
-      "fromNode": "l1",
-      "fromSide": "bottom",
-      "toNode": "l2",
-      "toSide": "top"
-    },
-    {
-      "id": "e12",
-      "fromNode": "l2",
-      "fromSide": "bottom",
-      "toNode": "l3",
-      "toSide": "top"
-    },
-    {
-      "id": "e13",
-      "fromNode": "l3",
-      "fromSide": "bottom",
-      "toNode": "l4",
-      "toSide": "top"
-    },
-    {
-      "id": "e14",
-      "fromNode": "l4",
-      "fromSide": "bottom",
-      "toNode": "l5",
-      "toSide": "top"
-    },
-    {
-      "id": "e15",
-      "fromNode": "s0",
-      "fromSide": "bottom",
-      "toNode": "s1",
-      "toSide": "top"
-    },
-    {
-      "id": "e16",
-      "fromNode": "s1",
-      "fromSide": "bottom",
-      "toNode": "s2",
-      "toSide": "top"
-    },
-    {
-      "id": "e17",
-      "fromNode": "s2",
-      "fromSide": "bottom",
-      "toNode": "s3",
-      "toSide": "top"
-    },
-    {
-      "id": "e18",
-      "fromNode": "s3",
-      "fromSide": "bottom",
-      "toNode": "s4",
-      "toSide": "top"
-    },
-    {
-      "id": "e19",
-      "fromNode": "s4",
-      "fromSide": "bottom",
-      "toNode": "s5",
-      "toSide": "top"
-    },
-    {
-      "id": "e20",
-      "fromNode": "v0",
-      "fromSide": "bottom",
-      "toNode": "v1",
-      "toSide": "top"
-    },
-    {
-      "id": "e21",
-      "fromNode": "v1",
-      "fromSide": "bottom",
-      "toNode": "v2",
-      "toSide": "top"
-    },
-    {
-      "id": "e22",
-      "fromNode": "v2",
-      "fromSide": "bottom",
-      "toNode": "v3",
-      "toSide": "top"
-    },
-    {
-      "id": "e23",
-      "fromNode": "v3",
-      "fromSide": "bottom",
-      "toNode": "v4",
-      "toSide": "top"
-    },
-    {
-      "id": "e24",
-      "fromNode": "v4",
-      "fromSide": "bottom",
-      "toNode": "v5",
-      "toSide": "top"
-    },
-    {
-      "id": "x0",
-      "fromNode": "j2",
-      "fromSide": "right",
-      "toNode": "l1",
-      "toSide": "left",
-      "label": "queued",
-      "color": "3"
-    },
-    {
-      "id": "x1",
-      "fromNode": "j3",
-      "fromSide": "right",
-      "toNode": "l1",
-      "toSide": "left",
-      "label": "a brief",
-      "color": "3"
-    },
-    {
-      "id": "x2",
-      "fromNode": "j4",
-      "fromSide": "right",
-      "toNode": "l1",
-      "toSide": "left",
-      "label": "unknown sources queued",
-      "color": "3"
-    },
-    {
-      "id": "x3",
-      "fromNode": "l1",
-      "fromSide": "right",
-      "toNode": "s0",
-      "toSide": "left",
-      "label": "worked unattended",
-      "color": "3"
-    },
-    {
-      "id": "x4",
-      "fromNode": "l3",
-      "fromSide": "right",
-      "toNode": "v0",
-      "toSide": "left",
-      "label": "staged",
-      "color": "6"
-    },
-    {
-      "id": "x5",
-      "fromNode": "s4",
-      "fromSide": "right",
-      "toNode": "v0",
-      "toSide": "left",
-      "label": "staged",
-      "color": "3"
-    },
-    {
-      "id": "x6",
-      "fromNode": "v2",
-      "fromSide": "left",
-      "toNode": "p3",
-      "toSide": "right",
-      "label": "review",
-      "color": "4"
-    },
-    {
-      "id": "x7",
-      "fromNode": "p4",
-      "fromSide": "right",
-      "toNode": "v4",
-      "toSide": "left",
-      "label": "promote",
-      "color": "4"
-    },
-    {
-      "id": "x8",
-      "fromNode": "v4",
-      "fromSide": "left",
-      "toNode": "j1",
-      "toSide": "right",
-      "label": "answers",
-      "color": "5"
-    }
-  ]
+	"nodes":[
+		{"id":"lane-library","type":"group","x":-124,"y":-670,"width":984,"height":4860,"color":"6","label":"The library agent  ·  tier: contribute"},
+		{"id":"lane-scout","type":"group","x":3280,"y":-3280,"width":984,"height":4860,"color":"3","label":"The unattended local-model scout"},
+		{"id":"lane-person","type":"group","x":-1108,"y":4320,"width":984,"height":4718,"color":"4","label":"The person"},
+		{"id":"lane-vault","type":"group","x":4720,"y":1760,"width":984,"height":4671,"color":"1","label":"The airlock, and the truth  ·  tier: curate"},
+		{"id":"lane-project","type":"group","x":-1600,"y":-1840,"width":984,"height":4624,"color":"5","label":"A project agent  ·  tier: consult"},
+		{"id":"v2","type":"text","text":"## readiness\n\nEvery proposal comes back saying what promotion *would* refuse — at propose time, while the agent still has the connection open.\n\n```\n{\"ready\": false,\n \"blocked_on\": [\"missing 'github_stars'\", ...]}\n```\n\nA proposal that sits in staging looking finished and can never be promoted is worse than a refused one.","x":4774,"y":3459,"width":875,"height":755,"color":"1"},
+		{"id":"v3","type":"text","text":"## One validator, not two\n\nPromotion calls the **same three integrity checks** `librarian integrity` runs, on a one-note list — not a second copy of the rules that would drift from the first.","x":4774,"y":4308,"width":875,"height":471,"color":"1"},
+		{"id":"v4","type":"text","text":"# 01-Resources/\n\n**The truth.**\n\nReached by exactly one tool — `promote_proposal`, tier `curate` — and only with a sentence somebody stands behind.","x":4774,"y":4876,"width":875,"height":471,"color":"1"},
+		{"id":"v5","type":"text","text":"## The tiers\n\n```\nconsult     reads + application records\ncontribute  + briefs, queue, staging\n            (cannot alter a note)\ncurate      + promotion\n```\n\nThe old guarantee was *exactly one tool writes*. Its honest successor is **what each write can reach**: seven write, two create a note, one creates a note in `01-Resources/` — and it is not in the tier a research agent runs at.","x":4774,"y":5442,"width":875,"height":802,"color":"1"},
+		{"id":"v0","type":"text","text":"# The airlock\n\n`.Data/staging/`\n\nNothing here is in the vault. Nothing here is indexed. Nothing here reaches a reader.","x":4774,"y":1996,"width":875,"height":424,"color":"1"},
+		{"id":"v1","type":"text","text":"## Why the split is here\n\nIt follows the line the vault already draws between its layers:\n\n| step | who | produces |\n|---|---|---|\n| `propose` | any agent, incl. a local model | **data** |\n| `promote` | a person, or an agent that used it | **information** |\n\nFilling ten closed enumerations from a survey is constrained choice. Writing the sentence a reader acts on is not.","x":4774,"y":2515,"width":875,"height":850,"color":"1"},
+		{"id":"02dd266c6a56138c","x":-1048,"y":4755,"width":250,"height":60,"type":"text","text":""},
+		{"id":"j4","type":"text","text":"## Record what actually worked\n\n`record_application(...)`\n\n`what_the_catalogue_should_learn` is what turns a diary entry into a requirement.\n\nAny source it names that the catalogue does not hold is **queued automatically** — you do not log it twice.","x":-1545,"y":1463,"width":875,"height":661,"color":"5"},
+		{"id":"j5","type":"text","text":"## What it cannot do\n\nWrite a note. By design: a resource note carries a sentence a reader acts on, and that is written by whoever stands behind it.","x":-1545,"y":2218,"width":875,"height":377,"color":"5"},
+		{"id":"j0","type":"text","text":"# A project agent\n\n```\nlibrarian serve --tier consult\n```\n\nRuns inside `Mark-XLVIII`, `quantule_mapper`, `knowledge_compiler_engine`, `network_management` — not inside the vault.","x":-1545,"y":-1604,"width":875,"height":471,"color":"5"},
+		{"id":"j1","type":"text","text":"## Ask before building\n\n`find_donor(need, constraints)`\n\nIf nothing fits, the reply says **\"nothing here covers this\"** as plainly as it reports a match.\n\nThat is a real answer. Do not treat a weak match as an endorsement.","x":-1545,"y":-1038,"width":875,"height":613,"color":"5"},
+		{"id":"j2","type":"text","text":"## Log every source you touch\n\n`log_use(url, project, why)`\n\nOne call, no ceremony, nothing owed afterwards. The `why` is stored as *reported by you* — never as a fact about the project — and it is the only part of the eventual note that will come from real use rather than a README.","x":-1545,"y":-330,"width":875,"height":708,"color":"5"},
+		{"id":"j3","type":"text","text":"## Ask for what is missing\n\n`open_brief(project, need, disqualifiers, constraints)`\n\n**`disqualifiers` is required.** Not the topic — what a candidate must not assume, require or depend on.\n\n> RuView was found, researched and charted accurately, and still cost a leg of the project: its sense model assumes ESP32 input shape and the hardware is an Intel 5300. No taxonomy anticipates that. Only the asker knows it.","x":-1545,"y":473,"width":875,"height":897,"color":"5"},
+		{"id":"p2","type":"text","text":"## 2 · Log what you used\n\n```\nlibrarian queue add <url> --why \"...\"\n```\n\nA URL is fine. Three answers: **already catalogued** (with the note), **queued**, **seen again**.\n\nLog it even if you rejected it — say so in `--why`. The queue is cheap; rediscovering the same dead end next quarter is not.","x":-1053,"y":5830,"width":875,"height":708,"color":"4"},
+		{"id":"p3","type":"text","text":"## 3 · Review the airlock\n\n```\nlibrarian staging list\nlibrarian staging show <id>\n```\n\n`show` renders the note **exactly as it would be written**, so nothing is a surprise after the fact.","x":-1053,"y":6633,"width":875,"height":566,"color":"4"},
+		{"id":"p4","type":"text","text":"## 4 · Promote\n\n```\nlibrarian staging promote <id> \\\n  --bottom-line \"...\" \\\n  --what-it-solves \"...\"\n```\n\nThe only write a reader ever sees. It **refuses without the interpretation**, and it runs the vault's own integrity checks *before* writing — a note the vault would reject is reported, not written.","x":-1053,"y":7293,"width":875,"height":755,"color":"4"},
+		{"id":"p5","type":"text","text":"## 5 · Maintain\n\n```\nlibrarian integrity\nlibrarian views --check\nlibrarian relevance --scenarios 0\nlibrarian staging rederive --deep\n```\n\nRun `rederive` after **any** taxonomy change: it replays the new rules over everything already staged, with no model calls and no network.","x":-1053,"y":8141,"width":875,"height":708,"color":"4"},
+		{"id":"p0","type":"text","text":"# The person\n\nYou own the sentence a reader acts on. **Nothing else in this system can write one.**","x":-1053,"y":4556,"width":875,"height":377,"color":"4"},
+		{"id":"p1","type":"text","text":"## 1 · Find something\n\n```\nlibrarian web\nlibrarian query donor \"...\"\n```\n\nA catalogue, not a search box: drop-downs are built from the result set, and a count is the size of what survives choosing it.\n\nCounts reconcile. A constraint that removed the best answer says so, in red, at the top.","x":-1053,"y":5028,"width":875,"height":708,"color":"4"},
+		{"id":"l0","type":"text","text":"# The library agent\n\n```\nlibrarian serve --tier contribute\n```\n\nHolds no path into `01-Resources/`. The reachable damage is a directory of JSON.","x":-69,"y":-434,"width":875,"height":424,"color":"6"},
+		{"id":"l1","type":"text","text":"## Take work\n\n```\nlist_briefs()  →  claim_brief(id, agent)\nlist_queue()\n```\n\nA brief is *find me something that does X*. The queue is the commoner case: *someone is already using this and we have never heard of it*.","x":-69,"y":85,"width":875,"height":613,"color":"6"},
+		{"id":"l2","type":"text","text":"## Screen against the brief\n\nOne cheap model call, asked negatively: **what does this text contradict?**\n\n`keep` · `reject` · **`unclear`**\n\nAsked whether something is suitable, a small model agrees. Asked for a contradiction, it has to point at a sentence. `unclear` is a normal answer — most texts will not say.","x":-69,"y":793,"width":875,"height":755,"color":"6"},
+		{"id":"l3","type":"text","text":"## Stage what survives\n\n`propose_resource(repo_key, url, axes, evidence, ...)`\n\nFour refusals, each by name:\n\n- `EVIDENCE_REQUIRED` — nothing was fetched\n- `NO_SCHEMA_DRIFT` — axis value outside its enumeration\n- `STAGING_BEFORE_VAULT` — already charted; here is the note\n- `INTERPRETATION_IS_NOT_MACHINE_WORK`","x":-69,"y":1643,"width":875,"height":802,"color":"6"},
+		{"id":"l4","type":"text","text":"## Dispose of everything seen\n\n`decide_candidate(brief, repo, \"rejected\", reason)`\n\nThe reason **is** the negative result. *\"Sense model assumes ESP32 CSI shape\"* is worth more to the next search than most positive entries — and it exists only because something insisted on it here.","x":-69,"y":2538,"width":875,"height":708,"color":"6"},
+		{"id":"l5","type":"text","text":"## Close\n\n`close_brief(id, summary)`\n\nRefuses while any candidate is undecided. `DOCUMENT_BEFORE_DESTROY`, one level up from the workbench.\n\n`--discard` exists, and is not silent: each dropped candidate is recorded with a reason.","x":-69,"y":3340,"width":875,"height":661,"color":"6"},
+		{"id":"s0","type":"text","text":"# The local-model scout\n\n```\nlibrarian populate queue --limit N\nlibrarian populate brief <id>\n```\n\nLM Studio, roughly 110s per source, free. It stages; it never writes a note.","x":3334,"y":-3044,"width":875,"height":471,"color":"3"},
+		{"id":"s1","type":"text","text":"## Read, don't ask\n\nA fact is **never** put to a model. `derive` reads it:\n\n| axis | from |\n|---|---|\n| `license_class` | SPDX, else the LICENSE file |\n| `ecosystem` | the language |\n| `maturity_stage` | archived flag + push date |\n| `security_compliance` | keywords |\n| `agent_surface` | the path ladder — **0.958** |\n\n> Asked for a licence with `GPL-3.0` in the text above the question, a 4B model answered `Unknown`.","x":3334,"y":-2478,"width":875,"height":992,"color":"3"},
+		{"id":"s2","type":"text","text":"## Ask only what must be judged\n\nOne enumeration per call, temperature 0, no history, no knowledge of the pipeline.\n\n`confident: false` → **dropped, not recorded.**\n\n> A bigger model was *more confident and more wrong*: `qwen3-8b` answered `ecosystem: Web_Frontend`, confidently, citing its own evidence line `main language: Rust`.","x":3334,"y":-1393,"width":875,"height":802,"color":"3"},
+		{"id":"s3","type":"text","text":"## Describe from evidence\n\nWhat Is Inside · Architecture & Mechanics · Integration & Use Cases\n\nEvery bullet is checked against the text the model was given. An invented name is dropped.\n\n> The first run wrote *\"Uses tree-sitter for parsing\"* for a project whose documentation never mentions tree-sitter.","x":3334,"y":-496,"width":875,"height":708,"color":"3"},
+		{"id":"s4","type":"text","text":"## Never the interpretation\n\n`Bottom Line` and `What It Solves` are **refused** from any machine.\n\nA small model fills enumerations well and writes plausible mush — and mush passes every structural check there is.","x":3334,"y":306,"width":875,"height":519,"color":"3"},
+		{"id":"s5","type":"text","text":"## Resume\n\nA killed run strands nothing: a claim nobody is holding is retaken by the next run.\n\n```\nlibrarian queue release <id>\n```","x":3334,"y":919,"width":875,"height":471,"color":"3"}
+	],
+	"edges":[
+		{"id":"e0","fromNode":"p0","fromSide":"bottom","toNode":"p1","toSide":"top"},
+		{"id":"e1","fromNode":"p1","fromSide":"bottom","toNode":"p2","toSide":"top"},
+		{"id":"e2","fromNode":"p2","fromSide":"bottom","toNode":"p3","toSide":"top"},
+		{"id":"e3","fromNode":"p3","fromSide":"bottom","toNode":"p4","toSide":"top"},
+		{"id":"e4","fromNode":"p4","fromSide":"bottom","toNode":"p5","toSide":"top"},
+		{"id":"e5","fromNode":"j0","fromSide":"bottom","toNode":"j1","toSide":"top"},
+		{"id":"e6","fromNode":"j1","fromSide":"bottom","toNode":"j2","toSide":"top"},
+		{"id":"e7","fromNode":"j2","fromSide":"bottom","toNode":"j3","toSide":"top"},
+		{"id":"e8","fromNode":"j3","fromSide":"bottom","toNode":"j4","toSide":"top"},
+		{"id":"e9","fromNode":"j4","fromSide":"bottom","toNode":"j5","toSide":"top"},
+		{"id":"e10","fromNode":"l0","fromSide":"bottom","toNode":"l1","toSide":"top"},
+		{"id":"e11","fromNode":"l1","fromSide":"bottom","toNode":"l2","toSide":"top"},
+		{"id":"e12","fromNode":"l2","fromSide":"bottom","toNode":"l3","toSide":"top"},
+		{"id":"e13","fromNode":"l3","fromSide":"bottom","toNode":"l4","toSide":"top"},
+		{"id":"e14","fromNode":"l4","fromSide":"bottom","toNode":"l5","toSide":"top"},
+		{"id":"e15","fromNode":"s0","fromSide":"bottom","toNode":"s1","toSide":"top"},
+		{"id":"e16","fromNode":"s1","fromSide":"bottom","toNode":"s2","toSide":"top"},
+		{"id":"e17","fromNode":"s2","fromSide":"bottom","toNode":"s3","toSide":"top"},
+		{"id":"e18","fromNode":"s3","fromSide":"bottom","toNode":"s4","toSide":"top"},
+		{"id":"e19","fromNode":"s4","fromSide":"bottom","toNode":"s5","toSide":"top"},
+		{"id":"e20","fromNode":"v0","fromSide":"bottom","toNode":"v1","toSide":"top"},
+		{"id":"e21","fromNode":"v1","fromSide":"bottom","toNode":"v2","toSide":"top"},
+		{"id":"e22","fromNode":"v2","fromSide":"bottom","toNode":"v3","toSide":"top"},
+		{"id":"e23","fromNode":"v3","fromSide":"bottom","toNode":"v4","toSide":"top"},
+		{"id":"e24","fromNode":"v4","fromSide":"bottom","toNode":"v5","toSide":"top"},
+		{"id":"x0","fromNode":"j2","fromSide":"right","toNode":"l1","toSide":"left","color":"3","label":"queued"},
+		{"id":"x1","fromNode":"j3","fromSide":"right","toNode":"l1","toSide":"left","color":"3","label":"a brief"},
+		{"id":"x2","fromNode":"j4","fromSide":"right","toNode":"l1","toSide":"left","color":"3","label":"unknown sources queued"},
+		{"id":"x3","fromNode":"l1","fromSide":"right","toNode":"s0","toSide":"left","color":"3","label":"worked unattended"},
+		{"id":"x4","fromNode":"l3","fromSide":"right","toNode":"v0","toSide":"left","color":"6","label":"staged"},
+		{"id":"x5","fromNode":"s4","fromSide":"right","toNode":"v0","toSide":"left","color":"3","label":"staged"},
+		{"id":"x6","fromNode":"v2","fromSide":"left","toNode":"p3","toSide":"right","color":"4","label":"review"},
+		{"id":"x7","fromNode":"p4","fromSide":"right","toNode":"v4","toSide":"left","color":"4","label":"promote"},
+		{"id":"x8","fromNode":"v4","fromSide":"left","toNode":"j1","toSide":"right","color":"5","label":"answers"}
+	]
 }
